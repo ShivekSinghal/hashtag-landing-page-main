@@ -669,12 +669,12 @@ def payment_successful():
 
     return render_template("success.html")
 
-def render_recipt(date):
-    return render_template("receipt2.html", date=today_date, name=name, batch=batch_str, phone=phone,
-                                       validity=validity, email=email, studio=studio, gross_amount=gross_amount,
-                                       gst=gst, fee=fee, order_receipt=f"#{str(order_receipt)}",
-                                       mode_of_payment=mode_of_payment, paid_to=paid_to, hashtag_logo=hashtag_logo,
-                                       watermark=hashtag_watermark, promo_code=promo_code)
+# def render_recipt(date):
+#     return render_template("receipt2.html", date=today_date, name=name, batch=batch_str, phone=phone,
+#                                        validity=validity, email=email, studio=studio, gross_amount=gross_amount,
+#                                        gst=gst, fee=fee, order_receipt=f"#{str(order_receipt)}",
+#                                        mode_of_payment=mode_of_payment, paid_to=paid_to, hashtag_logo=hashtag_logo,
+#                                        watermark=hashtag_watermark, promo_code=promo_code)
 
 
 @app.route('/terms')
