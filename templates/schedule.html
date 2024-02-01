@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      function getStudioClassData(studio, day) {
+            // Your Python function's equivalent logic here
+            // Return the respective studio data based on the studio and day
+            // You can reuse the logic from the previous Python function
+
+            // Example:
+            let studioData = {
+              'ED' : {
+                  0:[`<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="Jazz1_weekend1" name="batch" value="Jazz 1 (Weekend)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1_weekend1"></label>
+                            <span class="ml-2">Jazz 1 (Weekend), 11:30am-2:00pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="heels3" value="Heels (twice a week)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="heels3"></label>
+                            <span class="ml-2">Heels, 2:00pm-3:15pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="hiphop" value="Hip Hop (twice a week)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="hiphop"></label>
+                            <span class="ml-2">Hip Hop, 4:14pm-6:30pm</span>
+                        </div>
+                    </div>`
+
+
+
+                  ],
+
+                  1:[`<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="heels3" value="Heels (twice a week)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="heels3"></label>
+                            <span class="ml-2">Heels, 7:15pm-3:15pm</span>
+                        </div>
+                    </div>`,
+                    ],
+
+                  2:[`<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="KidsJazz" name="batch" value="Kids Jazz" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="KidsJazz"></label>
+                            <span class="ml-2">Kids Jazz, 4:15pm-5:15pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="ballet" value="Ballet" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="ballet"></label>
+                            <span class="ml-2">Ballet, 5:15pm-6:30pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="modern" value="Modern" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="modern"></label>
+                            <span class="ml-2">Modern, 7:45pm-9:00pm</span>
+                        </div>
+                    </div>
+                    ]
+                  3: [`<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <h4 style="color:white;">No classes for this day</h4>
+                        </div>
+                    </div>`],
+                  4: [`<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <h4 style="color:white;">No classes for this day</h4>
+                        </div>
+                    </div>`],
+                  5: [
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="KidsJazz" name="batch" value="Kids Jazz" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="KidsJazz"></label>
+                            <span class="ml-2">Kids Jazz, 4:15pm-5:15pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="ballet" value="Ballet" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="ballet"></label>
+                            <span class="ml-2">Ballet, 5:15pm-6:30pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="modern" value="Modern" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="modern"></label>
+                            <span class="ml-2">Modern, 7:45pm-9:00pm</span>
+                        </div>
+                    </div>`
+                    ],
+
+                  6: [`<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <h4 style="color:white;">No classes for this day</h4>
+                        </div>
+                    </div>`]
+
+
+
+
+
+
+
+
+              },
+
+              'NDA' : {
+
+                  0: [
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="Jazz2_weekend1" name="batch" value="Jazz 2 (Weekend)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz2_weekend1"></label>
+                            <span class="ml-2">Jazz 2 (Weekend), 11:30am-2:00pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="Jazz1_weekend" name="batch" value="Jazz 1 (Weekend)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1_weekend1"></label>
+                            <span class="ml-2">Jazz 1 (Weekend), 2:00pm-4:30pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="hiphop" value="Hip Hop (twice a week)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="hiphop"></label>
+                            <span class="ml-2">Hip Hop, 4:30pm-6:00pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="Heels1" value="Heels (twice a week)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Heels1"></label>
+                            <span class="ml-2">Heels, 6:00pm-7:30pm</span>
+                        </div>
+                    </div>`
+
+
+                ],
+                 1: [
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="KidsJazz" name="batch" value="Kids Jazz" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="KidsJazz"></label>
+                            <span class="ml-2">Kids Jazz, 3:45pm-4:45pm</span>
+                        </div>
+                    </div>`,
+
+                   `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="Heels1" value="Heels (twice a week)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Heels1"></label>
+                            <span class="ml-2">Heels, 7:00pm-8:15pm</span>
+                        </div>
+                    </div>`,
+
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="Jazz1.1" value="Jazz 1 (Weekdays)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1.1"></label>
+                            <span class="ml-2">Jazz 1, 8:15pm-9:30pm</span>
+                        </div>
+                    </div>`
+                    ],
+
+
+                 2: [
+
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="KidsBallet" name="batch" value="Kids Ballet" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="KidsBallet"></label>
+                            <span class="ml-2">Kids Jazz, 4:15pm-5:15pm</span>
+                        </div>
+                    </div>`,
+
+                    <div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="Jazz1.2" value="Jazz 1 (Weekdays)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1.2"></label>
+                            <span class="ml-2">Jazz 1, 5:15pm-6:30pm</span>
+                        </div>
+                    </div>`,
+
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="ballet" value="Ballet" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="ballet"></label>
+                            <span class="ml-2">Ballet, 6:30pm-7:45pm</span>
+                        </div>
+                    </div>`,
+
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="modern" value="Modern" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="modern"></label>
+                            <span class="ml-2">Modern, 7:45pm-9:00pm</span>
+                        </div>
+                    </div>`,
+                ],
+                 3: [
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <h4 style="color:white;">No classes for this day</h4>
+                        </div>
+                    </div>`],
+                4: [
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="KidsJazz" name="batch" value="Kids Jazz" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="KidsJazz"></label>
+                            <span class="ml-2">Kids Jazz, 3:45pm-4:45pm</span>
+                        </div>,
+                    </div>`,
+
+                   `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="Heels1" value="Heels (twice a week)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Heels1"></label>
+                            <span class="ml-2">Heels, 7:00pm-8:15pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="Jazz1.1" value="Jazz 1 (Weekdays)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1.1"></label>
+                            <span class="ml-2">Jazz 1, 8:15pm-9:30pm</span>
+                        </div>
+                    </div>`,
+                    ],
+
+
+                5: [
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input class="text-white" type="radio" id="KidsBallet" name="batch" value="Kids Ballet" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="KidsBallet"></label>
+                            <span class="ml-2">Kids Jazz, 4:15pm-5:15pm</span>
+                        </div>
+                    </div>`,
+                    <div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="Jazz1.2" value="Jazz 1 (Weekdays)" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1.2"></label>
+                            <span class="ml-2">Jazz 1, 5:15pm-6:30pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="ballet" value="Ballet" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="ballet"></label>
+                            <span class="ml-2">Ballet, 6:30pm-7:45pm</span>
+                        </div>
+                    </div>`,
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <input type="radio" name="batch" id="modern" value="Modern" onchange="updateFee()">
+                            <label style="margin-bottom: 0;" class="checkbox-inline" for="modern"></label>
+                            <span class="ml-2">Modern, 7:45pm-9:00pm</span>
+                        </div>
+                    </div>`
+                ],
+                6: [
+                    `<div class="col-md-12">
+                        <div class="form-group d-flex align-items-center">
+                            <h4 style="color:white;">No classes for this day</h4>
+                        </div>
+                    </div>`]
+
+
+
+
+
+
+
+
+
+
+            } // Your studio data logic here
+            // ...
+            };
+
+            if (studio in studioData && day in studioData[studio]) {
+                return studioData[studio][day];
+            } else {
+                return [];
+            }
+        }
+
+      function loadClasses() {
+            const selectedDate = new Date(document.getElementById('calendar').value);
+            const dayOfWeek = selectedDate.getDay();
+            const selectedStudio = 'ED'
+<!--            const selectedStudio = document.getElementById('studio').value;-->
+
+            const classSelection = document.getElementById('ClassSchedule');
+            const classes = getStudioClassData(selectedStudio, dayOfWeek);
+
+            if (classes.length > 0) {
+                classSelection.innerHTML = classes.join('');
+            } else {
+                classSelection.innerHTML = '<div class="col-md-12"><div class="form-group d-flex align-items-center"><h4 style="color:white;">No classes for this day</h4></div></div>';
+            }
+        }
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

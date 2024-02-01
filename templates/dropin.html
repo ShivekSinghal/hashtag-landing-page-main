@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Drop In Form</title>
+    <link rel="icon" href="../static/images/pink_favicorn/favicon.ico" type="image/x-icon">
+
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+<!--    Bootstarp Css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Main CSS-->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="all">
+<!--OR-->
+
+</head>
+  <script>
+
+<!-- Same apps script code as GetFees shared before   -->
+    function updateFee() {
+      var feeField = document.getElementById("feeField");
+      var selectedBatches = Array.from(document.querySelectorAll('input[name="batch[]"]:checked')).map(checkbox => checkbox.value);
+      var no_of_batches = selectedBatches.length;
+
+      // Define the fees dictionary
+      var feesDictionary = {
+            "Any1": 9500,
+            "Any2": 17860,
+            "Any3": 26123,
+            "Any4": 34292,
+            "All5": 42366,
+            "HHorHL_once": 5900,
+            "HHandHL_once": 11092,
+            "Any1_twiceandHHorHL_once": 14691,
+            "Any1_twiceandHHandHL_once": 19824,
+            "Any2_twiceandHHorHL_once": 22992,
+            "Any2_twiceandHHandHL_once": 28066,
+            "Any3_twiceandHHorHL_once": 31197,
+            "Any4_twiceorHHandHL_once" : 29618,
+            "Any3_twiceandHHandHL_once" : 36212,
+
+        // Add the remaining fees here
+      };
+
+
+
+
+
+
+      // Logic For Getting Fees
+      if (no_of_batches === 1) {
+        var selectedBatch = selectedBatches[0];
+        if (selectedBatch === "Hip Hop (once a week)" || selectedBatch === "Heels (once a week)") {
+          feeField.value = feesDictionary['HHorHL_once'];
+        } else {
+          feeField.value = feesDictionary['Any1'];
+        }
+      } else if (no_of_batches === 2) {
+        var first_batch = selectedBatches[0];
+        var second_batch = selectedBatches[1];
+
+        if (second_batch === "Hip Hop (once a week)" || second_batch === "Heels (once a week)") {
+          if (first_batch === "Hip Hop (once a week)") {
+            feeField.value = feesDictionary['HHandHL_once'];
+          } else {
+            feeField.value = feesDictionary['Any1_twiceandHHorHL_once'];
+          }
+        } else {
+          feeField.value = feesDictionary['Any2'];
+        }
+      } else if (no_of_batches === 3) {
+        var first_batch = selectedBatches[0];
+        var second_batch = selectedBatches[1];
+        var third_batch = selectedBatches[2];
+
+        if (second_batch === "Hip Hop (once a week)") {
+          feeField.value = feesDictionary['Any1_twiceandHHandHL_once'];
+        }
+        else if (third_batch === "Hip Hop (once a week)" || third_batch === "Heels (once a week)") {
+          feeField.value = feesDictionary['Any2_twiceandHHorHL_once'];
+        } else {
+          feeField.value = feesDictionary['Any3'];
+        }
+      } else if (no_of_batches === 4) {
+        var first_batch = selectedBatches[0];
+        var third_batch = selectedBatches[2];
+        var fourth_batch = selectedBatches[3];
+
+        if (third_batch === "Hip Hop (once a week)") {
+          feeField.value = feesDictionary['Any2_twiceandHHandHL_once'];
+        }
+        else if (fourth_batch === "Hip Hop (once a week)" || fourth_batch === "Heels (once a week)") {
+          feeField.value = feesDictionary['Any3_twiceandHHorHL_once'];
+        } else {
+          feeField.value = feesDictionary['Any4'];
+        }
+      } else if (no_of_batches === 5) {
+        var first_batch = selectedBatches[0];
+        var third_batch = selectedBatches[2];
+        var fourth_batch = selectedBatches[3];
+        var fifth_batch = selectedBatches[4];
+
+        if (fifth_batch === "Hip Hop (once a week)" || fifth_batch === "Heels (once a week)"){
+          feeField.value = feesDictionary["Any4_twiceorHHandHL_once"];
+        }
+        else if (fourth_batch === "Hip Hop (once a week)"){
+          feeField.value = feesDictionary["Any3_twiceandHHorHL_once"];
+        } else {
+          feeField.value = feesDictionary["All5"];
+        }
+      }
+    }
+    function doGet() {
+      return HtmlService.createTemplateFromFile('index').evaluate();
+      }
+
+
+    function validateForm() {
+        var name = document.forms[0].elements["name"].value;
+        var email = document.forms[0].elements["email"].value;
+        var phone = document.forms[0].elements["phone"].value;
+        var selectedStudio = document.forms[0].elements["Studio"].value;
+
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var phonePattern = /^\d{10}$/;
+
+        if (name === "") {
+            alert("Please enter your name.");
+            return false;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        if (!phonePattern.test(phone)) {
+            alert("Please enter a valid 10-digit phone number.");
+            return false;
+        }
+
+        if (selectedStudio === "Select Studio") {
+            alert("Please select a studio.");
+            return false;
+        }
+
+        return true; // Form submission will proceed if all validations pass
+    }
+
+
+
+  </script>
+
+
+<body>
+    <div class="page-wrapper p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+
+                <div class="card-heading"></div>
+
+                <div class="card-body" >
+                    <h1 class="title">Drop In Form</h1>
+                    <form onsubmit="return validateForm()" method="POST" action="{{ url_for('select_dropin') }}">
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Name" name="name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email" name="email">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Phone" name="phone">
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select class="custom-select" name="Studio" id="studioDropdown" required>
+                                    <option disabled="disabled" selected="selected">Select Studio</option>
+                                    <option value="NDA">Noida</option>
+                                    <option value="RG">Rajouri Garden</option>
+                                    <option value="PP">Pitampura</option>
+                                    <option value="GGN">Gurgaon</option>
+                                    <option value="SD">South Delhi</option>
+                                    <option value="ED">East Delhi</option>
+                                    <option value="IPM">Indirapuram</option>
+                                </select>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--hotpink btn--hotpink:hover" type="submit">Next</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+    <script>
+
+    </script>
+
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

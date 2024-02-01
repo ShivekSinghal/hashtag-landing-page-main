@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Define the auditorium container styles */
+        .auditorium {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr); /* 11 columns (A to K) */
+            gap: 5px; /* Gap between seats */
+        }
+
+        /* Define the seat styles */
+        .seat {
+            width: 40px;
+            height: 40px;
+            background-color: #ccc;
+            border: 1px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .seat input[type="checkbox"] {
+            display: none; /* Hide the actual checkbox input */
+        }
+
+        .seat input[type="checkbox"]:checked + label {
+            background-color: #3498db; /* Change the background color when checked */
+        }
+    </style>
+</head>
+<body>
+    <div class="auditorium" id="auditorium">
+    </div>
+
+    <script>
+        // Get the auditorium container
+        const auditorium = document.getElementById('auditorium');
+
+        // Define the number of rows and columns
+        const numRows = 20; // Rows A to T
+        const numCols = 11; // Columns 1 to 11
+
+        // Function to handle seat selection
+        function handleSeatSelection(event) {
+            const checkbox = event.target;
+            const seatName = checkbox.value;
+            const rowNumber = seatName.charCodeAt(0) - 64; // Convert letter to row number
+            console.log(`Selected seat: ${seatName}, Row: ${rowNumber}`);
+        }
+
+        // Loop to create the seats
+        for (let row = 1; row <= numRows; row++) {
+            for (let col = 1; col <= numCols; col++) {
+                // Create a seat div
+                const seatDiv = document.createElement('div');
+                seatDiv.className = 'seat';
+
+                // Create a checkbox
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = String.fromCharCode(64 + row) + col; // Convert row to letter (A to T)
+                checkbox.value = checkbox.id;
+
+                // Create a label for the checkbox
+                const label = document.createElement('label');
+                label.htmlFor = checkbox.id;
+                label.textContent = checkbox.id;
+
+                // Add an event listener to the checkbox for seat selection
+                checkbox.addEventListener('change', handleSeatSelection);
+
+                // Append the checkbox and label to the seat div
+                seatDiv.appendChild(checkbox);
+                seatDiv.appendChild(label);
+
+                // Append the seat div to the auditorium container
+                auditorium.appendChild(seatDiv);
+            }
+        }
+    </script>
+</body>
+</html>
+<x></x>

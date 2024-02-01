@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Batch Selection</title>
+    <script>
+        function showBatches() {
+            const datePicker = document.getElementById('datePicker');
+            const selectedDate = new Date(datePicker.value);
+            const dayOfWeek = selectedDate.getDay();
+
+            const batchSelection = document.getElementById('batchSelection');
+
+            if (dayOfWeek === 2) {
+                batchSelection.style.display = 'block';
+            } else {
+                batchSelection.style.display = 'none';
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div class="page-wrapper p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h1 class="title">Batch Selection</h1>
+                    <div class="input-group">
+                        <input type="date" id="datePicker" onchange="showBatches()">
+                    </div>
+                    <div class="input-group" id="batchSelection" style="display: none;">
+                        <input type="checkbox" name="batch[]" value="Ballet (Tuesdays 5:00 PM)"> Ballet (Tuesdays 5:00 PM)
+                        <input type="checkbox" name="batch[]" value="Modern Contemporary (Fridays 8:00 PM)"> Modern Contemporary (Fridays 8:00 PM)
+                    </div>
+                    <div class="p-t-10">
+                        <button class="btn btn--pill btn--hotpink btn--hotpink:hover" type="submit">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
