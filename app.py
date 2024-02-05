@@ -195,7 +195,7 @@ def apply_promo_code(name, email, phone, promo_code, filename):
                     and check_promo_validity(datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
             ):
                 print("applied")
-                amount = promo_entry.get('amount')
+                amount = float(promo_entry.get('amount'))
                 break
         return amount
     except (FileNotFoundError, json.JSONDecodeError, KeyError):
