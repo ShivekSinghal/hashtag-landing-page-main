@@ -41,6 +41,11 @@ button{
   margin-bottom : 10px;
 
 }
+p {
+    color: white;
+    padding : 7px;
+
+}
 
 .card-3 .card-body {
   padding: 57px 65px;
@@ -82,7 +87,10 @@ button{
 <!--                            <button id="rzp-button1" class="btn-primary btn&#45;&#45;pill">Pay with Razorpay</button>-->
 <!--                            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>-->
 <!--                        </div>-->
-
+                            <p>Fee: ₹ {{ fee_without_gst }}</p>
+                            <p>GST (18%): ₹ {{ gst }}</p>
+                            <p>Internet Handling Fees: ₹ {{ internet_handling_fees }}</p>
+                            <p>Total: ₹ {{ fee_final/100 }}</p>
 
 
 
@@ -93,15 +101,17 @@ button{
                     <div class="container" id="payment-mode">
                         <div class="row">
                             <div class="col-sm">
-                                <button id="payment-button1" class="btn btn-primary btn-lg col-lg-12 col-md-12 col-sm-12 btn-pill" name="Bank Transfer">Bank Transfer</button>
+                                <button id="payment-button1" class="btn btn-primary btn-lg col-lg-12 col-md-12 col-sm-12 btn-pill" name="Bank Transfer">Checkout</button>
 <!--                                <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>-->
 
                                 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
                             </div>
-                            <div class="col-sm">
-                                <button id="cash-button1" class="btn btn-success btn-lg col-lg-12 col-md-12 col-sm-12 btn-pill" name="Cash">Cash</button>
-                            </div>
+
                         </div>
+                        <div class="col-sm">
+                                <a style="color : #a9a9a9; float: right;" href="{{ url_for('cash_payment') }}"><u>Pay at Studio</u></a>
+<!--                                <a id="cash-button1" class="btn btn-success btn-sm btn-lg col-lg-12 col-md-12 col-sm-12 btn-pill" name="Cash">Cash</a>-->
+                            </div>
                     </div>
 
 
@@ -110,11 +120,12 @@ button{
         </div>
     </div>
     <script>
-    document.getElementById("cash-button1").addEventListener("click", function() {
-      var cashPaymentUrl = "{{ url_for('cash_payment') }}";
-      window.open(cashPaymentUrl);
 
-    });
+    document.getElementById("cash-button1").addEventListener("click", function() {
+    var cashPaymentUrl = "{{ url_for('cash_payment') }}";
+    window.location.href = cashPaymentUrl;
+});
+
   </script>
 
 
@@ -127,7 +138,7 @@ button{
         // Generate a Razorpay order and open the Razorpay checkout
         var options = {
             key: 'rzp_test_9Yy2azW5HeczxN', // Replace with your Razorpay API key
-            amount: {{fee}}, // Replace with the actual amount in paisa
+            amount: {{fee_final}}, // Replace with the actual amount in paisa
             currency: 'INR', // Replace with the desired currency code
             name: 'Pink Grid Creations Pvt. Ltd.',
             image: '../static/images/hashtag.jpeg',

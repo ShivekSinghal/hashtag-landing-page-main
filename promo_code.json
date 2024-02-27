@@ -198,5 +198,13 @@
         "email": "singhalshivek24@gmail.com",
         "phone": "8527805203",
         "amount": "1076.27"
+    },
+    {
+        "promo_code": "HashtagPH9Q5TR9",
+        "expiry": "2024-02-26 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshivek24@gmail.com",
+        "phone": "8527805203",
+        "amount": "542"
     }
 ]

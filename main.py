@@ -12,14 +12,18 @@ from datetime import datetime, timedelta
 from string import Template
 import threading
 import razorpay
-
+import requests
+from flask_session import Session
 
 
 
 
 app = Flask(__name__)
-app.secret_key = '#register_with_hashtag0909'
 
+# app.secret_key = '#register_with_hashtag0909'
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"]= 'filesystem'
+Session(app)
 
 
 # Google Sheets API credentials
@@ -56,11 +60,30 @@ razorpay_key_secret = 'QhcRWMasciGh2iZUhNe6m786'
 # Create a Razorpay client
 razorpay_client = razorpay.Client(auth=(razorpay_key_id, razorpay_key_secret))
 
+def get_razorpay_modeofpayment(payment_id):
+    url = f'https://api.razorpay.com/v1/payments/{payment_id}'
+
+    headers = {
+        'Content-Type': 'application/json',
+    }
+
+    auth = (razorpay_key_id, razorpay_key_secret)
+
+    response = requests.get(url, headers=headers, auth=auth)
+
+    if response.status_code == 200:
+        payment_details = response.json()
+        payment_method = payment_details.get('method', 'Unknown')
+        print(f'The payment method used is: {payment_method}')
+    else:
+        print(f'Error getting payment details. Status code: {response.status_code}')
+        print(response.text)
+
 # PROMO CODE HANDLER
 
 
 def generate_random_promo_code(length=8 ):
-    characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()"
+    characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#"
     return f"Hashtag{''.join(random.choice(characters) for _ in range(length))}"
 
 
@@ -411,85 +434,114 @@ def select_batch():
     name = session.get('name')
     phone = session.get('phone')
     email = session.get('email')
+    studio = session.get('studio')
 
     today_date = datetime.today().strftime('%d-%b-%Y %H:%M:%S')
     sheet = client.open_by_key(sheet_key).worksheet("Payment_Incomplete")
-    registration_data = [today_date, session.get('name'), session.get('phone'), session.get('email'), session.get('studio')]
+    registration_data = [today_date, name, phone, email, studio]
 
     sheet.append_row(registration_data)
 
     promo_code_applied = session.get('promo_code_applied')
-    batch_scenario = ""
-    if session.get('studio') in ["Noida", "Rajouri Garden", "Pitampura", "Gurgaon", "South Delhi"]:
-        batch_scenario = "twice"
 
-
-    elif session.get('studio') in ["Indirapuram"]:
-        batch_scenario = "no_modern"
-
-    else:
-        batch_scenario = "once"
 
     promo_data = load_promo_data("promo_data.json")
     if promo_data is not None:
         discount = int(apply_promo_code(name, email, phone, promo_code_applied, filename="promo_code.json"))
         if promo_code_applied == "":
             discount = 0
-            return render_template('selectbatch.html', batch_scenario=batch_scenario, discount=discount)
+            return render_template('selectbatch.html', discount=discount)
 
         if discount > 0:
             print(discount)
 
-            return render_template('selectbatch.html', batch_scenario=batch_scenario, discount=discount,
+            return render_template('selectbatch.html', discount=discount,
                                    promo_message=f"Promo Code worth {discount} applied successfully")
         if discount == 0:
-            return render_template('selectbatch.html', batch_scenario=batch_scenario, discount=discount,
+            return render_template('selectbatch.html', discount=discount,
                                    promo_message=f"Promo Code expired or invalid user details")
 
 
 @app.route('/payment-method', methods=['GET', 'POST'])
 def make_payment():
+    # Get the selected batches as a list
 
     session['batches'] = request.form.getlist('batch[]')
-    print(session['batches'])
-    batch = session['batches']
-    # Get the selected batches as a list
-        # Create a new order in Razorpay
-    order_amount = int(float(request.form['fee']) * 100)  # Convert fee to the smallest currency unit (in paisa)
+    session['order_amount'] = int(float(request.form['fee']) * 100)  # Convert fee to the smallest currency unit (in paisa)
     order_currency = 'INR'
+    session['order_receipt'] = get_current_receipt_number()
+
+
+    batch = session.get('batches')
+    order_amount = session.get('order_amount')
+    order_receipt = session.get('order_receipt')
+    print(batch)
+
+    # Create a new order in Razorpay
 
     order_data = {
             'amount': order_amount,
             'currency': order_currency,
-            'receipt': session.get('order_receipt'),
+            'receipt': order_receipt,
             'payment_capture': 1,  # Auto-capture the payment
-            # Add any other parameters as required
-        }
 
-    order_response = razorpay_client.order.create(data=order_data)
+                # Add any other parameters as required
+            }
+
+    session['order_response'] = razorpay_client.order.create(data=order_data)
     session['fee'] = round(order_amount/100 * 1.18)
-    print(session.get('fee'))
+
+    order_response = session.get('order_response')
+    fee = session.get('fee')
+
+    print(fee)
+
+
+
     if order_response.get('id'):
-        order_id = order_response['id']
-        session['order_receipt'] = get_current_receipt_number()
+        session['order_id'] = order_response['id']
         session['batches'] = request.form.getlist('batch[]')
         session['fee_without_gst'] = request.form['fee']
-        session['fee'] = str(round(float(session.get('fee_without_gst')) * 1.18))
-        paid_to = "Pink Grid"
+        session['fee_with_gst'] = str(round(float(session.get('fee_without_gst')) * 1.18))
+
+
         session['validity'] = request.form['validity']
+
+        order_id = session.get('order_id')
+        batches = session.get('batches')
+        fee_without_gst = session.get('fee_without_gst')
+        fee_with_gst = session.get('fee')
+
+        session['internet_handling_fees'] = round((float(fee_with_gst) / 0.97 * 100) * 0.02036 / 100, 2)
+        session['fee_final'] = round(int(float(fee_with_gst) / 0.97 * 100))
+        session['gst'] = round(float(fee_without_gst) * 0.18,2)
+
+        gst = session.get('gst')
+        internet_handling_fees = session.get('internet_handling_fees')
+        fee_final = session.get('fee_final')
+
         validity = session.get('validity')
+        paid_to = "Pink Grid"
+
         if validity == "two_months_grid":
             session['validity'] = "Grid, December, January"
         if validity == "three_months":
-            validity = "August, September, December"
+            validity = "March, April, May"
         if validity == "grid":
-            validity = "Grid 2.0"
+            validity = "Grid"
         if validity == "Drop In":
             session['dropin_date'] = request.form['dropin_date']
             session['batch'] = request.form['batch']
 
+            dropin_date = session.get('dropin_date')
+            batch = session.get('batch')
+
+        print(session)
         # Redirect the user to the Razorpay payment page
-        return render_template("pay.html", payment=order_response,  fee = float(session.get('fee'))*100)
+        return render_template("pay.html", payment=order_response,
+                               fee_without_gst=float(fee_without_gst),
+                               gst=gst, internet_handling_fees=internet_handling_fees, fee_final=fee_final)
+
     else:
         # Failed to create the order
         return render_template('failed.html')
@@ -559,9 +611,13 @@ def cash_payment():
     studio = session.get('studio')
 
     session['wingperson'] = get_studio_wingperson(studio)
+    session['location'] = get_studio_location(studio=studio)
+
+    wingperson = session.get('wingperson')
+    location = session.get('locatoion')
     fee = session.get('fee')
 
-    return render_template('cash.html',studio=studio, full_studio=return_studio_fullform(studio), fee=fee, wingperson=session.get('wingperson'), location=get_studio_location(studio=studio))
+    return render_template('cash.html', studio=studio, full_studio=return_studio_fullform(studio), fee=fee,wingperson=wingperson, location=location)
 
 
 
@@ -588,7 +644,8 @@ def process_cash():
 
 
 @app.route('/success', methods=['GET', 'POST'])
-def payment_successful():
+def payment_successful(batches, name, phone, email, order_recipt, fee_without_gst, validity, fee,internet_handling_fees, studio, promo_code_applied):
+    print(session)
     sheet = client.open_by_key(sheet_key).worksheet(sheet_name)
     batch_str = ', '.join(session.get('batches'))  # Join the batches list with a comma separator
     print(f"thi is {batch_str}")
@@ -607,10 +664,14 @@ def payment_successful():
     if source == "Cash":
         mode_of_payment = "Cash"
         paid_to = wingperson_name
+        internet_handling_fees = 0
+
 
     else:
-        mode_of_payment = "Bank Transfer"
+        mode_of_payment = "Razorpay"
         paid_to = "Pink Grid"
+        internet_handling_fees = session.get('internet_handling_fees')
+
 
 
     if validity == 'grid':
@@ -635,8 +696,8 @@ def payment_successful():
     else:
         promo_code_created = ""
 
-        row = [today_date, name, phone, email, "#" + order_receipt, validity, batch_str, fee, studio,
-               mode_of_payment, paid_to, promo_code_applied]
+        row = [today_date, name, phone, email, "#" + order_receipt,"", validity, batch_str, "","", round(float(fee)/1.18, 2), round(float(fee)/1.18*0.18, 2), fee,
+               mode_of_payment, paid_to, promo_code_applied, studio, internet_handling_fees]
 
     gross_amount = round(float(fee) / 1.18, 2)
     gst = round(gross_amount * 0.18, 2)
@@ -648,20 +709,19 @@ def payment_successful():
     sheet.append_row(row)
     print("Succesfully added to sheets")
 
-
     def send_receipt_background():
         rendered_receipt = render_template("receipt2.html", date=today_date, name=name, batch=batch_str, phone=phone,
-                                           validity='September, October, Grid', email=email, studio=studio, gross_amount=gross_amount,
-                                           gst=gst, fee=fee, order_receipt=f"#{str(order_receipt)}",
-                                           mode_of_payment="Bank Transfer", paid_to="Pink Grid", hashtag_logo=hashtag_logo,
+                                           validity=validity, email=email, studio=studio, gross_amount=gross_amount,
+                                           gst=gst, internet_handling_fees=internet_handling_fees, fee=fee, order_receipt=f"#{str(order_receipt)}",
+                                           mode_of_payment=mode_of_payment, paid_to=paid_to, hashtag_logo=hashtag_logo,
                                            watermark=hashtag_watermark, promo_code=promo_code_created)
 
         print("reciptrendered")
 
         send_receipt(receiver_mail=email, rendered_html=rendered_receipt)
 
-    # thread = threading.Thread(target=send_receipt_background)
-    # thread.start()
+    thread = threading.Thread(target=send_receipt_background)
+    thread.start()
     send_receipt_background()
     print("receipt sent")
 
@@ -688,5 +748,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4916)
+    app.run(debug=True, port=4918)
 

@@ -27,40 +27,84 @@
 
 </head>
   <script>
+  const radioButtons = document.querySelectorAll('input[name="batch"]');
+  const nextButton = document.getElementById('next-button');
+
+  function updateFee() {
+    const isSelected = Array.from(radioButtons).some(rb => rb.checked);
+    const feeField = document.getElementById("feeField");
+    const selectedBatch = document.querySelector('input[name="batch"]:checked').value;
+
+    // Define the fees dictionary
+    var feesDictionary = {
+      "Jazz 1 (Weekend)": 1076.27,
+      "Hip Hop (Weekend)": 1076.27,
+      "Jazz 1 (Weekdays)": 542.37,
+      "Ballet": 542,
+      "Modern": 542,
+      "Hip Hop (once a week)": 542,
+      "Hip Hop (twice a week)": 542,
+      "Heels (once a week)": 542,
+      "Heels (twice a week)": 542,
+      "Kids Jazz": 542,
+      "Kids Ballet": 542,
+      "Jazz 1": 542,
+      "Jazz 1.1": 542,
+      "Jazz 1.2": 542
+      // Add other batches and their fees here
+    };
+
+    // Check if the selected batch exists in the fees dictionary
+    if (selectedBatch in feesDictionary) {
+      feeField.value = feesDictionary[selectedBatch];
+    } else {
+      feeField.value = ""; // Set fee value to an empty string if the batch is not found
+    }
+
+    // Enable the next button if a radio button is selected and the fee is not empty
+    nextButton.disabled = !isSelected || feeField.value.trim() === "";
+  }
+
+  radioButtons.forEach(radioButton => {
+    radioButton.addEventListener('change', updateFee);
+  });
+
+
+
 
 <!-- Same apps script code as GetFees shared before   -->
-    function updateFee() {
-        var feeField = document.getElementById("feeField");
-        var selectedBatch = document.querySelector('input[name="batch"]:checked').value;
+<!--    function updateFee() {-->
+<!--        var feeField = document.getElementById("feeField");-->
+<!--        var selectedBatch = document.querySelector('input[name="batch"]:checked').value;-->
 
-        // Define the fees dictionary
-        var feesDictionary = {
-            "Jazz 1 (Weekend)": 1076.27,
-            "Hip Hop (Weekend)": 1076.27,
-            "Jazz 1 (Weekdays)" : 542.37,
-            "Ballet" : 542,
-            "Modern" : 542,
-            "Hip Hop (once a week)" : 542,
-            "Hip Hop (twice a week)" : 542,
-            "Heels (once a week)" : 542,
-            "Heels (twice a week)" : 542,
-            "Kids Jazz" : 542,
-            "Kids Ballet" : 542,
-            "Jazz 1" : 542,
-            "Jazz 1.1" : 542,
-            "Jazz 1.2" : 542
+<!--        // Define the fees dictionary-->
+<!--        var feesDictionary = {-->
+<!--            "Jazz 1 (Weekend)": 1076.27,-->
+<!--            "Hip Hop (Weekend)": 1076.27,-->
+<!--            "Jazz 1 (Weekdays)" : 542.37,-->
+<!--            "Ballet" : 542,-->
+<!--            "Modern" : 542,-->
+<!--            "Hip Hop (once a week)" : 542,-->
+<!--            "Hip Hop (twice a week)" : 542,-->
+<!--            "Heels (once a week)" : 542,-->
+<!--            "Heels (twice a week)" : 542,-->
+<!--            "Kids Jazz" : 542,-->
+<!--            "Kids Ballet" : 542,-->
+<!--            "Jazz 1" : 542,-->
+<!--            "Jazz 1.1" : 542,-->
+<!--            "Jazz 1.2" : 542-->
 
-            // Add other batches and their fees here
-        };
+<!--            // Add other batches and their fees here-->
+<!--        };-->
 
-        // Check if the selected batch exists in the fees dictionary
-        if (selectedBatch in feesDictionary) {
-            feeField.value = feesDictionary[selectedBatch];
+<!--        // Check if the selected batch exists in the fees dictionary-->
+<!--        if (selectedBatch in feesDictionary) {-->
+<!--            feeField.value = feesDictionary[selectedBatch];-->
 
-        } else {
-            feeField.value = ""; // Set fee value to an empty string if the batch is not found
-        }
-    }
+<!--        } else {-->
+<!--            feeField.value = ""; // Set fee value to an empty string if the batch is not found-->
+<!--        }-->
+<!--    }-->
 
 
     function doGet() {
@@ -167,7 +211,7 @@
 
 
                         <div class="p-t-10">
-                            <button class="btn btn--pill btn--hotpink btn--hotpink:hover" id="next" type="submit" style="margin-left: 30px;">Next</button>
+                            <button class="btn btn--pill btn--hotpink btn--hotpink:hover" id="next-button" type="submit" style="margin-left: 30px;">Next</button>
                         </div>
 
 
@@ -506,7 +550,7 @@
                         <div class="col-md-12">
                             <div class="form-group d-flex align-items-center">
 
-                                <input class="text-white" type="radio" id="Jazz1_weekend1" name="batch" value="Jazz 2 (Weekend)" onchange="updateFee()">
+                                <input class="text-white" type="radio" id="Jazz1_weekend1" name="batch" value="Jazz 1 (Weekend)" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz2_weekend1"></label>
                                 <span class="ml-2">Jazz 1 (Weekend), 1:30pm-3:45pm </span>
                             </div>
@@ -1184,6 +1228,30 @@
     </script>
     <!-- Main JS-->
     <script src="js/global.js"></script>
+
+    <script>
+    const radioButtons = document.querySelectorAll('input[name="batch"]');
+    const nextButton = document.getElementById('next-button');
+    const feeField = document.getElementById('feeField');
+
+    function validateFee() {
+        if (feeField.value.trim() === '') {
+            nextButton.disabled = true;
+            // Display an error message if you want
+        } else {
+            nextButton.disabled = false;
+        }
+    }
+
+    radioButtons.forEach(radioButton => {
+        radioButton.addEventListener('input', () => {
+            const isSelected = Array.from(radioButtons).some(rb => rb.checked);
+            nextButton.disabled = !isSelected;
+        });
+    });
+
+    feeField.addEventListener('input', validateFee);
+    </script>
 
 
 
