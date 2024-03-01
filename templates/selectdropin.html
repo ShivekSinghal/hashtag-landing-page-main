@@ -40,6 +40,7 @@
       "Jazz 1 (Weekend)": 1076.27,
       "Hip Hop (Weekend)": 1076.27,
       "Jazz 1 (Weekdays)": 542.37,
+      "Heels (Weekend)":1076.27,
       "Ballet": 542,
       "Modern": 542,
       "Hip Hop (once a week)": 542,
@@ -163,8 +164,8 @@
                 <div class="card-heading"></div>
 
                 <div class="card-body">
-                    <h1 class="title">Select Batches</h1>
-                    <form onsubmit="return validateForm()" method="POST" action="{{url_for('make_payment')}}">
+                    <h1 class="title">Select Date to see available batches</h1>
+                    <form onsubmit="return validateForm()" method="POST" action="/payment-method/{{session_id}}">
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select class="custom-select" name="validity" required>
@@ -186,7 +187,7 @@
                                     <h4 style="color : #ffffff; padding : 0px 0px 20px 15px;">Batch :</h4>
 
                                         <div id="classSchedule">
-                                            <h4 style="color : #ffffff; padding : 0px 0px 20px 15px;">Please select a Date to see available batches</h4>
+                                            <h4 style="color : #ffffff; padding : 0px 0px 20px 15px; color: rgba(255, 255, 255, 0.5);">Select Date</h4>
 
 
                                         </div>
@@ -199,7 +200,7 @@
                                             </div>
                                         </div>
                                         <div style="color:#fff; font-size:10px;">
-                                            <p>* We levy 18% GST as per Goverment guidelines</p>
+<!--                                            <p>* We levy 18% GST as per Goverment guidelines</p>-->
                                         </div>
 
 
@@ -262,7 +263,7 @@
                         <div class="col-md-12">
                             <div class="form-group d-flex align-items-center">
 
-                                <input type="radio" name="batch" id="heels3" value="Heels (twice a week)" onchange="updateFee()">
+                                <input type="radio" name="batch" id="heels3" value="Heels (Weekend)" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="heels3"></label>
                                 <span class="ml-2">Heels, 2:00pm-3:15pm</span>
                             </div>
@@ -274,7 +275,7 @@
                         <div class="col-md-12">
                             <div class="form-group d-flex align-items-center">
 
-                                <input type="radio" name="batch" id="hiphop" value="Hip Hop (twice a week)" onchange="updateFee()">
+                                <input type="radio" name="batch" id="hiphop" value="Hip Hop (Weekend)" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="hiphop"></label>
                                 <span class="ml-2">Hip Hop, 4:15pm-6:30pm</span>
                             </div>
@@ -325,23 +326,7 @@
 
 
                     `;
-            } else if (dayOfWeek === 1 ) { // Monday
-                classSelection.innerHTML = `
-                        <div class="col-md-12">
-                            <div class="form-group d-flex align-items-center">
 
-                                <input type="radio" name="batch" id="heels3" value="Heels (twice a week)" onchange="updateFee()">
-                                <label style="margin-bottom: 0;" class="checkbox-inline" for="heels3"></label>
-                                <span class="ml-2">Heels, 7:15pm-8:30pm</span>
-                            </div>
-                        </div>
-
-
-
-
-
-
-                    `;
             } else { //
                 classSelection.innerHTML = `
                         <div class="col-md-12">
@@ -622,7 +607,7 @@
 
 
                     `;
-            } else if (dayOfWeek === 1 || dayOfWeek === 4) { // Tuesday or Friday
+            } else if (dayOfWeek === 1 || dayOfWeek === 4) { // Monday or Thursday
                 classSelection.innerHTML = `
 
 
@@ -631,7 +616,7 @@
 
                                 <input class="text-white" type="radio" id="Jazz1.2" name="batch" value="Jazz 1.2" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1.2"></label>
-                                <span class="ml-2">Jazz 1, 11:00am-12:15pm </span>
+                                <span class="ml-2">Jazz 1, 11:30am-12:45pm </span>
                             </div>
                         </div>
 
@@ -721,7 +706,7 @@
 
                                 <input type="radio" name="batch" id="hiphop" value="Hip Hop (twice a week)" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="hiphop"></label>
-                                <span class="ml-2">Hip Hop, 5:30pm-6:45pm</span>
+                                <span class="ml-2">Hip Hop, 5:00pm-6:15pm</span>
                             </div>
                         </div>
 
@@ -730,9 +715,9 @@
                         <div class="col-md-12">
                             <div class="form-group d-flex align-items-center">
 
-                                <input type="radio" name="batch" id="heels3" value="Heels (twice a week)" onchange="updateFee()">
+                                <input type="radio" name="batch" id="heels3" value="Heels (Weekend)" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="heels3"></label>
-                                <span class="ml-2">Heels, 6:45pm-7:30pm</span>
+                                <span class="ml-2">Heels, 6:30pm-8:45pm</span>
                             </div>
                         </div>
 
@@ -793,14 +778,7 @@
                 classSelection.innerHTML = `
 
 
-                        <div class="col-md-12">
-                            <div class="form-group d-flex align-items-center">
 
-                                <input type="radio" name="batch" id="heels3" value="Heels (twice a week)" onchange="updateFee()">
-                                <label style="margin-bottom: 0;" class="checkbox-inline" for="heels3"></label>
-                                <span class="ml-2">Heels, 12:30pm-1:45pm</span>
-                            </div>
-                        </div>
 
                         <div class="col-md-12">
                             <div class="form-group d-flex align-items-center">
@@ -874,7 +852,7 @@
                         <div class="col-md-12">
                             <div class="form-group d-flex align-items-center">
 
-                                <input type="radio" name="batch" id="hiphop" value="Hip Hop (twice a week)" onchange="updateFee()">
+                                <input type="radio" name="batch" id="hiphop" value="Hip Hop (Weekend)" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="hiphop"></label>
                                 <span class="ml-2">Hip Hop, 6:00pm-8:30pm</span>
                             </div>
@@ -882,14 +860,7 @@
 
 
 
-                        <div class="col-md-12">
-                            <div class="form-group d-flex align-items-center">
 
-                                <input type="radio" name="batch" id="heels3" value="Heels (twice a week)" onchange="updateFee()">
-                                <label style="margin-bottom: 0;" class="checkbox-inline" for="heels3"></label>
-                                <span class="ml-2">Heels, 8:30pm-9:45pm</span>
-                            </div>
-                        </div>
 
 
                     `;
@@ -938,6 +909,15 @@
                                 <input class="text-white" type="radio" id="Jazz1.1" name="batch" value="Jazz 1.1" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1.1"></label>
                                 <span class="ml-2">Jazz 1, 7:15pm-8:30pm </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group d-flex align-items-center">
+
+                                <input type="radio" name="batch" id="heels3" value="Heels (twice a week)" onchange="updateFee()">
+                                <label style="margin-bottom: 0;" class="checkbox-inline" for="heels3"></label>
+                                <span class="ml-2">Heels, 8:30pm-9:45pm</span>
                             </div>
                         </div>
 

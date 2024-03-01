@@ -126,6 +126,7 @@ button {
   background: linear-gradient(to bottom right, #000000 30%, #FF007F 100%);
 
 
+
 }
 
 
@@ -603,7 +604,7 @@ label{
       background-size : cover;
       background-position: left center; /* This will shift the image to the left */
       display: table-cell;
-      width: 100%; /* Ensure the element takes up the full width */
+      width: 50%; /* Ensure the element takes up the full width */
       background-size : contain;
       object-fit: cover;
 
@@ -666,4 +667,14 @@ label{
     padding: 37px 30px;
     padding-bottom: 45px;
   }
+}
+
+#preloader{
+    background :#000;
+    opacity:50%;
+    height:100vh;
+    width: 100%;
+    position:fixed;
+    z-index:100;
+
 }

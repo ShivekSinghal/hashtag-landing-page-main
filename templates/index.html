@@ -180,6 +180,8 @@
 
 
 <body>
+<div id="preloader"></div>
+
     <div class="page-wrapper p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
             <div class="card card-3">
@@ -218,6 +220,7 @@
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Promo Code (Optional)" name="promo">
                         </div>
+                        <input type="hidden" name="session_id" value="{{ session_id }}">
 
 
 
@@ -229,8 +232,12 @@
 
                     </form>
                 </div>
+
+
             </div>
+
         </div>
+
     </div>
 
 
@@ -242,6 +249,7 @@
 
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
 
 </html>
 <!-- end document-->

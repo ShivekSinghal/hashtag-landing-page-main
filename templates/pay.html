@@ -109,10 +109,11 @@ p {
 
                         </div>
                         <div class="col-sm">
-                                <a style="color : #a9a9a9; float: right;" href="{{ url_for('cash_payment') }}"><u>Pay at Studio</u></a>
+                                <a style="color : #a9a9a9; float: right;" href="{{ url_for('cash_payment', session_id=session_id) }}"><u>Pay at Studio</u></a>
 <!--                                <a id="cash-button1" class="btn btn-success btn-sm btn-lg col-lg-12 col-md-12 col-sm-12 btn-pill" name="Cash">Cash</a>-->
                             </div>
                     </div>
+                    <input type="hidden" name="session_id" value="{{ session_id }}">
 
 
                 </div>
@@ -122,7 +123,9 @@ p {
     <script>
 
     document.getElementById("cash-button1").addEventListener("click", function() {
-    var cashPaymentUrl = "{{ url_for('cash_payment') }}";
+    var session_id = "{{ session_id }}";
+<!--    var cashPaymentUrl = "{{ url_for('cash_payment', session_id=session_id) }}";-->
+    var cashPaymentUrl = "/success/" + session_id;
     window.location.href = cashPaymentUrl;
 });
 
@@ -149,7 +152,9 @@ p {
 
                 if (response.razorpay_payment_id) {
                     // Payment successful, redirect to /success
-                    window.location.href = "/success";
+
+                    window.location.href = '{{ url_for('payment_successful', session_id=session_id) }}';
+                    window.location.href = "/success/" + "{{session_id}}";
                 } else {
                     // Payment failed, redirect to /failure
                     window.location.href = "/failed";
