@@ -24,6 +24,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"]= 'filesystem'
 
 
+
 # Google Sheets API credentials
 scopes = ['https://www.googleapis.com/auth/spreadsheets']
 
