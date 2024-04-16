@@ -139,8 +139,10 @@ p {
     document.getElementById("payment-button1").addEventListener("click", function() {
         // Replace this with your Razorpay integration logic
         // Generate a Razorpay order and open the Razorpay checkout
+
+
         var options = {
-            key: 'rzp_test_9Yy2azW5HeczxN', // Replace with your Razorpay API key
+            key: "{{ razorpay_key }}", // Replace with your Razorpay API key
             amount: {{fee_final}}, // Replace with the actual amount in paisa
             currency: 'INR', // Replace with the desired currency code
             name: 'Pink Grid Creations Pvt. Ltd.',

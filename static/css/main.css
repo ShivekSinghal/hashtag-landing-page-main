@@ -123,6 +123,7 @@ button {
   backdrop-filter: blur(5px);
   background-size : 100%;
   background: #000000;
+  padding: 60px 0px;
   background: linear-gradient(to bottom right, #000000 30%, #FF007F 100%);
 
 
@@ -320,6 +321,8 @@ input[type="date" i] {
     border: 1px solid #000;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
+    font-size: 18px;
+
 }
 
 /* Styling for the drop-down arrow */
@@ -422,7 +425,7 @@ hr {
 
 .input--style-3 {
   padding: 5px 0;
-  font-size: 16px;
+  font-size: 18px;
   color: #ccc;
   background: transparent;
 }
@@ -566,7 +569,7 @@ label{
    #TITLE
    ========================================================================== */
 .title {
-  font-size: 23px;
+  font-size: 25px;
   color: #fff;
   font-weight: 400;
   margin-bottom: 36px;
