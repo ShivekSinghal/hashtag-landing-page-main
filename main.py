@@ -1143,8 +1143,14 @@ def process_data(session_id, source):
 
         # promo_code_applied = user_data[session_id]['promo_code_applied']
         promo_code_created = ""
-        validity = "May, Grid, June"
+
+        if validity == "two_months_grid":
+            validity = "May, Grid, June"
+        # else:
+        #     validity = "May, Grid, June"
+        print(validity)
         increment_receipt_number()
+        print(source)
 
         row = [today_date, name, phone, email, "#PAC" + order_receipt,"", validity,"Offline", batch_str, "", fee_without_gst, gst, fee-internet_handling_fees,
                mode_of_payment, paid_to, "",f"OrderID : {razorpay_id} Razorpay Fees : ₹{internet_handling_fees}", "", studio]
@@ -1197,5 +1203,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4992)
+    app.run(debug=True, port=4991)
 
