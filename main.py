@@ -62,6 +62,9 @@ def razorpay_client_credentials(studio):
     if studio in ["NDA","SD","IPM","GGN"]:
         razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
+    if studio == "Ramagya":
+        razorpay_key_id = ''
+        razorpay_key_secret = ''
 
     else:
         razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
@@ -404,6 +407,8 @@ def make_promo():
     amount = request.form['amount']
     promo_code = create_promo_json(name=name, email=email, phone=phone, amount=amount, promo_date=promo_date)
     render_template('success2.html', promo_code=promo_code)
+
+
 
 
 

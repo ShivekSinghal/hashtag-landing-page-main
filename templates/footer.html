@@ -3,8 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        /* CSS for the footer container */
+        .footer-container {
+            width: 100%; /* Increase the width to full viewport width */
+            display: flex; /* Use flexbox to align children */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            padding: 20px; /* Add padding for spacing */
+            background-color: #f1f1f1; /* Optional: Background color for visibility */
+        }
+
+        /* CSS for the contact-info */
+        .contact-info {
+            display: flex; /* Ensure items are in a row */
+            gap: 10px; /* Add space between items */
+            padding-left: 0; /* Override inline style if necessary */
+        }
+
+        .icons {
+            display: flex; /* Center the content of links */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+        }
+
+        /* Additional styling for links for visibility */
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: black; /* Set text color */
+        }
+
+        a:hover {
+            color: blue; /* Color on hover */
+        }
+
+        img {
+            width: 30px; /* Set a specific size for icons */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
 </head>
 <body>
+    <footer>
+                        <div  class="footer-container">
+                            <div style="padding-left:30px;" class="contact-info">
+                                <a class="icons" href="tel:+919205488417">
+
+                                    <img src="../static/images/phone.png" alt="Call Us">
+                                </a>
+                                <a class="icons" href="https://wa.me/919205488417" target="_blank" rel="noopener noreferrer" >
+
+                                    <img src="../static/images/whatsapp.png" alt="Whatsapp">
+
+                                </a>
+                                <a class="icons" href="mailto:universal@hashtag.dance">
+
+                                    <img src="../static/images/email.png" alt="Email">
+
+                                </a>
+                                <a class="icons" href="https://www.instagram.com/hashtagfordance" target="_blank" rel="noopener noreferrer">
+
+                                    <img src="../static/images/instagram.png" alt="Instagram">
+
+                                </a>
+
+                                    <a style="justify-content: right;" href="https://join.hashtag.dance/terms">*Terms and conditions</a>
+
+                            </div>
+
+                        </div>
+                    </footer>
 
 </body>
 </html>
