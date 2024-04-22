@@ -88,7 +88,9 @@ p {
 <!--                            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>-->
 <!--                        </div>-->
                             <p>Fee: ₹ {{ fee_without_gst }}</p>
-                            <p>GST (18%): ₹ {{ gst }}</p>
+                            {%if gst != 0%}
+                                <p>GST (18%): ₹ {{ gst }}</p>
+                            {%endif%}
                             <p>Internet Handling Fees: ₹ {{ internet_handling_fees }}</p>
                             <p>Total: ₹ {{ fee_final/100 }}</p>
 

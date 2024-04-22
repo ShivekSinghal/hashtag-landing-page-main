@@ -458,7 +458,9 @@
                         <h2 class="sub-heading" >Creativity Takes Courage</h2>
                             <div class="info ">
 <!--                            <h4>GSTIN : O9AALCP6879JIZG(UP), O7AALCP6879JIZK(DEL)</h4> -->
-                            <h4>Receipt No. : {{order_receipt}}</h4>
+                            {% if gst != 0%}
+                                <h4>Receipt No. : {{order_receipt}}</h4>
+                            {% endif %}
                             <h4>{{date}}</h4>
                             <h6>Order Id : {{razorpay_id}}</h6>
                             </div>
@@ -475,20 +477,25 @@
 
             <div>
                 <h2 style="color:white; text-decoration:none;">Email : {{email}}</h2>
-                <h2>Studio :    {{studio}}</h2>
+                {% if gst != 0%}
+                    <h2>Studio :    {{studio}}</h2>
+                {% endif %}
             </div>
                     <hr>
 
                     <table>
-                        <tr>
-                            <td>Gross Amount</td>
-                            <td>₹ {{gross_amount}}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size : 22px;">GST @ 18%</td>
-                            <td style="font-size : 22px;">₹ {{gst}}</td>
-                        </tr>
-                        <tr>
+
+                            <tr>
+                                <td>Gross Amount</td>
+                                <td>₹ {{gross_amount}}</td>
+                            </tr>
+                        {% if gst != 0%}
+                            <tr>
+                                <td style="font-size : 22px;">GST @ 18%</td>
+                                <td style="font-size : 22px;">₹ {{gst}}</td>
+                            </tr>
+                            <tr>
+                        {% endif %}
                             <td>Internet Handling Fees</td>
                             <td>₹ {{internet_handling_fees}}</td>
                         </tr>
@@ -500,7 +507,9 @@
                     <hr>
                     <div id="paid-to">
                     <h3>Mode Of Payment : {{mode_of_payment}}</h3>
-                    <h3>Paid To : {{paid_to}}</h3>
+                    {% if gst!=0%}
+                        <h3>Paid To : {{paid_to}}</h3>
+                    {% endif %}
                     <h3>Promo Code : {{promo_code}}</h3>
                     </div>
 
@@ -527,7 +536,7 @@
 
                                 </a>
                                 <div style="padding-left: 160px;" class="bottom-right-container">
-                                    <a href="https://register.hashtag.dance/terms">*Terms and conditions</a>
+                                    <a href="https://join.hashtag.dance/terms">*Terms and conditions</a>
                                 </div>
                             </div>
 

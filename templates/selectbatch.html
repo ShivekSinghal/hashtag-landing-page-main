@@ -114,9 +114,26 @@
 
         };
 
-
-
         var two_months_grid_fees = {
+          "Any1": 11800,
+          "Any2": 21692,
+          "Any3": 31520,
+          "Any4": 41199,
+          "All5": 50714,
+          "HHorHL_once": 7700,
+          "HHandHL_once": 14100,
+          "Any1_twiceandHHorHL_once": 18100,
+          "Any1_twiceandHHandHL_once": 24400,
+          "Any2_twiceandHHorHL_once": 27800,
+          "Any2_twiceandHHandHL_once": 34200,
+          "Any3_twiceandHHorHL_once": 37700,
+          "Any4_twiceorHHandHL_once": 47300,
+          "Any3_twiceandHHandHL_once": 43900,
+          "no_selection": ""
+
+          };
+
+        var two_months_grid_fees2 = {
           "Any1": 12500,
           "Any2": 23060,
           "Any3": 33500,
@@ -267,7 +284,7 @@
                                 <select class="custom-select" name="validity" onchange="updateFee()" required>
 <!--                                    <option disabled="disabled" selected="selected" value="">Validity</option>-->
                                     <option  value="two_months_grid" selected="selected">May, June, Grid</option>
-<!--                                    <option  value="grid">Grid</option>-->
+                                    <option  value="grid">Grid</option>
 
 
 <!--                                    {% if three_months_validity %}-->

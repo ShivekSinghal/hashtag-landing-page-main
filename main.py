@@ -317,11 +317,11 @@ from email.mime.text import MIMEText
 
 
 
-def send_receipt(receiver_mail, rendered_html):
+def send_receipt(receiver_mail, rendered_html, subject):
     my_email = "universal@hashtag.dance"
     password = 'mmowlsextvnjwkzz'
     smtp_server = "smtp.gmail.com"
-    email_subject = "Registration Receipt May'24"
+    email_subject = subject
     smtp_port = 587
 
     inlined_html = transform(rendered_html)
@@ -387,6 +387,26 @@ name_password_pairs = dict(Priyanshi=os.environ.get("PRIYANSHI_PASSWORD"), Kajal
                            Tarun=os.environ.get("TARUN_PASSWORD"),)
 
 user_data = {}
+
+@app.route('/promocode')
+def make_promo_code():
+    session_id = os.urandom(16).hex()
+
+    render_template('promo.html', session_id=session_id)
+
+
+@app.route('/promocodeprocess/<session_id>')
+def make_promo():
+    promo_date = request.form['promo_date']
+    email = request.form['email']
+    name = request.form['name']
+    phone = request.form['phone']
+    amount = request.form['amount']
+    promo_code = create_promo_json(name=name, email=email, phone=phone, amount=amount, promo_date=promo_date)
+    render_template('success2.html', promo_code=promo_code)
+
+
+
 @app.route('/static/<path:filename>')
 def serve_static(filename):
     root_dir = os.path.dirname(os.path.abspath(__file__))
@@ -536,7 +556,7 @@ def make_payment_landingpage(session_id, fee, event):
 @app.route('/pinkd')
 def pink_dropin():
     session_id = os.urandom(16).hex()
-    return render_template("dropin2.html", session_id=session_id, fee=2000, event='Pinkd')
+    return render_template("dropin2.html", session_id=session_id, fee=2500, event='Pinkd')
 
 
 @app.route('/payment-method-pinkd/<session_id>/<int:fee>/<event>', methods=['GET', 'POST'])
@@ -581,9 +601,9 @@ def make_payment_pinkd(session_id, fee, event):
 
         dob_year = dob.split('-')[0]
         if int(dob_year) >= 2006:
-            fee = 1000
+            fee = 1800
 
-
+        razorpay_key = "rzp_test_eTpKi2x9qCXzCn"
 
         session['batches'] = event
         session['order_amount'] = fee * 100  # Convert fee to the smallest currency unit (in paisa)
@@ -601,8 +621,8 @@ def make_payment_pinkd(session_id, fee, event):
 
                     # Add any other parameters as required
                 }
-        razorpay_client = razorpay.Client(auth=(razorpay_client_credentials(user_data[session_id]['studio'])['id'], razorpay_client_credentials(user_data[session_id]['studio'])['secret']))
-        user_data[session_id]['razorpay_key'] = razorpay_client_credentials(user_data[session_id]['studio'])['id']
+        razorpay_client = razorpay.Client(auth=(razorpay_key, "TONcmoAmqaAIKrU8rBiksCp2"))
+        # user_data[session_id]['razorpay_key'] = razorpay_client_credentials(user_data[session_id]['studio'])['id']
         session['order_response'] = razorpay_client.order.create(data=order_data)
         session['fee'] = round(order_amount/100 * 1.18)
 
@@ -627,9 +647,10 @@ def make_payment_pinkd(session_id, fee, event):
             fee_without_gst = session.get('fee_without_gst')
             fee_with_gst = session.get('fee')
 
-            session['internet_handling_fees'] = round((float(fee_with_gst) / 0.9764 * 100) * 0.0236 / 100, 2)
-            session['fee_final'] = round(int(float(fee_with_gst) / 0.9764 * 100))
-            session['gst'] = round(float(fee_without_gst) * 0.18,2)
+            session['internet_handling_fees'] = round((float(fee_without_gst) / 0.9764 * 100) * 0.0236 / 100, 2)
+            session['fee_final'] = round(int(float(fee_without_gst) / 0.9764 * 100))
+            # session['gst'] = round(float(fee_without_gst) * 0.18,2)
+            session['gst'] = 0
 
             gst = session.get('gst')
             internet_handling_fees = session.get('internet_handling_fees')
@@ -652,13 +673,13 @@ def make_payment_pinkd(session_id, fee, event):
 
             print(user_data)
             print(session_id)
-            print(f"razorpay keyyyy {user_data[session_id]['razorpay_key']}")
+            # print(f"razorpay keyyyy {user_data[session_id]['razorpay_key']}")
 
             print(session)
             # Redirect the user to the Razorpay payment page
             return render_template("pay.html", payment=order_response,
                                    fee_without_gst=float(fee_without_gst),
-                                   gst=gst, internet_handling_fees=internet_handling_fees, fee_final=fee_final,razorpay_key=user_data[session_id]['razorpay_key'], session_id=session_id)
+                                   gst=0, internet_handling_fees=internet_handling_fees, fee_final=fee_final,razorpay_key=razorpay_key, session_id=session_id)
 
         else:
             # Failed to create the order
@@ -1008,8 +1029,7 @@ def process_data(session_id, source):
 
     print(session)
     sheet = client.open_by_key(sheet_key).worksheet(sheet_name)
-    batch_str = ', '.join(user_data[session_id]['batch'])  # Join the batches list with a comma separator
-    print(f"thi is {batch_str}")
+
     today_date = datetime.today().strftime('%d-%b-%Y')
 
     # Error Fixed
@@ -1089,9 +1109,22 @@ def process_data(session_id, source):
         row = [today_date, name, phone, email, "#" + "DropIn","", validity, batch_str,"","", fee_without_gst, gst, fee,
                mode_of_payment, paid_to, promo_code_created,razorpay_id, internet_handling_fees, studio]
     elif validity == "Pinkd":
+
+        rendered_receipt = render_template("receipt2.html", date=today_date, name=name, phone=phone,
+                                           validity="PINKD", email=email, studio=studio, gross_amount=fee_without_gst,
+                                           gst=gst, internet_handling_fees=internet_handling_fees, fee=fee,
+                                           order_receipt=f"#PAC{str(order_receipt)}",
+                                           mode_of_payment=mode_of_payment, paid_to=paid_to, razorpay_id=razorpay_id)
+
+        print("reciptrendered")
+
+        send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
         row = [today_date, name, phone, email, "#" + "PinkD", "", validity, "", "", "", fee_without_gst, gst,
                fee,
-               mode_of_payment, paid_to, "", razorpay_id, internet_handling_fees, ""]
+               mode_of_payment, "Manav", "", razorpay_id, internet_handling_fees, ""]
+
+
+
         sheet.append_row(row)
         return jsonify({'status': 'success'})
     elif validity == "landingpage":
@@ -1105,16 +1138,16 @@ def process_data(session_id, source):
 
     else:
 
-
-
+        batch_str = ', '.join(user_data[session_id]['batch'])  # Join the batches list with a comma separator
+        print(f"thi is {batch_str}")
 
         # promo_code_applied = user_data[session_id]['promo_code_applied']
         promo_code_created = ""
         validity = "May, Grid, June"
         increment_receipt_number()
 
-        row = [today_date, name, phone, email, "#PAC" + order_receipt,"", validity, batch_str, "","", fee_without_gst, gst, fee,
-               mode_of_payment, paid_to, "",razorpay_id, internet_handling_fees, studio]
+        row = [today_date, name, phone, email, "#PAC" + order_receipt,"", validity,"Offline", batch_str, "", fee_without_gst, gst, fee-internet_handling_fees,
+               mode_of_payment, paid_to, "",f"OrderID : {razorpay_id} Razorpay Fees : ₹{internet_handling_fees}", "", studio]
 
 
     hashtag_logo = image_to_base64('./static/images/Hashtag_logo.png')
@@ -1132,7 +1165,7 @@ def process_data(session_id, source):
 
         print("reciptrendered")
 
-        send_receipt(receiver_mail=email, rendered_html=rendered_receipt)
+        send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt May'24")
 
     thread = threading.Thread(target=send_receipt_background)
     thread.start()
@@ -1164,5 +1197,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4958)
+    app.run(debug=True, port=4992)
 

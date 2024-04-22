@@ -49,10 +49,7 @@
                 </div>
                 <div class="text-center">
                     <h1>Thank You !</h1>
-                    <p>We've sent the receipt to your inbox. </p>
-                    {% if gst != 0%}
-                        <p>Show the receipt at your nearest studio to get tickets</p>
-                    {% endif %}
+                    <p>Promo Code : {{promo_code}} </p>
                     <a href="{{url_for('registration_form')}}" class="btn btn-outline-success">Back Home</a>
                 </div>
             </div>
