@@ -477,7 +477,7 @@ def make_payment_landingpage(session_id, fee, event):
 
         print(user_data)
 
-        sheet = client.open_by_key(sheet_key).worksheet("Payment_Incomplete(Pinkd)")
+        sheet = client.open_by_key(sheet_key).worksheet("Payment_Incomplete(DropIn)")
         dropin_data = [name, phone, email, studio]
 
         sheet.append_row(dropin_data)
