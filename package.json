@@ -1,3 +1,4 @@
+
 {
    "name": "colorlib-regform-3",
     "version": "1.0.0",
@@ -13,6 +14,7 @@
     },
     "author": "",
     "license": "ISC",
+
      "bugs": {
         "url": "https://github.com/ShivekSinghal/colorlib-regform-3/issues"
     },

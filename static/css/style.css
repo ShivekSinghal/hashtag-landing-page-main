@@ -630,7 +630,8 @@ section {
   margin-top: 80px;
 }
 
-@media (max-width: 992px) {
+
+wave1 (max-width: 992px) {
   .breadcrumbs {
     margin-top: 64px;
   }
