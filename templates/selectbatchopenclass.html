@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Registration Form</title>
+    <title>Pitampura Open Class</title>
     <link rel="icon" href="../static/images/pink_favicorn/favicon.ico" type="image/x-icon">
 
 
@@ -157,6 +157,9 @@
           "Any3": 1500,
           "Any4": 2000,
           "All5": 2500,
+          "Any6":3000,
+          "Any7":3500,
+          "Any8":4000,
           "HHorHL_once": 7700,
           "HHandHL_once": 14100,
           "Any1_twiceandHHorHL_once": 18100,
@@ -257,6 +260,59 @@
 
 
       }
+
+    else if (no_of_batches === 6) {
+        var first_batch = selectedBatches[0];
+        var third_batch = selectedBatches[2];
+        var fourth_batch = selectedBatches[3];
+        var fifth_batch = selectedBatches[4];
+
+        if (fifth_batch === "Hip Hop (once a week)" || fifth_batch === "Heels (once a week)"){
+          feeField.value = feesDictionary["Any4_twiceorHHandHL_once"] - {{ discount }};
+        }
+        else if (fourth_batch === "Hip Hop (once a week)"){
+          feeField.value = feesDictionary["Any3_twiceandHHorHL_once"] - {{ discount }};
+        } else {
+          feeField.value = feesDictionary["Any6"] - {{ discount }};
+        }
+
+
+      }
+         else if (no_of_batches === 7) {
+            var first_batch = selectedBatches[0];
+            var third_batch = selectedBatches[2];
+            var fourth_batch = selectedBatches[3];
+            var fifth_batch = selectedBatches[4];
+
+            if (fifth_batch === "Hip Hop (once a week)" || fifth_batch === "Heels (once a week)"){
+              feeField.value = feesDictionary["Any4_twiceorHHandHL_once"] - {{ discount }};
+            }
+            else if (fourth_batch === "Hip Hop (once a week)"){
+              feeField.value = feesDictionary["Any3_twiceandHHorHL_once"] - {{ discount }};
+            } else {
+              feeField.value = feesDictionary["Any7"] - {{ discount }};
+            }
+
+
+          }
+    else if (no_of_batches === 8) {
+        var first_batch = selectedBatches[0];
+        var third_batch = selectedBatches[2];
+        var fourth_batch = selectedBatches[3];
+        var fifth_batch = selectedBatches[4];
+
+        if (fifth_batch === "Hip Hop (once a week)" || fifth_batch === "Heels (once a week)"){
+          feeField.value = feesDictionary["Any4_twiceorHHandHL_once"] - {{ discount }};
+        }
+        else if (fourth_batch === "Hip Hop (once a week)"){
+          feeField.value = feesDictionary["Any3_twiceandHHorHL_once"] - {{ discount }};
+        } else {
+          feeField.value = feesDictionary["Any8"] - {{ discount }};
+        }
+
+
+      }
+
     }
 
     function enableBatchCheckboxes() {
@@ -335,12 +391,12 @@
 
                                                 <label class="checkbox-inline" for="jazzcheckbox">
                                                 </label>
-                                                <span class="ml-2">Jazz on 28th April'24 @ 1:30 PM</span>
+                                                <span class="ml-2">Jazz Weekend on 28th April'24 @ 1:30 PM</span>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group d-flex align-items-center">
-                                                <input class="custom-checkbox" type="checkbox" id="balletcheckbox" name="batch[]" value="Ballet" onchange="updateFee()">
+                                                <input class="custom-checkbox" type="checkbox" id="balletcheckbox" name="batch[]" value="Kids Division" onchange="updateFee()">
 
                                                 <label class="checkbox-inline" for="balletcheckbox">
                                                 </label>
@@ -349,13 +405,41 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group d-flex align-items-center">
+                                                <input class="custom-checkbox" type="checkbox" id="balletcheckbox2" name="batch[]" value="Ballet" onchange="updateFee()">
+
+                                                <label class="checkbox-inline" for="balletcheckbox">
+                                                </label>
+                                                <span class="ml-2">Ballet on 30th April'24 @ 5:45 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group d-flex align-items-center" >
+                                                <input class="custom-checkbox" type="checkbox" id="jazzcheckbox2" name="batch[]" value="Jazz1.2" aria-required="true"  onchange="updateFee()">
+
+                                                <label class="checkbox-inline" for="jazzcheckbox">
+                                                </label>
+                                                <span class="ml-2">Jazz Morming on 2nd May'24 @ 11:30 AM</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group d-flex align-items-center" >
+                                                <input class="custom-checkbox" type="checkbox" id="jazzcheckbox3" name="batch[]" value="Jazz1.1" aria-required="true"  onchange="updateFee()">
+
+                                                <label class="checkbox-inline" for="jazzcheckbox">
+                                                </label>
+                                                <span class="ml-2">Jazz Evening on 2nd May'24 @ 7:45 AM</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group d-flex align-items-center">
                                                 <input class="custom-checkbox" type="checkbox" id="moderncheckbox" name="batch[]" value="Modern" onchange="updateFee()">
 
                                                 <label class="checkbox-inline" for="moderncheckbox">
                                                 </label>
-                                                <span class="ml-2">Modern on 30th April'24 @ 8:15 PM</span>
+                                                <span class="ml-2">Modern on 3rd May'24 @ 8:15 PM</span>
                                             </div>
                                         </div>
+
 
                                         <div class="col-md-12">
                                             <div class="form-group d-flex align-items-center">
