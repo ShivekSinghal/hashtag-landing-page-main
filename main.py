@@ -440,7 +440,7 @@ def test_dropin():
 @app.route('/landing-page')
 def landing_page_dropin():
     session_id = os.urandom(16).hex()
-    return render_template("landingpage.html", session_id=session_id, fee=543, event='landingpage')
+    return render_template("landingpage.html", session_id=session_id, fee=572.88, event='landingpage')
 
 
 @app.route('/payment-method-landingpage/<session_id>/<int:fee>/<event>', methods=['GET', 'POST'])
