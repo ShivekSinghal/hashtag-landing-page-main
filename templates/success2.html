@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+
         body {
             background-color: black;
             color: white;
@@ -49,13 +50,24 @@
                 </div>
                 <div class="text-center">
                     <h1>Thank You !</h1>
-                    <p>Promo Code : {{promo_code}} </p>
+                    <h3>Promo Code is valid till {{promo_date}}</h3>
+                    <div style="display: flex;">
+                    <p >Promo Code : <span id="copyitem"> {{promo_code}} </span><span><a style="margin-left:10px ; height:40px" onclick="copyText()" id="copy">Copy</a></span> </p>
+
+                    </div>
                     <a href="{{url_for('registration_form')}}" class="btn btn-outline-success">Back Home</a>
                 </div>
             </div>
         </div>
     </div>
-
+<script>
+        function copyText() {
+            var text = document.getElementById('copyitem').textContent;  // Get the text content from the 'span' element
+            navigator.clipboard.writeText(text)  // Copy the text to the clipboard
+                .then(() => alert('Promo code copied to clipboard!'))
+                .catch(err => alert('Failed to copy text: ' + err));
+        }
+    </script>
 
 </body>
 </html>

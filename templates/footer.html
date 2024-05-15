@@ -41,39 +41,165 @@
             width: 30px; /* Set a specific size for icons */
             height: auto; /* Maintain aspect ratio */
         }
+        .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+        .footer-text {
+            line-height: 1.5;
+        }
+
+        .footer-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        .contact-icon {
+            margin-right: 1rem;
+        }
     </style>
 </head>
 <body>
-    <footer>
-                        <div  class="footer-container">
-                            <div style="padding-left:30px;" class="contact-info">
-                                <a class="icons" href="tel:+919205488417">
+<footer style="background-color: #; padding: 2rem 0; margin-top: 3rem;">
+    <div class="footer-container">
+        <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+                <h3 style="margin-bottom: 1rem;">Pink Grid Creations Pvt. Ltd.</h3>
+                <p class="footer-text">
+                    A-242, Sector 43<br>
+                    Noida, Uttar Pradesh, 201301, <br><br>
+                    <strong>Phone:</strong> +91 9205488417<br>
+                    <strong>Email:</strong> <a href="mailto:universal@hashtag.dance" class="footer-link">universal@hashtag.dance</a><br>
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="contact-info">
+                <a href="tel:+919205488417" class="contact-icon">
+                    <img src="../static/images/phone.png" alt="Call Us">
+                </a>
+                <a href="https://wa.me/919205488417" target="_blank" rel="noopener noreferrer" class="contact-icon">
+                    <img src="../static/images/whatsapp.png" alt="Whatsapp">
+                </a>
+                <a href="mailto:universal@hashtag.dance" class="contact-icon">
+                    <img src="../static/images/email.png" alt="Email">
+                </a>
+                <a href="https://www.instagram.com/hashtagfordance" target="_blank" rel="noopener noreferrer" class="contact-icon">
+                    <img src="../static/images/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://join.hashtag.dance/terms" class="footer-link" style="color:black;">*Terms and conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--  <footer id="footer">-->
+<!--    <div class="footer-top">-->
+<!--      <div class="container">-->
+<!--        <div class="row">-->
 
-                                    <img src="../static/images/phone.png" alt="Call Us">
-                                </a>
-                                <a class="icons" href="https://wa.me/919205488417" target="_blank" rel="noopener noreferrer" >
+<!--          <div class="col-lg-4 col-md-6">-->
+<!--            <div class="footer-info">-->
+<!--              <h3>Pink Grid Creations Pvt. Ltd.</h3>-->
+<!--              <p class="pb-3"><em></em></p>-->
+<!--              <p>-->
+<!--                A-242, Sector 43<br>-->
+<!--                Noida,Uttar Pradesh, 201301, <br><br>-->
+<!--                <strong>Phone:</strong> +91 9205488417<br>-->
+<!--                <strong>Email:</strong> universal@hashtag.dance<br>-->
 
-                                    <img src="../static/images/whatsapp.png" alt="Whatsapp">
+<!--              </p>-->
+<!--              <div class="social-links mt-3">-->
+<!--                <a href="https://wa.me/919205488417" class="facebook"><i class="bx bxl-whatsapp"></i></a>-->
+<!--                <a href="https://ig.me/m/hashtagfordance" class="instagram"><i class="bx bxl-instagram"></i></a>-->
+<!--                <a href="mailto:universal@hashtag.dance" class="instagram"><i class="bx bxl-gmail"></i></a>-->
+<!--                <a class="icons" href="tel:+919205488417">&ndash;&gt;-->
 
-                                </a>
-                                <a class="icons" href="mailto:universal@hashtag.dance">
+<!--                  <div class="dispay:flex; justify-content:center;" >-->
 
-                                    <img src="../static/images/email.png" alt="Email">
+<!--                                      <img src="../static/images/phone.png" alt="Call Us">-->
+<!--                                  </a>-->
+<!--                                  <a class="icons" href="https://wa.me/919205488417" target="_blank" rel="noopener noreferrer" >-->
+
+<!--                                      <img src="../static/images/whatsapp.png" alt="Whatsapp">-->
+
+<!--                                  </a>-->
+<!--                                  <a class="icons" href="mailto:universal@hashtag.dance">-->
+
+<!--                                      <img src="../static/images/email.png" alt="Email">-->
 
 
-                                </a>
-                                <a class="icons" href="https://www.instagram.com/hashtagfordance" target="_blank" rel="noopener noreferrer">
+<!--                                  </a>-->
+<!--                                  <a class="icons" href="https://www.instagram.com/hashtagfordance" target="_blank" rel="noopener noreferrer">-->
 
-                                    <img src="../static/images/instagram.png" alt="Instagram">
+<!--                                      <img src="../static/images/instagram.png" alt="Instagram">-->
 
-                                </a>
+<!--                                  </a>-->
+<!--                </div>-->
 
-                                    <a style="justify-content: right;" href="https://join.hashtag.dance/terms">*Terms and conditions</a>
 
-                            </div>
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
 
-                        </div>
-                    </footer>
+<!--          <div class="col-lg-2 col-md-6 footer-links">-->
+<!--            <h4>Useful Links</h4>-->
+<!--            <ul>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Best Dance Class</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Dance Classes</a></li>-->
+
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-2 col-md-6 footer-links">-->
+<!--            <h4>Our Services</h4>-->
+<!--            <ul>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Jazz Dance Classes</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Ballet Dance Classes</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Modern Dance Classes</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Hip Hop Dance Classes</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Heels Dance Classes</a></li>-->
+<!--              <li><i class="bx bx-chevron-right"></i> <a href="#">Kids Dance Classes</a></li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 footer-newsletter">-->
+<!--            <h4>Our Newsletter</h4>-->
+<!--            <p>Sign In to get regular updates</p>-->
+<!--            <form action="" method="post">-->
+<!--              <input type="email" name="email"><input type="submit" value="Subscribe">-->
+<!--            </form>-->
+
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="container">-->
+<!--      <div class="copyright">-->
+<!--&lt;!&ndash;        &copy; Copyright <strong><span>Bootslander</span></strong>. All Rights Reserved&ndash;&gt;-->
+<!--      </div>-->
+<!--      <div class="credits">-->
+<!--        &lt;!&ndash; All the links in the footer should remain intact. &ndash;&gt;-->
+<!--        &lt;!&ndash; You can delete the links only if you purchased the pro version. &ndash;&gt;-->
+<!--        &lt;!&ndash; Licensing information: https://bootstrapmade.com/license/ &ndash;&gt;-->
+<!--        &lt;!&ndash; Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ &ndash;&gt;-->
+<!--&lt;!&ndash;        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>&ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </footer>&lt;!&ndash; End Footer &ndash;&gt;-->
+
+
 
 </body>
 </html>

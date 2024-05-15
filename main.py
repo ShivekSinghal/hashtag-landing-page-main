@@ -65,7 +65,7 @@ def razorpay_client_credentials(studio):
         # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
         razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
-    if studio == "Ramagya":
+    elif studio == "Ramagya":
         razorpay_key_id = ''
         razorpay_key_secret = ''
 
@@ -75,8 +75,9 @@ def razorpay_client_credentials(studio):
 
 
         razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
-
         razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+
+
 
     return {"id": razorpay_key_id, "secret": razorpay_key_secret}
 
@@ -403,18 +404,29 @@ user_data = {}
 def make_promo_code():
     session_id = os.urandom(16).hex()
 
-    render_template('promo.html', session_id=session_id)
+    return render_template('promo.html', session_id=session_id)
+
 
 
 @app.route('/promocodeprocess/<session_id>')
-def make_promo():
-    promo_date = request.form['promo_date']
-    email = request.form['email']
-    name = request.form['name']
-    phone = request.form['phone']
-    amount = request.form['amount']
-    promo_code = create_promo_json(name=name, email=email, phone=phone, amount=amount, promo_date=promo_date)
-    render_template('success2.html', promo_code=promo_code)
+def make_promo(session_id):
+
+    promo_date = request.args.get('promo_date')
+    email = request.args.get('email')
+    name = request.args.get('name')
+    phone = request.args.get('phone')
+    amount = request.args.get('amount')
+
+    original_date = datetime.strptime(promo_date, '%Y-%m-%d')
+    promo_date_format = original_date.strftime('%d-%m-%Y')
+
+
+    promo_code = create_promo_json(name=name, email=email, phone=phone, amount=amount, dropin_date=promo_date, filename='promo_code.json')
+
+    # promo_receipt = render_template('promoreceipt.html')
+    # send_receipt(email, promo_receipt, 'Promo Code')
+
+    return render_template('success2.html', promo_code=promo_code, promo_date=promo_date_format)
 
 
 
@@ -749,6 +761,12 @@ def registration_form():
 
 
     return render_template('index.html')
+
+@app.route('/createpromocode', methods=['GET', 'POST'])
+def create_promo_code():
+    return render_template('promocode.html')
+
+
 
 @app.route('/openclass', methods=['GET', 'POST'])
 def registration_form_openclass():
@@ -1288,5 +1306,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5127)
+    app.run(debug=True, port=5129)
 

@@ -237,7 +237,8 @@
 
                 <div class="card-body" >
                     <h1 class="title">Create Promo Code</h1>
-                    <form onsubmit="return validateForm()" method="POST" action="{{ url_for('make_promo_code'), session_id=session_id}}">
+                    <form onsubmit="return validateForm()" method="GET" action="{{ url_for('make_promo', session_id=session_id) }}">
+
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Name" name="name">
                         </div>
@@ -248,13 +249,13 @@
                             <input class="input--style-3" type="text" placeholder="Phone" name="phone">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type=number placeholder="Ampunt" name="amount">
+                            <input class="input--style-3" type=number placeholder="Amount" name="amount">
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <label for="dob" class="date-label">
                                 <input class="custom-select" type="date" id="calendar" required onchange="loadClasses()" name="promo_date" min="<?php echo date('Y-m-d'); ?>">
-                                <span style="padding-top : 10px; color:#ffffff; ">Date of Birth</span>
+                                <span style="padding-top : 10px; color:#ffffff; ">Date of Expiry</span>
                                 </label>
 
                             </div>
