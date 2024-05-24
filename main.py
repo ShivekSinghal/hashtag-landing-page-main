@@ -1299,6 +1299,9 @@ def final_success():
 def terms_and_conditions():
     return render_template("terms.html")
 
+@app.route('/privacy')
+def privacy():
+    return render_template("privacypolicy.html")
 
 @app.route('/failed', methods=['GET', 'POST'])
 def payment_failed():
