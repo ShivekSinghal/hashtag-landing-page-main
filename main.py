@@ -65,6 +65,10 @@ def razorpay_client_credentials(studio):
         # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
         razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
+
+        # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
+        # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+
     elif studio == "Ramagya":
         razorpay_key_id = ''
         razorpay_key_secret = ''
@@ -73,6 +77,8 @@ def razorpay_client_credentials(studio):
         # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
         # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
 
+        # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
+        # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
         razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
         razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
@@ -1309,5 +1315,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5126)
+    app.run(debug=True, port=5111)
 
