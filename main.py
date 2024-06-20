@@ -74,14 +74,14 @@ def razorpay_client_credentials(studio):
         razorpay_key_secret = ''
 
     else:
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
+        razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
 
         # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
-        razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
-        razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+        # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
+        # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
 
 
 
@@ -982,7 +982,7 @@ def make_payment(session_id):
             paid_to = "Pink Grid"
 
             if validity == "two_months_grid":
-                session['validity'] = "May, June, Grid"
+                session['validity'] = "Grid, August, September"
             if validity == "three_months":
                 validity = "April, May, June"
             if validity == "grid":
@@ -1280,7 +1280,7 @@ def process_data(session_id, source):
 
         print("reciptrendered")
 
-        send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt May'24")
+        send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt Grid'24")
 
     thread = threading.Thread(target=send_receipt_background)
     thread.start()
