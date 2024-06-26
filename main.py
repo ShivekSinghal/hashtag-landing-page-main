@@ -494,9 +494,11 @@ def make_payment_landingpage(session_id, fee, event):
         user_data[session_id]['studio'] = studio
 
         print(user_data)
+        now = datetime.datetime.now()
+        formatted_date = now.strftime("%Y-%m-%d")
 
         sheet = client.open_by_key(sheet_key).worksheet("Payment_Incomplete(DropIn)")
-        dropin_data = [today_date, name, phone, email, studio]
+        dropin_data = [formatted_date, name, phone, email, studio]
 
         sheet.append_row(dropin_data)
 
