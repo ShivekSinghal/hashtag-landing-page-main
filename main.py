@@ -799,12 +799,12 @@ def select_batch_openclass():
     phone = session.get('phone')
     email = session.get('email')
     studio = session.get('studio')
-
-
+    now = datetime.datetime.now()
+    formatted_date = now.strftime("%Y-%m-%d")
 
     today_date = datetime.today().strftime('%d-%b-%Y %H:%M:%S')
     sheet = client.open_by_key(sheet_key).worksheet("Payment_Incomplete")
-    registration_data = [today_date, name, phone, email, studio]
+    registration_data = [formatted_date, name, phone, email, studio]
 
     sheet.append_row(registration_data)
 
