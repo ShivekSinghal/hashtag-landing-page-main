@@ -13,6 +13,7 @@ from string import Template
 import threading
 import razorpay
 import requests
+import datetime
 
 
 
@@ -455,7 +456,7 @@ def test_dropin():
     return render_template("dropin_test.html")
 # Landning Page
 
-@app.route('/landing-page')
+@app.route('/')
 def landing_page_dropin():
     session_id = os.urandom(16).hex()
     return render_template("landingpage.html", session_id=session_id, fee=572.88, event='landingpage')
@@ -477,7 +478,7 @@ def make_payment_landingpage(session_id, fee, event):
         studio = request.form['Studio']
         print()
 
-        today_date = datetime.today().strftime('%d-%b-%Y %H:%M:%S')
+        # today_date = datetime.today().strftime('%d-%b-%Y %H:%M:%S')
         dropin_studio = session.get('studio')
         if session_id not in user_data:
             user_data[session_id] = {
@@ -495,12 +496,13 @@ def make_payment_landingpage(session_id, fee, event):
 
         print(user_data)
         now = datetime.datetime.now()
-        formatted_date = now.strftime("%Y-%m-%d")
+        formatted_date = now.strftime('%d-%b-%Y %H:%M:%S')
 
         sheet = client.open_by_key(sheet_key).worksheet("Payment_Incomplete(DropIn)")
         dropin_data = [formatted_date, name, phone, email, studio]
 
         sheet.append_row(dropin_data)
+        print("Sheet Appended")
 
         session['batches'] = event
         session['order_amount'] = fee * 100  # Convert fee to the smallest currency unit (in paisa)
@@ -764,7 +766,7 @@ def select_dropin():
 # Registration Form
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/main', methods=['GET', 'POST'])
 def registration_form():
 
 
