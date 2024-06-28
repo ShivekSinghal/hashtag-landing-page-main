@@ -85,14 +85,14 @@ p {
                     </div>
 
                     <!-- Total Fee -->
-                    <p>Fee: ₹ {{ fee_final / 100 }} <span><button style="font-size:10px; color:#d3d3d3;" id="viewBreakupButton"class="btn btn-link text-white pl-0">  <i class="fas fa-chevron-down"></i></span></button>
+                    <p>Total Fee: ₹ {{ fee_final / 100 }} <span><button style="font-size:10px; color:#d3d3d3;" id="viewBreakupButton"class="btn btn-link text-white pl-0">  <i class="fas fa-chevron-down"></i></span></button>
 </span></p>
 <!--                    <div class="arrow" id="viewBreakupButton">-->
 <!--                    </div>-->
 
                     <!-- Expandable Section -->
                     <div id="feeDetails" style="display: none; font-size:10px;">
-                        <p>Total Fee: ₹ {{ fee_without_gst }}</p>
+                        <p>Fee: ₹ {{ fee_without_gst }}</p>
                         {% if gst != 0 %}
                             <p>GST (18%): ₹ {{ gst }}</p>
                         {% endif %}
