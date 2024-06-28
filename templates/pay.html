@@ -12,68 +12,60 @@
     <title>Registration Form</title>
     <link rel="icon" href="../static/images/pink_favicorn/favicon.ico" type="image/x-icon">
 
-
-
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!--OR-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">-->
-
-<!--    Bootstarp Css-->
+    <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font Awesome for the arrow icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Main CSS-->
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="all">
-<!--OR-->
-
 </head>
 
 <style>
-button{
-    padding : 5px 0px 5px 0px;
-    }
+button {
+    padding: 5px 0px;
+}
 .card-3 .card-heading {
-  display: table-cell;
-  width: 50%;
-  margin-right : 10px;
-
-  margin-bottom : 10px;
-
+    display: table-cell;
+    width: 50%;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 p {
     color: white;
-    padding : 7px;
-
+    padding: 7px;
 }
-
 .card-3 .card-body {
-  padding: 57px 65px;
-  padding-bottom: 65px;
-  display: table-cell;
+    padding: 57px 65px;
+    padding-bottom: 65px;
+    display: table-cell;
 }
-
 @media (max-width: 767px) {
-  .card-3 {
-    display: block;
-  }
-  .card-3 .card-heading {
-    display: block;
-    width: 100%;
-    padding-top: 400px;
-    background-position: center center;
-  }
-  .card-3 .card-body {
-    display: block;
-    width: 100%;
-    padding: 37px 30px;
-    padding-bottom: 45px;
-  }}
-
-
+    .card-3 {
+        display: block;
+    }
+    .card-3 .card-heading {
+        display: block;
+        width: 100%;
+        padding-top: 400px;
+        background-position: center center;
+    }
+    .card-3 .card-body {
+        display: block;
+        width: 100%;
+        padding: 37px 30px;
+        padding-bottom: 45px;
+    }
 }
-
-
+.arrow {
+    text-align: left;
+    cursor: pointer;
+    color: white;
+}
 </style>
 
 <body>
@@ -82,138 +74,79 @@ p {
             <div class="card card-3">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h1 class="title" style="text-align : center;">Payment Mode</h1>
-<!--                        <div class="p-t-10">-->
-<!--                            <button id="rzp-button1" class="btn-primary btn&#45;&#45;pill">Pay with Razorpay</button>-->
-<!--                            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>-->
-<!--                        </div>-->
-                            <p>Fee: ₹ {{ fee_without_gst }}</p>
-                            {%if gst != 0%}
-                                <p>GST (18%): ₹ {{ gst }}</p>
-                            {%endif%}
-                            <p>Internet Handling Fees: ₹ {{ internet_handling_fees }}</p>
-                            <p>Total: ₹ {{ fee_final/100 }}</p>
-
-
-
-<!--                        <div class="p-t-10">-->
-<!--                            <button id="cash-button1" class="btn-primary btn&#45;&#45;pill">Pay with Cash</button>-->
-<!--                        </div>-->
-
+                    <h1 class="title" style="text-align: center;">Almost There !</h1>
                     <div class="container" id="payment-mode">
                         <div class="row">
                             <div class="col-sm">
                                 <button id="payment-button1" class="btn btn-primary btn-lg col-lg-12 col-md-12 col-sm-12 btn-pill" name="Bank Transfer">Checkout</button>
-<!--                                <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>-->
-
                                 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
                             </div>
-
                         </div>
-                        <div class="col-sm">
-<!--                                <a style="color : #a9a9a9; float: right;" href="{{ url_for('cash_payment', session_id=session_id) }}"><u>Pay at Studio</u></a>-->
-<!--                                <a id="cash-button1" class="btn btn-success btn-sm btn-lg col-lg-12 col-md-12 col-sm-12 btn-pill" name="Cash">Cash</a>-->
-                            </div>
                     </div>
+
+                    <!-- Total Fee -->
+                    <p>Fee: ₹ {{ fee_final / 100 }} <span><button style="font-size:10px; color:#d3d3d3;" id="viewBreakupButton"class="btn btn-link text-white pl-0">  <i class="fas fa-chevron-down"></i></span></button>
+</span></p>
+<!--                    <div class="arrow" id="viewBreakupButton">-->
+<!--                    </div>-->
+
+                    <!-- Expandable Section -->
+                    <div id="feeDetails" style="display: none; font-size:10px;">
+                        <p>Total Fee: ₹ {{ fee_without_gst }}</p>
+                        {% if gst != 0 %}
+                            <p>GST (18%): ₹ {{ gst }}</p>
+                        {% endif %}
+                        <p>Internet Handling Fees: ₹ {{ internet_handling_fees }}</p>
+                        <p>Total: ₹ {{ fee_final / 100 }}</p>
+                    </div>
+
                     <input type="hidden" name="session_id" value="{{ session_id }}">
-
-
                 </div>
             </div>
         </div>
     </div>
     {% include 'footer.html' %}
+
     <script>
-
-    document.getElementById("cash-button1").addEventListener("click", function() {
-    var session_id = "{{ session_id }}";
-<!--    var cashPaymentUrl = "{{ url_for('cash_payment', session_id=session_id) }}";-->
-    var cashPaymentUrl = "/success/" + session_id;
-    window.location.href = cashPaymentUrl;
-});
-
-  </script>
-
-
-    <!-- Main JS-->
-    <script src="js/global.js"></script>
-
-<script>
     document.getElementById("payment-button1").addEventListener("click", function() {
-        // Replace this with your Razorpay integration logic
-        // Generate a Razorpay order and open the Razorpay checkout
-
-
         var options = {
             key: "{{ razorpay_key }}", // Replace with your Razorpay API key
-            amount: {{fee_final}}, // Replace with the actual amount in paisa
+            amount: {{ fee_final }}, // Replace with the actual amount in paisa
             currency: 'INR', // Replace with the desired currency code
             name: 'Pink Grid Creations Pvt. Ltd.',
             image: '../static/images/hashtag.jpeg',
             description: 'Payment for Registration',
             handler: function(response, error) {
-                // Handle the Razorpay payment response
-                console.log(response);
-
                 if (response.razorpay_payment_id) {
-                    // Payment successful, redirect to /success
-
                     window.location.href = '{{ url_for('payment_successful', session_id=session_id) }}';
-                    window.location.href = "/success/" + "{{session_id}}";
                 } else {
-                    // Payment failed, redirect to /failure
                     window.location.href = "/failed";
                 }
             }
         };
-
         var rzp = new Razorpay(options);
         rzp.open();
     });
-</script>
 
+    document.getElementById("viewBreakupButton").addEventListener("click", function() {
+        var feeDetails = document.getElementById("feeDetails");
+        if (feeDetails.style.display === "none") {
+            feeDetails.style.display = "block";
+        } else {
+            feeDetails.style.display = "none";
+        }
+    });
 
-<script>
+    document.getElementById("cash-button1").addEventListener("click", function() {
+        var session_id = "{{ session_id }}";
+        var cashPaymentUrl = "/success/" + session_id;
+        window.location.href = cashPaymentUrl;
+    });
+    </script>
 
-
-<!--document.getElementById("payment-button1").addEventListener("click", function() {-->
-    // Replace this with CC Avenue's API integration logic
-    // Redirect the user to CC Avenue's payment page for bank transfer
-
-<!--    var bankTransferUrl = "https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction&merchant_id=$mid&encRequest=$encReq&access_code=$xscode";  // Replace with the actual route to CC Avenue's bank transfer page-->
-<!--    var bankTransferUrl = "https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction&merchant_id={{ mid }}&encRequest=P{{ encReq }}&access_code={{ xscode }}";  // Use double curly braces to interpolate Flask variables-->
-    var bankTransferUrl = "{{ url_for('ccavenue_login') }}"
-<!--    var bankTransferUrl = "https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction&merchant_id=${mid}&amount=${fee}&order_id=${order_id}&currency=${currency}&redirect_url=${redirect_url}&cancel_url=${cancel_url}&access_code=${xscode}";  // Replace with the actual route to CC Avenue's bank transfer page-->
-    window.open(bankTransferUrl);
-    // Open the iframe with the CC Avenue bank transfer page
-<!--    var iframeHtml = `-->
-<!--        <center>-->
-<!--            &lt;!&ndash; width required minimum 482px &ndash;&gt;-->
-<!--            <iframe width="482" height="500" scrolling="No" frameborder="0" id="paymentFrame" src="${bankTransferUrl}">-->
-<!--            </iframe>-->
-<!--        </center>-->
-<!--    `;-->
-
-<!--    document.getElementById("payment-mode").innerHTML = iframeHtml;-->
-});
-
-
-<!--GET FEES By SELECTiNG BATCHES-->
-
-<!-- Same apps script code as GetFees shared before   -->
-
-    function doGet() {
-      return HtmlService.createTemplateFromFile('index').evaluate();
-      }
-
-
-
-
-</script>
-
-
-
-
-
+    <!-- Bootstrap and main JS-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT3mxzzPIp3RweM2j3R9j7fYZ+MGA7rHBOgf9SRn8z04dH/9" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-0EVHe/X+R7YkG3oG09Usl+Q+YZl1R4MGz6a6Fp/vmsT2c6L/uf2jHsxesbt3wiJ" crossorigin="anonymous"></script>
+    <script src="js/global.js"></script>
 </body>
 </html>
