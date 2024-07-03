@@ -80,11 +80,11 @@ def razorpay_client_credentials(studio):
 
         # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
-        razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
-        razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
+        # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
+        # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
-        # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
-        # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+        razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
+        razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
 
 
 
@@ -466,7 +466,7 @@ def landing_page_dropin():
 @app.route('/masterclass')
 def landing_page_dropin2():
     session_id = os.urandom(16).hex()
-    return render_template("masterclass.html", session_id=session_id, fee=678, event='landingpage')
+    return render_template("masterclass.html", session_id=session_id, fee=423.73, event='landingpage')
 
 
 @app.route('/payment-method-landingpage/<session_id>/<int:fee>/<event>', methods=['GET', 'POST'])
@@ -1326,5 +1326,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5111)
+    app.run(debug=True, port=5151)
 
