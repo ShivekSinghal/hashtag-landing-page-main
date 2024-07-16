@@ -779,6 +779,77 @@ def registration_form():
 
     return render_template('index.html')
 
+@app.route('/ticket', methods=['GET', 'POST'])
+def registration_form_ticket():
+
+
+    return render_template('ticketindex.html')
+
+@app.route('/selectticket', methods=['GET', 'POST'])
+def select_ticket():
+
+    session['session_id'] = os.urandom(16).hex()
+    session_id = session['session_id']
+
+
+
+    session['name'] = request.form['name']
+    session['phone'] = request.form['phone']
+    session['email'] = request.form['email']
+    session['studio'] = request.form['Studio']
+    session['promo_code_applied'] = request.form['promo']
+
+    name = session.get('name')
+    phone = session.get('phone')
+    email = session.get('email')
+    studio = session.get('studio')
+
+    now = datetime.datetime.now()
+    today_date = now.strftime('%d-%b-%Y %H:%M:%S')
+    sheet = client.open_by_key(sheet_key).worksheet("Tickets")
+    registration_data = [today_date, name, phone, email, studio]
+
+    sheet.append_row(registration_data)
+
+    promo_code_applied = session.get('promo_code_applied')
+
+    if session_id not in user_data:
+        user_data[session_id] = {
+            'name': None,
+            'phone': None,
+            'email': None,
+            'studio': None,
+            'promo_code_applied': None
+        }
+
+    user_data[session_id]['name'] = name
+    user_data[session_id]['phone'] = phone
+    user_data[session_id]['email'] = email
+    user_data[session_id]['studio'] = studio
+    user_data[session_id]['promo_code_applied'] = promo_code_applied
+
+    print(user_data)
+    print("withpromo")
+
+
+    promo_data = load_promo_data("promo_data.json")
+    if promo_data is not None:
+        discount = int(apply_promo_code(name, email, phone, promo_code_applied, filename="promo_code.json"))
+        if promo_code_applied == "":
+            discount = 0
+            return render_template('selectticket.html', session_id=session_id, discount=discount)
+
+        if discount > 0:
+            print(discount)
+
+            return render_template('selectticket.html', session_id=session_id, discount=discount,
+                                   promo_message=f"Promo Code worth {discount} applied successfully")
+        if discount == 0:
+            return render_template('selectticket.html', session_id=session_id, discount=discount,
+                                   promo_message=f"Promo Code expired or invalid user details")
+
+
+
 @app.route('/createpromocode', methods=['GET', 'POST'])
 def create_promo_code():
     return render_template('promocode.html')
@@ -1326,5 +1397,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5151)
+    app.run(debug=True, port=5152)
 

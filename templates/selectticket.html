@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Registration Form</title>
+    <link rel="icon" href="../static/images/pink_favicorn/favicon.ico" type="image/x-icon">
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Main CSS-->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h1 class="title">Select Dance Style</h1>
+                    <form onsubmit="return validateForm()" method="POST" action="/payment-method/{{session_id}}">
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select class="custom-select" name="validity" required>
+                                    <option value="two_months_grid" selected="selected">Grid Tickets</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="numberOfTickets">Number of tickets:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-circle btn-outline-secondary" onclick="changeTicketCount(-1)">-</button>
+                                            </div>
+                                            <input style="display:flex; width:45px; height:35px; flex-direction: column; align-items: center;" type="text" id="numberOfTickets" name="numberOfTickets" class="input--style-3 text-center" value="0" readonly>
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-circle btn-outline-secondary" onclick="changeTicketCount(1)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+
+                                <div class="col-md-12">
+                                    <div class="form-group d-flex align-items-center">
+                                        <label class="fee-label" for="fee">Fee:</label>
+                                        <input id="feeField" class="input--style-3" type="text" name="fee" readonly required style="padding-left: 7px; padding-bottom: 11px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--hotpink btn--hotpink:hover" id="next-button" type="submit" style="margin-left: 30px;">Next</button>
+                        </div>
+                        <input type="hidden" name="session_id" value="{{ session_id }}">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+
+    <script>
+        function validateForm() {
+            var numberOfTickets = document.forms[0].elements["numberOfTickets"].value;
+            if (numberOfTickets <= 0) {
+                alert("Please enter a valid number of tickets.");
+                return false;
+            }
+            return true;
+        }
+
+        function changeTicketCount(amount) {
+            var numberOfTicketsField = document.getElementById("numberOfTickets");
+            var currentCount = parseInt(numberOfTicketsField.value);
+            var newCount = currentCount + amount;
+
+            if (newCount >= 1) {
+                numberOfTicketsField.value = newCount;
+                updateFee();
+            }
+        }
+
+        function updateFee() {
+            var feeField = document.getElementById("feeField");
+            var numberOfTickets = document.forms[0].elements["numberOfTickets"].value;
+
+            if (numberOfTickets > 0) {
+                feeField.value = numberOfTickets * 500 - {{ discount }};
+            } else {
+                feeField.value = '';
+            }
+        }
+    </script>
+    <style>
+        .btn-circle {
+            width: 40px;
+            height: 40px;
+            padding: 6px 0;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.42857;
+        }
+    </style>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+</body>
+</html>
