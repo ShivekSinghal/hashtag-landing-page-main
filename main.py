@@ -1299,18 +1299,18 @@ def process_data(session_id, source):
                                        "promo_code.json")
         row = [today_date, name, phone, email, "#" + "DropIn","", validity, batch_str,"","", fee_without_gst, gst, fee,
                mode_of_payment, paid_to, promo_code_created,razorpay_id, internet_handling_fees, studio]
-    elif validity == "Pinkd":
+    elif validity == "GridTicket":
 
-        rendered_receipt = render_template("receipt2.html", date=today_date, name=name, phone=phone,
-                                           validity="PINKD", email=email, studio=studio, gross_amount=fee_without_gst,
-                                           gst=gst, internet_handling_fees=internet_handling_fees, fee=fee,
-                                           order_receipt=f"#PAC{str(order_receipt)}",
-                                           mode_of_payment=mode_of_payment, paid_to=paid_to, razorpay_id=razorpay_id)
-
-        print("reciptrendered")
-
-        send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
-        row = [today_date, name, phone, email, "#" + "PinkD", "", validity, "", "", "", fee_without_gst, gst,
+        # rendered_receipt = render_template("receipt2.html", date=today_date, name=name, phone=phone,
+        #                                    validity="PINKD", email=email, studio=studio, gross_amount=fee_without_gst,
+        #                                    gst=gst, internet_handling_fees=internet_handling_fees, fee=fee,
+        #                                    order_receipt=f"#PAC{str(order_receipt)}",
+        #                                    mode_of_payment=mode_of_payment, paid_to=paid_to, razorpay_id=razorpay_id)
+        #
+        # print("reciptrendered")
+        #
+        # send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
+        row = [today_date, name, phone, email, studio, "#" + "GridTicket", "", validity, "", "", "", fee_without_gst, gst,
                fee,
                mode_of_payment, "Manav", "", razorpay_id, internet_handling_fees, ""]
 
@@ -1397,5 +1397,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5152)
+    app.run(debug=True, port=5156)
 

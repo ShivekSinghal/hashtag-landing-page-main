@@ -34,7 +34,7 @@
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select class="custom-select" name="validity" required>
-                                    <option value="two_months_grid" selected="selected">Grid Tickets</option>
+                                    <option value="GridTicket" selected="selected">Grid Tickets</option>
                                 </select>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
             var numberOfTickets = document.forms[0].elements["numberOfTickets"].value;
 
             if (numberOfTickets > 0) {
-                feeField.value = numberOfTickets * 500 - {{ discount }};
+                feeField.value = numberOfTickets * 1 - {{ discount }};
             } else {
                 feeField.value = '';
             }
