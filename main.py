@@ -14,6 +14,8 @@ import threading
 import razorpay
 import requests
 import datetime
+from test import send_grid_ticket
+from test2 import get_date
 
 
 
@@ -75,16 +77,16 @@ def razorpay_client_credentials(studio):
         razorpay_key_secret = ''
 
     else:
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
+        razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
 
         # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
         # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
-        razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
-        razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+        # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
+        # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
 
 
 
@@ -473,11 +475,11 @@ def landing_page_dropin2():
 def make_payment_landingpage(session_id, fee, event):
     # Get the selected batches as a
     # session_id = request.form.get('session_id')
-    print(request.form.get('dob'))
-    if fee == "":
-        flash('Please Select a date and Batch!', 'error')
-        return redirect(url_for('registration_form_dropin'))
-    else:
+    # print(request.form.get('dob'))
+    # if fee == "":
+    #     flash('Please Select a date and Batch!', 'error')
+    #     return redirect(url_for('registration_form_dropin'))
+    # else:
 
         name = request.form['name']
         phone = request.form['phone']
@@ -605,11 +607,11 @@ def pink_dropin():
 def make_payment_pinkd(session_id, fee, event):
     # Get the selected batches as a
     # session_id = request.form.get('session_id')
-    print(request.form.get('dob'))
-    if fee == "":
-        flash('Please Select a date and Batch!', 'error')
-        return redirect(url_for('registration_form_dropin'))
-    else:
+    # print(request.form.get('dob'))
+    # if fee == "":
+    #     flash('Please Select a date and Batch!', 'error')
+    #     return redirect(url_for('registration_form_dropin'))
+    # else:
 
         name = request.form['name']
         phone = request.form['phone']
@@ -791,7 +793,7 @@ def select_ticket():
     session['session_id'] = os.urandom(16).hex()
     session_id = session['session_id']
 
-
+    print("started")
 
     session['name'] = request.form['name']
     session['phone'] = request.form['phone']
@@ -803,13 +805,16 @@ def select_ticket():
     phone = session.get('phone')
     email = session.get('email')
     studio = session.get('studio')
+    print("staerted1")
 
     now = datetime.datetime.now()
     today_date = now.strftime('%d-%b-%Y %H:%M:%S')
-    sheet = client.open_by_key(sheet_key).worksheet("Tickets")
-    registration_data = [today_date, name, phone, email, studio]
-
-    sheet.append_row(registration_data)
+    print("datedone")
+    # sheet = client.open_by_key(sheet_key).worksheet("Tickets")
+    # registration_data = [today_date, name, phone, email, studio]
+    # print("not done")
+    # sheet.append_row(registration_data)
+    print("done")
 
     promo_code_applied = session.get('promo_code_applied')
 
@@ -997,10 +1002,10 @@ def select_batch():
 def make_payment(session_id):
     # Get the selected batches as a
     # session_id = request.form.get('session_id')
-    if request.form['fee'] == "":
-        flash('Please Select a date and Batch!', 'error')
-        return redirect(url_for('registration_form_dropin'))
-    else:
+    # if session.get('fee' == "":
+    #     flash('Please Select a date and Batch!', 'error')
+    #     return redirect(url_for('registration_form_dropin'))
+
         print(session_id)
         print(user_data)
         print("third")
@@ -1219,9 +1224,9 @@ def process_data(session_id, source):
 
 
     print(session)
-    sheet = client.open_by_key(sheet_key).worksheet(sheet_name)
+    sheet = client.open_by_key(sheet_key).worksheet('Registrations')
 
-    today_date = datetime.today().strftime('%d-%b-%Y')
+    # today_date = datetime.today().strftime('%d-%b-%Y')
 
     # Error Fixed
 
@@ -1297,7 +1302,7 @@ def process_data(session_id, source):
         # batch_str = session.get('batch')
         promo_code_created = create_promo_json(name, email, phone, fee_without_gst, session.get('dropin_date'),
                                        "promo_code.json")
-        row = [today_date, name, phone, email, "#" + "DropIn","", validity, batch_str,"","", fee_without_gst, gst, fee,
+        row = [name, phone, email, "#" + "DropIn","", validity, batch_str,"","", fee_without_gst, gst, fee,
                mode_of_payment, paid_to, promo_code_created,razorpay_id, internet_handling_fees, studio]
     elif validity == "GridTicket":
 
@@ -1308,21 +1313,28 @@ def process_data(session_id, source):
         #                                    mode_of_payment=mode_of_payment, paid_to=paid_to, razorpay_id=razorpay_id)
         #
         # print("reciptrendered")
+
+
         #
+        number_of_tickets = int(int(fee_without_gst) / 500)
         # send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
-        row = [today_date, name, phone, email, studio, "#" + "GridTicket", "", validity, "", "", "", fee_without_gst, gst,
-               fee,
-               mode_of_payment, "Manav", "", razorpay_id, internet_handling_fees, ""]
+        row = [get_date(), name, phone, email, studio, validity, validity + order_receipt, number_of_tickets , fee_without_gst, gst,
+               fee, mode_of_payment, razorpay_id, internet_handling_fees]
 
 
 
         sheet.append_row(row)
+        # return redirect(url_for('final_success', session_id=session_id))
+
+        ""
+        send_grid_ticket(name, studio, number_of_tickets, email)
         return jsonify({'status': 'success'})
+        print("FinalDOne")
     elif validity == "landingpage":
-        row = [today_date, name, phone, email, "#" + "LandingPage", "", validity, "", "", "", fee_without_gst, gst,
+        row = [name, phone, email, "#" + "LandingPage", "", validity, "", "", "", fee_without_gst, gst,
                fee,
                mode_of_payment, paid_to, "", razorpay_id, internet_handling_fees, ""]
-        sheet.append_row(row)
+        # sheet.append_row(row)
         return jsonify({'status': 'success'})
 
 
@@ -1343,7 +1355,7 @@ def process_data(session_id, source):
         increment_receipt_number()
         print(source)
 
-        row = [today_date, name, phone, email, "#PAC" + order_receipt,"", validity,"Offline", batch_str, "", fee_without_gst, gst, fee-internet_handling_fees,
+        row = [name, phone, email, "#PAC" + order_receipt,"", validity,"Offline", batch_str, "", fee_without_gst, gst, fee-internet_handling_fees,
                mode_of_payment, paid_to, "",f"OrderID : {razorpay_id} Razorpay Fees : ₹{internet_handling_fees}", "", studio]
 
 
@@ -1397,5 +1409,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5156)
+    app.run(debug=True, port=5159)
 

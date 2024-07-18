@@ -54,6 +54,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-12" hidden>
+                                            <div class="form-group d-flex align-items-center" >
+                                                <option class="custom-checkbox" selected="selected" type="checkbox"  id="jazzcheckbox" name="batch[]" value="Jazz" aria-required="true" onchange="updateFee()">
+
+                                                <label class="checkbox-inline" for="jazzcheckbox">
+                                                </label>
+                                                <span class="ml-2">Jazz</span>
+                                            </div>
+                                        </div>
+
                                 </div>
 
                                 <div class="col-md-12">
@@ -104,7 +114,7 @@
             var numberOfTickets = document.forms[0].elements["numberOfTickets"].value;
 
             if (numberOfTickets > 0) {
-                feeField.value = numberOfTickets * 1 - {{ discount }};
+                feeField.value = numberOfTickets * 500 - {{ discount }};
             } else {
                 feeField.value = '';
             }

@@ -204,13 +204,23 @@
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select class="custom-select" name="Studio" id="studioDropdown" required >
                                     <option disabled="disabled" selected="selected" value="no_studio">Select Show</option>
-                                    <option value="Show 1">Show 1 (3rd August)</option>
-                                    <option value="Show 2">Show 2 (4th August)</option>
+                                    <option value="Show1">Show 1 (3rd August)</option>
+                                    <option value="Show2">Show 2 (4th August)</option>
 
                                 </select>
 
 
                             </div>
+                            <div hidden class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <label for="dob" class="date-label">
+                                <option selected="selected" class="custom-select" type="date" id="calendar" required value="2003-06-24" onchange="loadClasses()" name="dob" min="<?php echo date('Y-m-d'); ?>">
+                                <span style="padding-top : 10px; color:#ffffff; ">Date of Birth</span>
+                                </label>
+
+                            </div>
+                        </div>
+
                         </div>
 
                         <div class="input-group">
