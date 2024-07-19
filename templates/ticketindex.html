@@ -11,6 +11,48 @@
 
     <!-- Title Page-->
     <title>Grid Tickets</title>
+    <style>
+        #termsModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1000;
+            overflow: auto;
+        }
+        #termsModal iframe {
+            width: 100%;
+            height: 100%;
+        }
+        #termsOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .terms-container {
+            margin-bottom: 20px;
+        }
+        .terms-container a {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .terms-container a input {
+            margin-right: 10px;
+        }
+    </style>
+
+    </style>
     <link rel="icon" href="../static/images/pink_favicorn/favicon.ico" type="image/x-icon">
 
 
@@ -183,7 +225,7 @@
 
     <div class="page-wrapper p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
-            <div class="card card-3">
+            <div id="card-3" class="card card-3">
 
                 <div class="card-heading"></div>
 
@@ -219,6 +261,7 @@
                                 </label>
 
                             </div>
+
                         </div>
 
                         </div>
@@ -238,8 +281,11 @@
 
                     </form>
 
-                </div>
+        </div>
 
+                </div>
+            <div class="terms-container">
+                <a href="/terms" onclick="openTermsModal()"><span><input type="checkbox" id="termsCheckbox" required disabled checked></span> *Terms and Conditions</a>
 
             </div>
             <div style="text-align: right;">
@@ -249,6 +295,38 @@
 
     </div>
     {% include 'footer.html' %}
+    <script>
+        function checkTerms() {
+            var termsCheckbox = document.getElementById('termsCheckbox');
+            if (!termsCheckbox.checked) {
+                alert('You must agree to the terms and conditions before submitting the form.');
+                return false;
+            }
+            return true;
+        }
+
+        function openTermsModal() {
+            document.getElementById('termsModal').style.display = 'block';
+            document.getElementById('termsOverlay').style.display = 'block';
+        }
+
+        function closeTermsModal() {
+            document.getElementById('termsModal').style.display = 'none';
+            document.getElementById('termsOverlay').style.display = 'none';
+        }
+        function hideOtherElements() {
+            if (window.top !== window.self) {
+                // Page is loaded in an iframe
+                var elementsToHide = document.querySelectorAll('body > *:not(#card-3)');
+                elementsToHide.forEach(function(element) {
+                    element.style.display = 'none';
+                });
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", hideOtherElements);
+    </script>
+
 
 
 

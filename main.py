@@ -1325,9 +1325,11 @@ def process_data(session_id, source):
 
         sheet.append_row(row)
         # return redirect(url_for('final_success', session_id=session_id))
+        first_name = name.split()[0]
+        last_name = name.split()[1]
 
         ""
-        send_grid_ticket(name, studio, number_of_tickets, email)
+        send_grid_ticket(name,first_name, last_name,phone,email, studio, number_of_tickets, email)
         return jsonify({'status': 'success'})
         print("FinalDOne")
     elif validity == "landingpage":
