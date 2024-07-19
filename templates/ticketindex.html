@@ -314,17 +314,7 @@
             document.getElementById('termsModal').style.display = 'none';
             document.getElementById('termsOverlay').style.display = 'none';
         }
-        function hideOtherElements() {
-            if (window.top !== window.self) {
-                // Page is loaded in an iframe
-                var elementsToHide = document.querySelectorAll('body > *:not(#card-3)');
-                elementsToHide.forEach(function(element) {
-                    element.style.display = 'none';
-                });
-            }
-        }
 
-        document.addEventListener("DOMContentLoaded", hideOtherElements);
     </script>
 
 
