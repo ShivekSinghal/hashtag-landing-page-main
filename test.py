@@ -32,13 +32,22 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
 
         font_size = 50
         name_position = (387.26, 158)  # Adjust the position accordingly
-        ticket_number_position = (780.6, 663.28)  # Adjust the position accordingly
+        ticket_number_position = (210.43, 664.9)  # Adjust the position accordingly
         qr_position = (1063, 162)  # Adjust the position accordingly
         qr_size = 30
+
+        event_date = show
+        event_date_position = (386.26, 267)
+
+        price = "Rs. 500"
+        price_position = (834.6,664.28)
 
         image = Image.open(template_path)
         image = add_text_to_image(image, name, name_position, font_path, font_size, color="white")
         image = add_text_to_image(image, ticket_number, ticket_number_position, font_path, font_size, color="white")
+        image = add_text_to_image(image, event_date, event_date_position, font_path, font_size, color="white")
+        image = add_text_to_image(image, price, price_position, font_path, font_size, color="white")
+
         image = add_qr_code_to_image(image, qr_data, qr_position, qr_size)
 
         image.save(output_path)
