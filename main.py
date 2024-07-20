@@ -77,11 +77,11 @@ def razorpay_client_credentials(studio):
         razorpay_key_secret = ''
 
     else:
-        razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
+        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
 
-        # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
-        # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
+        razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
+        razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
         # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
