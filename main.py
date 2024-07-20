@@ -1315,12 +1315,17 @@ def process_data(session_id, source):
         #                                    mode_of_payment=mode_of_payment, paid_to=paid_to, razorpay_id=razorpay_id)
         #
         # print("reciptrendered")
+        def get_ticket_number():
+
+            with open(f"{studio}_ticket_number.txt", "r") as file:
+                current_receipt_number = int(file.read())
+            return str(current_receipt_number)
 
 
 
         number_of_tickets = user_data[session_id]['numberOfTickets']
         # send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
-        row = [get_date(), name, phone, email, studio, validity, validity + order_receipt, number_of_tickets , fee_without_gst, gst,
+        row = [get_date(), name, phone, email, studio, validity, studio + get_ticket_number(), number_of_tickets , fee_without_gst, gst,
                fee,promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
 
 

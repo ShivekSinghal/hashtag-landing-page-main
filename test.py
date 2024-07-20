@@ -7,12 +7,12 @@ from email.mime.text import MIMEText
 from email import encoders
 import os
 
-def send_grid_ticket(name,first_name,last_name,phone, email, show, number_of_tickets, to_email):
+def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_tickets, to_email):
 
-    def add_text_to_image(image, text, position, font_path, font_size):
+    def add_text_to_image(image, text, position, font_path, font_size, color="white"):
         draw = ImageDraw.Draw(image)
         font = ImageFont.truetype(font_path, font_size)
-        draw.text(position, text, font=font, fill="black")
+        draw.text(position, text, font=font, fill=color)
         return image
 
     def add_qr_code_to_image(image, qr_data, position, qr_size):
@@ -25,20 +25,20 @@ def send_grid_ticket(name,first_name,last_name,phone, email, show, number_of_tic
         return image
 
     def create_ticket(name, ticket_number, qr_data, template_path, output_path):
-        font_path = "arial.ttf"  # Path to the font file
+        font_path = "impact.ttf"  # Path to the font file
         if not os.path.exists(font_path):
             print("Font file not found. Using default font.")
             font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"  # Update to a font path available on your system
 
-        font_size = 20
-        name_position = (50, 50)  # Adjust the position accordingly
-        ticket_number_position = (50, 100)  # Adjust the position accordingly
-        qr_position = (300, 50)  # Adjust the position accordingly
-        qr_size = 10
+        font_size = 50
+        name_position = (387.26, 158)  # Adjust the position accordingly
+        ticket_number_position = (780.6, 663.28)  # Adjust the position accordingly
+        qr_position = (1063, 162)  # Adjust the position accordingly
+        qr_size = 30
 
         image = Image.open(template_path)
-        image = add_text_to_image(image, f"Name: {name}", name_position, font_path, font_size)
-        image = add_text_to_image(image, f"Ticket #: {ticket_number}", ticket_number_position, font_path, font_size)
+        image = add_text_to_image(image, name, name_position, font_path, font_size, color="white")
+        image = add_text_to_image(image, ticket_number, ticket_number_position, font_path, font_size, color="white")
         image = add_qr_code_to_image(image, qr_data, qr_position, qr_size)
 
         image.save(output_path)
@@ -89,10 +89,9 @@ def send_grid_ticket(name,first_name,last_name,phone, email, show, number_of_tic
         return new_ticket_number
 
     # Example usage
+
+
     template_path = "ticket_template.png"
-    # name = "John Doe"
-    # number_of_tickets = 3  # Number of tickets the person has booked
-    # show = "show1"  # Specify the show here ("show1" or "show2")
     ticket_file = f"{show}_ticket_number.txt"  # Use separate files for each show
 
     attachment_paths = []
@@ -106,9 +105,8 @@ def send_grid_ticket(name,first_name,last_name,phone, email, show, number_of_tic
         create_ticket(name, ticket_number, qr_data, template_path, output_path)
         attachment_paths.append(output_path)
 
-    # to_email = "singhalshivek24@gmail.com"
     subject = "Your Event Tickets"
-    body = f"Please find attached your tickets for {show}."
+    body = f"Please find attached your tickets for Show on {show}."
 
     send_email_with_attachments(to_email, subject, body, attachment_paths)
 
