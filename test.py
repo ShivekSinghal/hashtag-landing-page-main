@@ -97,7 +97,7 @@ def send_grid_ticket(name,first_name,last_name,phone, email, show, number_of_tic
 
     attachment_paths = []
 
-    for _ in range(number_of_tickets):
+    for _ in range(int(number_of_tickets)):
         ticket_number = show + str(increment_ticket_number(ticket_file))  # Get and increment the current ticket number for the specified show
         qr_data = f"https://docs.google.com/forms/d/e/1FAIpQLScLU6j8PKGlxsa5LV-PY9XHRl-Y1mr04vDgp8Eo8ApbmE4gXQ/viewform?usp=pp_url&entry.1211795223={first_name + last_name}&entry.669271916={phone}&entry.539132351={email}&entry.966328261={show}&entry.1058215280={ticket_number}"
         print(qr_data)
