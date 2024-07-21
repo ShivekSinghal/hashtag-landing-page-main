@@ -77,11 +77,11 @@ def razorpay_client_credentials(studio):
         razorpay_key_secret = ''
 
     else:
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
+        razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
 
-        razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
-        razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
+        # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
+        # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
         # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
@@ -781,11 +781,19 @@ def registration_form():
 
     return render_template('index.html')
 
-@app.route('/ticket', methods=['GET', 'POST'])
-def registration_form_ticket():
+@app.route('/ticket1', methods=['GET', 'POST'])
+def registration_form_ticket1():
 
 
-    return render_template('ticketindex.html')
+    return render_template('ticketindex1.html')
+
+@app.route('/ticket2', methods=['GET', 'POST'])
+def registration_form_ticket2():
+
+
+    return render_template('ticketindex2.html')
+
+
 
 @app.route('/selectticket', methods=['GET', 'POST'])
 def select_ticket():
@@ -842,7 +850,7 @@ def select_ticket():
         discount = int(apply_promo_code(name, email, phone, promo_code_applied, filename="promo_code.json"))
         if promo_code_applied == "":
             discount = 0
-            return render_template('selectticket.html', session_id=session_id, discount=discount)
+            return render_template('selectticket.html', session_id=session_id ,discount=discount)
 
         if discount > 0:
             print(discount)
@@ -1306,7 +1314,9 @@ def process_data(session_id, source):
                                        "promo_code.json")
         row = [name, phone, email, "#" + "DropIn","", validity, batch_str,"","", fee_without_gst, gst, fee,
                mode_of_payment, paid_to, promo_code_created,razorpay_id, internet_handling_fees, studio]
-    elif validity == "GridTicket":
+    elif validity == "750" or "500":
+
+
 
         # rendered_receipt = render_template("receipt2.html", date=today_date, name=name, phone=phone,
         #                                    validity="PINKD", email=email, studio=studio, gross_amount=fee_without_gst,
@@ -1336,7 +1346,7 @@ def process_data(session_id, source):
         last_name = name.split()[1]
 
         ""
-        send_grid_ticket(name,first_name, last_name,phone,email, studio, number_of_tickets, email)
+        send_grid_ticket(name,first_name, last_name,phone,email, studio, number_of_tickets, email, price=validity)
         remove_promo_code(name,email,phone,promo_code_applied,"promo_code.json")
         return jsonify({'status': 'success'})
         print("FinalDOne")
@@ -1414,7 +1424,7 @@ def privacy():
     return render_template("privacypolicy.html")
 
 @app.route('/contactus')
-def privacy():
+def contactus():
     return render_template("contactus.html")
 
 @app.route('/failed', methods=['GET', 'POST'])

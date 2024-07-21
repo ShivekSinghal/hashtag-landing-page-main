@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from email import encoders
 import os
 
-def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_tickets, to_email):
+def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_tickets, to_email,price):
 
     def add_text_to_image(image, text, position, font_path, font_size, color="white"):
         draw = ImageDraw.Draw(image)
@@ -24,7 +24,7 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
         image.paste(qr_image, position)
         return image
 
-    def create_ticket(name, ticket_number, qr_data, template_path, output_path):
+    def create_ticket(name, ticket_number, qr_data, template_path, output_path, price):
         font_path = "impact.ttf"  # Path to the font file
         if not os.path.exists(font_path):
             print("Font file not found. Using default font.")
@@ -39,7 +39,7 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
         event_date = show
         event_date_position = (386.26, 267)
 
-        price = "Rs. 500"
+        price = f"Rs. {price}"
         price_position = (834.6,664.28)
 
         image = Image.open(template_path)
@@ -111,10 +111,10 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
         print(qr_data)
         print("Qr Code")
         output_path = f"{show}_ticket_{ticket_number}.png"
-        create_ticket(name, ticket_number, qr_data, template_path, output_path)
+        create_ticket(name, ticket_number, qr_data, template_path, output_path,price)
         attachment_paths.append(output_path)
 
-    subject = "Your Event Tickets"
+    subject = "Grid Tickets"
     body = f"Please find attached your tickets for Show on {show}."
 
     send_email_with_attachments(to_email, subject, body, attachment_paths)

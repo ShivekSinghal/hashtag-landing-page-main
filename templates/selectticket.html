@@ -33,8 +33,10 @@
                     <form onsubmit="return validateForm()" method="POST" action="/payment-method/{{session_id}}">
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select class="custom-select" name="validity" required>
-                                    <option value="GridTicket" selected="selected">Grid Tickets</option>
+                                <select class="custom-select" name="validity" id="ticketType" onchange="updateFee()" required>
+                                    <option value="" disabled selected="selected">Select Ticket Type</option>
+                                    <option value="750">Main Area</option>
+                                    <option value="500">Balcony</option>
                                 </select>
                             </div>
                         </div>
@@ -54,19 +56,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12" hidden>
-                                            <div class="form-group d-flex align-items-center" >
-                                                <option class="custom-checkbox" selected="selected" type="checkbox"  id="jazzcheckbox" name="batch[]" value="Jazz" aria-required="true" onchange="updateFee()">
-
-                                                <label class="checkbox-inline" for="jazzcheckbox">
-                                                </label>
-                                                <span class="ml-2">Jazz</span>
-                                            </div>
-                                        </div>
-
                                 </div>
-
-                                <div class="col-md-12">
 
                                 <div class="col-md-12">
                                     <div class="form-group d-flex align-items-center">
@@ -103,7 +93,7 @@
             var currentCount = parseInt(numberOfTicketsField.value);
             var newCount = currentCount + amount;
 
-            if (newCount >= 1) {
+            if (newCount >= 0) {
                 numberOfTicketsField.value = newCount;
                 updateFee();
             }
@@ -111,10 +101,12 @@
 
         function updateFee() {
             var feeField = document.getElementById("feeField");
-            var numberOfTickets = document.forms[0].elements["numberOfTickets"].value;
+            var numberOfTickets = document.getElementById("numberOfTickets").value;
+            var ticketType = document.getElementById("ticketType").value;
 
-            if (numberOfTickets > 0) {
-                feeField.value = numberOfTickets * 500 - {{ discount }};
+            if (numberOfTickets > 0 && ticketType) {
+                var totalFee = numberOfTickets * ticketType;
+                feeField.value = totalFee;
             } else {
                 feeField.value = '';
             }
