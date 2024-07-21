@@ -1413,6 +1413,10 @@ def terms_and_conditions():
 def privacy():
     return render_template("privacypolicy.html")
 
+@app.route('/contactus')
+def privacy():
+    return render_template("contactus.html")
+
 @app.route('/failed', methods=['GET', 'POST'])
 def payment_failed():
     return render_template('failed.html')
