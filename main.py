@@ -77,11 +77,11 @@ def razorpay_client_credentials(studio):
         razorpay_key_secret = ''
 
     else:
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
+        razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
 
-        razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
-        razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
+        # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
+        # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
         # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
@@ -814,6 +814,8 @@ def select_ticket():
     email = session.get('email')
     studio = session.get('studio')
     print("staerted1")
+    print(name)
+    print(phone)
 
     now = datetime.datetime.now()
     today_date = now.strftime('%d-%b-%Y %H:%M:%S')
@@ -1314,7 +1316,7 @@ def process_data(session_id, source):
                                        "promo_code.json")
         row = [name, phone, email, "#" + "DropIn","", validity, batch_str,"","", fee_without_gst, gst, fee,
                mode_of_payment, paid_to, promo_code_created,razorpay_id, internet_handling_fees, studio]
-    elif validity == "750" or "500":
+    elif validity == "500" or "400":
 
 
 
