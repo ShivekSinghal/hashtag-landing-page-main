@@ -712,6 +712,14 @@
         "amount": "1000"
     },
     {
+        "promo_code": "#test_promo",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Manas Yellapantula",
+        "email": "manas210890@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
         "promo_code": "#batch1_GUSB5W",
         "expiry": "2024-07-30 23:59:59",
         "name": "Japneet Kaur",

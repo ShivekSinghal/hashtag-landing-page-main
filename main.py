@@ -1433,6 +1433,10 @@ def final_success():
 def terms_and_conditions():
     return render_template("terms.html")
 
+@app.route('/termsticket')
+def terms_and_conditions_ticket():
+    return render_template("ticketterms.html")
+
 @app.route('/privacy')
 def privacy():
     return render_template("privacypolicy.html")
