@@ -106,11 +106,18 @@
 
             if (numberOfTickets > 0 && ticketType) {
                 var totalFee = numberOfTickets * ticketType;
-                feeField.value = totalFee;
+                var discountedFee = totalFee - {{ discount }};
+                feeField.value = discountedFee > 0 ? discountedFee : 1;
             } else {
                 feeField.value = '';
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            {% if promo_message %}
+                alert("{{ promo_message }}");
+            {% endif %}
+        });
     </script>
     <style>
         .btn-circle {

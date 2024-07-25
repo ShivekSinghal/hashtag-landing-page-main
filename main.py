@@ -76,7 +76,7 @@ def razorpay_client_credentials(studio):
         razorpay_key_id = ''
         razorpay_key_secret = ''
 
-    else:
+    elif studio == "03-August-2024":
         # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
         # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
 
@@ -87,6 +87,11 @@ def razorpay_client_credentials(studio):
 
         # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
         # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+    elif studio == "04-August-2024":
+        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
+        razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
+        razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
 
 
 
@@ -250,7 +255,7 @@ def apply_promo_code(name, email, phone, promo_code, filename):
             if (
                     promo_entry.get("name") == name
                     and promo_entry.get("email") == email
-                    and promo_entry.get("phone") == phone
+                    # and promo_entry.get("phone") == phone
                     and promo_entry.get("promo_code") == promo_code
                     and check_promo_validity(datetime.datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
             ):
@@ -290,7 +295,12 @@ accessCode = "AVKR14KI19BL44RKLB"
 
 
 # Receipt Number Generation
-
+def save_data_to_json(file_path, data):
+    with open(file_path, 'r+') as file:
+        file_data = json.load(file)
+        file_data.append(data)
+        file.seek(0)
+        json.dump(file_data, file, indent=4)
 def get_current_receipt_number():
     # Code to retrieve the current receipt number from storage (file or database)
     # Return the current receipt number as an integer
@@ -662,6 +672,7 @@ def make_payment_pinkd(session_id, fee, event):
                 'currency': 'INR',
                 # 'receipt': order_receipt,
                 'payment_capture': 1,  # Auto-capture the payment
+                'redirect': url_for("'payment_successful', session_id=session_id")
 
                     # Add any other parameters as required
                 }
@@ -820,10 +831,10 @@ def select_ticket():
     now = datetime.datetime.now()
     today_date = now.strftime('%d-%b-%Y %H:%M:%S')
     print("datedone")
-    # sheet = client.open_by_key(sheet_key).worksheet("Tickets")
-    # registration_data = [today_date, name, phone, email, studio]
+    sheet = client.open_by_key(sheet_key).worksheet("Tickets")
+    registration_data = [today_date, name, phone, email, studio]
     # print("not done")
-    # sheet.append_row(registration_data)
+    sheet.append_row(registration_data)
     print("done")
 
     promo_code_applied = session.get('promo_code_applied')
@@ -858,7 +869,7 @@ def select_ticket():
             print(discount)
 
             return render_template('selectticket.html', session_id=session_id, discount=discount,
-                                   promo_message=f"Promo Code worth {discount} applied successfully")
+                                   promo_message=f"Promo Code worth upto {discount} applied successfully")
         if discount == 0:
             return render_template('selectticket.html', session_id=session_id, discount=discount,
                                    promo_message=f"Promo Code expired or invalid user details")
@@ -1337,18 +1348,19 @@ def process_data(session_id, source):
 
         number_of_tickets = user_data[session_id]['numberOfTickets']
         # send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
-        row = [get_date(), name, phone, email, studio, validity, studio + get_ticket_number(), number_of_tickets , fee_without_gst, gst,
-               fee,promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
 
-
-
-        sheet.append_row(row)
         # return redirect(url_for('final_success', session_id=session_id))
         first_name = name.split()[0]
         last_name = name.split()[1]
 
-        ""
-        send_grid_ticket(name,first_name, last_name,phone,email, studio, number_of_tickets, email, price=validity)
+
+        ticket_numbers_list = send_grid_ticket(name,first_name, last_name,phone,email, studio, number_of_tickets, email, price=validity)
+        ticket_numbers_str = ", ".join(ticket_numbers_list)
+        row = [get_date(), name, phone, email, studio, validity, ticket_numbers_str, number_of_tickets,
+               fee_without_gst, gst,
+               fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
+
+        sheet.append_row(row)
         remove_promo_code(name,email,phone,promo_code_applied,"promo_code.json")
         return jsonify({'status': 'success'})
         print("FinalDOne")
