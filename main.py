@@ -16,6 +16,7 @@ import requests
 import datetime
 from test import send_grid_ticket
 from test2 import get_date
+import logging
 
 
 
@@ -26,6 +27,9 @@ app.secret_key = '#register_with_hashtag0909'
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"]= 'filesystem'
 
+# Setup logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 # Google Sheets API credentials
@@ -1349,6 +1353,7 @@ def process_data(session_id, source):
         number_of_tickets = user_data[session_id]['numberOfTickets']
         # send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
 
+
         # return redirect(url_for('final_success', session_id=session_id))
         first_name = name.split()[0]
         last_name = name.split()[1]
@@ -1360,9 +1365,12 @@ def process_data(session_id, source):
                fee_without_gst, gst,
                fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
 
+
         sheet.append_row(row)
+        logger.info('row added')
         remove_promo_code(name,email,phone,promo_code_applied,"promo_code.json")
         print("promoremoved")
+        logger.info('succes didnt happened')
         return jsonify({'status': 'success'})
         print("FinalDOne")
     elif validity == "landingpage":
