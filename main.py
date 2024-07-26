@@ -286,7 +286,7 @@ def remove_promo_code(name, email, phone, promo_code, filename):
                 and promo_entry.get("email") == email
                 # and promo_entry.get("phone") == phone
                 and promo_entry.get("promo_code") == promo_code
-                and check_promo_validity(datetime.datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
+                and check_promo_validity(datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
         ):
             promo_data.remove(promo_entry)
 
@@ -1237,10 +1237,10 @@ def process_cash(session_id):
         return render_template("cash.html")
 
 
-@app.route('/success/<session_id>/<source>', methods=['GET', 'POST'])
-def payment_successful(session_id, source):
-    # source = request.args.get('source')
-    # print(f"the source is {source}")
+@app.route('/success/<session_id>', methods=['GET', 'POST'])
+def payment_successful(session_id):
+    source = request.args.get('source')
+    print(f"the source is {source}")
     return render_template("loading.html", session_id=session_id, source=source)
 
 # @app.route('/process/<session_id>/<source>', methods=['POST'])
@@ -1496,10 +1496,12 @@ def process_data(session_id, source):
             ticket_numbers_str = ", ".join(ticket_numbers_list)
             row = [get_date(), name, phone, email, studio, validity, ticket_numbers_str, number_of_tickets,
                    fee_without_gst, gst, fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
-
+            sheet.append_row(row)
             logger.info('Row added to sheet')
             remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
             logger.info('Promo code removed')
+            print("Sheet Appended")
+
             return jsonify({'status': 'success'})
         elif validity == "landingpage":
             row = [name, phone, email, "#" + "LandingPage", "", validity, "", "", "", fee_without_gst, gst, fee,
