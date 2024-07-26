@@ -1680,6 +1680,14 @@
         "amount": "1000"
     },
     {
+        "promo_code": "#shivek_test",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshive24k@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
         "promo_code": "#batch2_A5QYNC",
         "expiry": "2024-07-30 23:59:59",
         "name": "Tisha Jain",
