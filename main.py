@@ -1456,7 +1456,7 @@ def process_data(session_id, source):
         fee_final = user_session.get('fee_final')
         promo_code_applied = user_session.get('promo_code_applied')
         internet_handling_fees = user_session.get('internet_handling_fees')
-        # sheet = client.open_by_key('1cJdiWjKzOMK6kVkPWBfhBVGTy_bsxDBwDbwlagkQfY4').worksheet('Registrations')
+        sheet = client.open_by_key('1cJdiWjKzOMK6kVkPWBfhBVGTy_bsxDBwDbwlagkQfY4').worksheet('Registrations')
         def get_paid_to(studio):
             if studio in ["NDA", "SD", "GGN", "IPM"]:
                 return "Manas"
