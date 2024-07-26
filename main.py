@@ -1,25 +1,24 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify, flash, session
-import os
-from oauth2client.service_account import ServiceAccountCredentials
-import gspread
-from premailer import transform
 import base64
-from email.mime.image import MIMEImage
-from ccavutil import encrypt, decrypt
+import datetime
 import json
+import logging
+import os
 import random
-from datetime import datetime, timedelta
-from string import Template
 import threading
+from datetime import datetime, timedelta
+from email.mime.image import MIMEImage
+from string import Template
+
+import gspread
 import razorpay
 import requests
-import datetime
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify, session
+from oauth2client.service_account import ServiceAccountCredentials
+from premailer import transform
+
+from ccavutil import encrypt
 from test import send_grid_ticket
 from test2 import get_date
-import logging
-
-
-
 
 app = Flask(__name__)
 
