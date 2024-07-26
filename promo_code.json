@@ -856,6 +856,14 @@
         "amount": "500"
     },
     {
+        "promo_code": "#shivek_test",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshivek24@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
         "promo_code": "#batch1_JGG559",
         "expiry": "2024-07-30 23:59:59",
         "name": "Krishnavi",
