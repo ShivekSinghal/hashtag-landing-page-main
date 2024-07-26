@@ -1362,6 +1362,7 @@ def process_data(session_id, source):
 
         sheet.append_row(row)
         remove_promo_code(name,email,phone,promo_code_applied,"promo_code.json")
+        print("promoremoved")
         return jsonify({'status': 'success'})
         print("FinalDOne")
     elif validity == "landingpage":
