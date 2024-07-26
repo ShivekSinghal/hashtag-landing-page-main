@@ -1456,7 +1456,9 @@ def process_data(session_id, source):
         fee_final = user_session.get('fee_final')
         promo_code_applied = user_session.get('promo_code_applied')
         internet_handling_fees = user_session.get('internet_handling_fees')
+
         sheet = client.open_by_key('1cJdiWjKzOMK6kVkPWBfhBVGTy_bsxDBwDbwlagkQfY4').worksheet('Registrations')
+        logger.error(f'Sheet loaded')
         def get_paid_to(studio):
             if studio in ["NDA", "SD", "GGN", "IPM"]:
                 return "Manas"
@@ -1488,7 +1490,9 @@ def process_data(session_id, source):
                     current_receipt_number = int(file.read())
                 return str(current_receipt_number)
 
+
             remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
+            logger.error(f'Promo Code removed')
 
             number_of_tickets = user_session.get('numberOfTickets')
             first_name = name.split()[0]
@@ -1498,8 +1502,8 @@ def process_data(session_id, source):
             ticket_numbers_str = ", ".join(ticket_numbers_list)
             row = [get_date(), name, phone, email, studio, validity, ticket_numbers_str, number_of_tickets,
                    fee_without_gst, gst, fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
-            # sheet.append_row(row)
-            logger.info('Row added to sheet')
+            sheet.append_row(row)
+            logger.error('Row added to sheet')
             remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
             logger.info('Promo code removed')
             print("Sheet Appended")
