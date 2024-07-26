@@ -672,7 +672,7 @@ def make_payment_pinkd(session_id, fee, event):
                 'currency': 'INR',
                 # 'receipt': order_receipt,
                 'payment_capture': 1,  # Auto-capture the payment
-                'redirect': url_for("'payment_successful', session_id=session_id")
+                'redirect': url_for("'payment_successful', session_id=session_id, source='Razorpay'")
 
                     # Add any other parameters as required
                 }
@@ -1231,10 +1231,10 @@ def process_cash(session_id):
         return render_template("cash.html")
 
 
-@app.route('/success/<session_id>', methods=['GET', 'POST'])
-def payment_successful(session_id):
-    source = request.args.get('source')
-    print(f"the source is {source}")
+@app.route('/success/<session_id>/<source>', methods=['GET', 'POST'])
+def payment_successful(session_id, source):
+    # source = request.args.get('source')
+    # print(f"the source is {source}")
     return render_template("loading.html", session_id=session_id, source=source)
 
 @app.route('/process/<session_id>/<source>', methods=['POST'])
