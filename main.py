@@ -20,6 +20,8 @@ from ccavutil import encrypt
 from test import send_grid_ticket
 from test2 import get_date
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 app.secret_key = '#register_with_hashtag0909'
@@ -1241,192 +1243,300 @@ def payment_successful(session_id, source):
     # print(f"the source is {source}")
     return render_template("loading.html", session_id=session_id, source=source)
 
+# @app.route('/process/<session_id>/<source>', methods=['POST'])
+# def process_data(session_id, source):
+#     # session_id = request.form.get('session_id')
+#     print(session_id)
+#     print('final_session_id')
+#     print(user_data)
+#
+#
+#     print(session)
+#     sheet = client.open_by_key(sheet_key).worksheet('Registrations')
+#
+#     # today_date = datetime.today().strftime('%d-%b-%Y')
+#
+#     # Error Fixed
+#
+#     # name = session.get('name')
+#     # phone = session.get('phone')
+#     # email = session.get('email')
+#     # order_receipt = session.get('order_receipt')
+#     # fee_without_gst = session.get('fee_without_gst')
+#     # validity = session.get('validity')
+#     # fee = session.get('fee')
+#     # studio = session.get('studio')
+#     # mode_of_payment = session.get('mode_of_payment')
+#     # promo_code_applied = session.get('promo_code_applied')
+#     #
+#     name = user_data[session_id]['name']
+#     phone = user_data[session_id]['phone']
+#     email = user_data[session_id]['email']
+#     batch = user_data[session_id]['batch']
+#     order_receipt = user_data[session_id]['order_receipt']
+#     fee_without_gst = user_data[session_id]['fee_without_gst']
+#     validity = user_data[session_id]['validity']
+#     fee = user_data[session_id]['fee_with_gst']
+#     gst = user_data[session_id]['gst']
+#     studio = user_data[session_id]['studio']
+#     fee_with_gst = user_data[session_id]['fee_with_gst']
+#     fee_final = user_data[session_id]['fee_final']
+#     promo_code_applied= user_data[session_id]['promo_code_applied']
+#     razorpay_id = ""
+#     print(validity)
+#     print('should be drop in')
+#
+#     print(f"Validity is {validity}")
+#     def get_paid_to(studio):
+#         if studio in ["NDA", "SD", "GGN", "IPM"]:
+#             return "Manas"
+#         else:
+#             return "Ayushi"
+#
+#
+#
+#
+#     internet_handling_fees = user_data[session_id]['internet_handling_fees']
+#
+#
+#     if source == "Cash":
+#         user_data[session_id]['mode_of_payment'] = "Cash"
+#         user_data[session_id]['paid_to'] = user_data[session_id]['wingperson']
+#
+#         mode_of_payment = user_data[session_id]['mode_of_payment']
+#         paid_to = user_data[session_id]['paid_to']
+#         internet_handling_fees = 0
+#         razorpay_id = "N/A"
+#         fee = fee_with_gst
+#
+#     else:
+#
+#         user_data[session_id]['mode_of_payment'] = "Razorpay"
+#         user_data[session_id]['paid_to'] = get_paid_to(studio)
+#         mode_of_payment = user_data[session_id]['mode_of_payment']
+#         paid_to = user_data[session_id]['paid_to']
+#         fee = fee_final
+#         razorpay_id = user_data[session_id]['razorpay_id']
+#         print(user_data)
+#
+#
+#
+#
+#
+#         # if promo_data is not None:
+#
+#
+#     if validity == "Drop In":
+#         batch_str=batch
+#         # batch_str = session.get('batch')
+#         promo_code_created = create_promo_json(name, email, phone, fee_without_gst, session.get('dropin_date'),
+#                                        "promo_code.json")
+#         row = [name, phone, email, "#" + "DropIn","", validity, batch_str,"","", fee_without_gst, gst, fee,
+#                mode_of_payment, paid_to, promo_code_created,razorpay_id, internet_handling_fees, studio]
+#     elif validity == "500" or "400":
+#
+#
+#
+#         # rendered_receipt = render_template("receipt2.html", date=today_date, name=name, phone=phone,
+#         #                                    validity="PINKD", email=email, studio=studio, gross_amount=fee_without_gst,
+#         #                                    gst=gst, internet_handling_fees=internet_handling_fees, fee=fee,
+#         #                                    order_receipt=f"#PAC{str(order_receipt)}",
+#         #                                    mode_of_payment=mode_of_payment, paid_to=paid_to, razorpay_id=razorpay_id)
+#         #
+#         # print("reciptrendered")
+#         def get_ticket_number():
+#
+#             with open(f"{studio}_ticket_number.txt", "r") as file:
+#                 current_receipt_number = int(file.read())
+#             return str(current_receipt_number)
+#
+#         remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
+#
+#         number_of_tickets = user_data[session_id]['numberOfTickets']
+#         # send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
+#
+#
+#         # return redirect(url_for('final_success', session_id=session_id))
+#         first_name = name.split()[0]
+#         last_name = name.split()[1]
+#
+#
+#         ticket_numbers_list = send_grid_ticket(name,first_name, last_name,phone,email, studio, number_of_tickets, email, price=validity)
+#         ticket_numbers_str = ", ".join(ticket_numbers_list)
+#         row = [get_date(), name, phone, email, studio, validity, ticket_numbers_str, number_of_tickets,
+#                fee_without_gst, gst,
+#                fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
+#
+#
+#         # sheet.append_row(row)
+#         logger.info('row added')
+#         remove_promo_code(name,email,phone,promo_code_applied,"promo_code.json")
+#         print("promoremoved")
+#         logger.info('succes didnt happened')
+#         return jsonify({'status': 'success'})
+#         print("FinalDOne")
+#     elif validity == "landingpage":
+#         row = [name, phone, email, "#" + "LandingPage", "", validity, "", "", "", fee_without_gst, gst,
+#                fee,
+#                mode_of_payment, paid_to, "", razorpay_id, internet_handling_fees, ""]
+#         # sheet.append_row(row)
+#         return jsonify({'status': 'success'})
+#
+#
+#
+#     else:
+#
+#         batch_str = ', '.join(user_data[session_id]['batch'])  # Join the batches list with a comma separator
+#         print(f"thi is {batch_str}")
+#
+#         # promo_code_applied = user_data[session_id]['promo_code_applied']
+#         promo_code_created = ""
+#
+#         if validity == "two_months_grid":
+#             validity = "May, Grid, June"
+#         # else:
+#         #     validity = "May, Grid, June"
+#         print(validity)
+#         increment_receipt_number()
+#         print(source)
+#
+#         row = [name, phone, email, "#PAC" + order_receipt,"", validity,"Offline", batch_str, "", fee_without_gst, gst, fee-internet_handling_fees,
+#                mode_of_payment, paid_to, "",f"OrderID : {razorpay_id} Razorpay Fees : ₹{internet_handling_fees}", "", studio]
+#
+#
+#     hashtag_logo = image_to_base64('./static/images/Hashtag_logo.png')
+#     hashtag_watermark = image_to_base64('./static/images/pink.png')
+#
+#     sheet.append_row(row)
+#     print("Succesfully added to sheets")
+#
+#     def send_receipt_background():
+#         rendered_receipt = render_template("receipt2.html", date=today_date, name=name, batch=batch_str, phone=phone,
+#                                            validity=validity, email=email, studio=studio, gross_amount=fee_without_gst,
+#                                            gst=gst, internet_handling_fees=internet_handling_fees, fee=fee, order_receipt=f"#PAC{str(order_receipt)}",
+#                                            mode_of_payment=mode_of_payment, paid_to=paid_to, hashtag_logo=hashtag_logo,
+#                                            watermark=hashtag_watermark, razorpay_id=razorpay_id, promo_code=promo_code_created)
+#
+#         print("reciptrendered")
+#
+#         send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt Grid'24")
+#
+#     thread = threading.Thread(target=send_receipt_background)
+#     thread.start()
+#     send_receipt_background()
+#     print("receipt sent")
+#
+#
+#
+#     return jsonify({'status': 'success'})
+
+
 @app.route('/process/<session_id>/<source>', methods=['POST'])
 def process_data(session_id, source):
-    # session_id = request.form.get('session_id')
-    print(session_id)
-    print('final_session_id')
-    print(user_data)
+    try:
+        if session_id not in user_data:
+            logger.error(f'Session ID {session_id} not found in user_data.')
+            return jsonify({'status': 'error', 'message': 'Invalid session ID'}), 400
 
+        user_session = user_data[session_id]
 
-    print(session)
-    sheet = client.open_by_key(sheet_key).worksheet('Registrations')
+        name = user_session.get('name')
+        phone = user_session.get('phone')
+        email = user_session.get('email')
+        batch = user_session.get('batch')
+        order_receipt = user_session.get('order_receipt')
+        fee_without_gst = user_session.get('fee_without_gst')
+        validity = user_session.get('validity')
+        fee = user_session.get('fee_with_gst')
+        gst = user_session.get('gst')
+        studio = user_session.get('studio')
+        fee_with_gst = user_session.get('fee_with_gst')
+        fee_final = user_session.get('fee_final')
+        promo_code_applied = user_session.get('promo_code_applied')
+        internet_handling_fees = user_session.get('internet_handling_fees')
 
-    # today_date = datetime.today().strftime('%d-%b-%Y')
+        def get_paid_to(studio):
+            if studio in ["NDA", "SD", "GGN", "IPM"]:
+                return "Manas"
+            else:
+                return "Ayushi"
 
-    # Error Fixed
-
-    # name = session.get('name')
-    # phone = session.get('phone')
-    # email = session.get('email')
-    # order_receipt = session.get('order_receipt')
-    # fee_without_gst = session.get('fee_without_gst')
-    # validity = session.get('validity')
-    # fee = session.get('fee')
-    # studio = session.get('studio')
-    # mode_of_payment = session.get('mode_of_payment')
-    # promo_code_applied = session.get('promo_code_applied')
-    #
-    name = user_data[session_id]['name']
-    phone = user_data[session_id]['phone']
-    email = user_data[session_id]['email']
-    batch = user_data[session_id]['batch']
-    order_receipt = user_data[session_id]['order_receipt']
-    fee_without_gst = user_data[session_id]['fee_without_gst']
-    validity = user_data[session_id]['validity']
-    fee = user_data[session_id]['fee_with_gst']
-    gst = user_data[session_id]['gst']
-    studio = user_data[session_id]['studio']
-    fee_with_gst = user_data[session_id]['fee_with_gst']
-    fee_final = user_data[session_id]['fee_final']
-    promo_code_applied= user_data[session_id]['promo_code_applied']
-    razorpay_id = ""
-    print(validity)
-    print('should be drop in')
-
-    print(f"Validity is {validity}")
-    def get_paid_to(studio):
-        if studio in ["NDA", "SD", "GGN", "IPM"]:
-            return "Manas"
+        if source == "Cash":
+            mode_of_payment = "Cash"
+            paid_to = user_session.get('wingperson')
+            internet_handling_fees = 0
+            razorpay_id = "N/A"
+            fee = fee_with_gst
         else:
-            return "Ayushi"
+            mode_of_payment = "Razorpay"
+            paid_to = get_paid_to(studio)
+            razorpay_id = user_session.get('razorpay_id')
+            fee = fee_final
 
+        sheet = client.open_by_key(sheet_key).worksheet('Registrations')
 
+        if validity == "Drop In":
+            batch_str = batch
+            promo_code_created = create_promo_json(name, email, phone, fee_without_gst, session.get('dropin_date'), "promo_code.json")
+            row = [name, phone, email, "#" + "DropIn", "", validity, batch_str, "", "", fee_without_gst, gst, fee,
+                   mode_of_payment, paid_to, promo_code_created, razorpay_id, internet_handling_fees, studio]
+        elif validity in ["500", "400"]:
+            def get_ticket_number():
+                with open(f"{studio}_ticket_number.txt", "r") as file:
+                    current_receipt_number = int(file.read())
+                return str(current_receipt_number)
 
+            remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
 
-    internet_handling_fees = user_data[session_id]['internet_handling_fees']
+            number_of_tickets = user_session.get('numberOfTickets')
+            first_name = name.split()[0]
+            last_name = name.split()[1]
 
+            ticket_numbers_list = send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, email, price=validity)
+            ticket_numbers_str = ", ".join(ticket_numbers_list)
+            row = [get_date(), name, phone, email, studio, validity, ticket_numbers_str, number_of_tickets,
+                   fee_without_gst, gst, fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
 
-    if source == "Cash":
-        user_data[session_id]['mode_of_payment'] = "Cash"
-        user_data[session_id]['paid_to'] = user_data[session_id]['wingperson']
+            logger.info('Row added to sheet')
+            remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
+            logger.info('Promo code removed')
+            return jsonify({'status': 'success'})
+        elif validity == "landingpage":
+            row = [name, phone, email, "#" + "LandingPage", "", validity, "", "", "", fee_without_gst, gst, fee,
+                   mode_of_payment, paid_to, "", razorpay_id, internet_handling_fees, ""]
+            return jsonify({'status': 'success'})
+        else:
+            batch_str = ', '.join(user_session.get('batch'))
+            promo_code_created = ""
+            if validity == "two_months_grid":
+                validity = "May, Grid, June"
+            increment_receipt_number()
 
-        mode_of_payment = user_data[session_id]['mode_of_payment']
-        paid_to = user_data[session_id]['paid_to']
-        internet_handling_fees = 0
-        razorpay_id = "N/A"
-        fee = fee_with_gst
+            row = [name, phone, email, "#PAC" + order_receipt, "", validity, "Offline", batch_str, "", fee_without_gst, gst,
+                   fee - internet_handling_fees, mode_of_payment, paid_to, "", f"OrderID : {razorpay_id} Razorpay Fees : ₹{internet_handling_fees}", "", studio]
 
-    else:
+        hashtag_logo = image_to_base64('./static/images/Hashtag_logo.png')
+        hashtag_watermark = image_to_base64('./static/images/pink.png')
 
-        user_data[session_id]['mode_of_payment'] = "Razorpay"
-        user_data[session_id]['paid_to'] = get_paid_to(studio)
-        mode_of_payment = user_data[session_id]['mode_of_payment']
-        paid_to = user_data[session_id]['paid_to']
-        fee = fee_final
-        razorpay_id = user_data[session_id]['razorpay_id']
-        print(user_data)
+        sheet.append_row(row)
+        logger.info('Successfully added to sheets')
 
+        def send_receipt_background():
+            rendered_receipt = render_template("receipt2.html", date=datetime.now().strftime('%d-%b-%Y'), name=name, batch=batch_str, phone=phone,
+                                               validity=validity, email=email, studio=studio, gross_amount=fee_without_gst,
+                                               gst=gst, internet_handling_fees=internet_handling_fees, fee=fee, order_receipt=f"#PAC{str(order_receipt)}",
+                                               mode_of_payment=mode_of_payment, paid_to=paid_to, hashtag_logo=hashtag_logo,
+                                               watermark=hashtag_watermark, razorpay_id=razorpay_id, promo_code=promo_code_created)
+            send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt Grid'24")
 
+        thread = threading.Thread(target=send_receipt_background)
+        thread.start()
+        logger.info('Receipt sent')
 
-
-
-        # if promo_data is not None:
-
-
-    if validity == "Drop In":
-        batch_str=batch
-        # batch_str = session.get('batch')
-        promo_code_created = create_promo_json(name, email, phone, fee_without_gst, session.get('dropin_date'),
-                                       "promo_code.json")
-        row = [name, phone, email, "#" + "DropIn","", validity, batch_str,"","", fee_without_gst, gst, fee,
-               mode_of_payment, paid_to, promo_code_created,razorpay_id, internet_handling_fees, studio]
-    elif validity == "500" or "400":
-
-
-
-        # rendered_receipt = render_template("receipt2.html", date=today_date, name=name, phone=phone,
-        #                                    validity="PINKD", email=email, studio=studio, gross_amount=fee_without_gst,
-        #                                    gst=gst, internet_handling_fees=internet_handling_fees, fee=fee,
-        #                                    order_receipt=f"#PAC{str(order_receipt)}",
-        #                                    mode_of_payment=mode_of_payment, paid_to=paid_to, razorpay_id=razorpay_id)
-        #
-        # print("reciptrendered")
-        def get_ticket_number():
-
-            with open(f"{studio}_ticket_number.txt", "r") as file:
-                current_receipt_number = int(file.read())
-            return str(current_receipt_number)
-
-        remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
-
-        number_of_tickets = user_data[session_id]['numberOfTickets']
-        # send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
-
-
-        # return redirect(url_for('final_success', session_id=session_id))
-        first_name = name.split()[0]
-        last_name = name.split()[1]
-
-
-        ticket_numbers_list = send_grid_ticket(name,first_name, last_name,phone,email, studio, number_of_tickets, email, price=validity)
-        ticket_numbers_str = ", ".join(ticket_numbers_list)
-        row = [get_date(), name, phone, email, studio, validity, ticket_numbers_str, number_of_tickets,
-               fee_without_gst, gst,
-               fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
-
-
-        # sheet.append_row(row)
-        logger.info('row added')
-        remove_promo_code(name,email,phone,promo_code_applied,"promo_code.json")
-        print("promoremoved")
-        logger.info('succes didnt happened')
         return jsonify({'status': 'success'})
-        print("FinalDOne")
-    elif validity == "landingpage":
-        row = [name, phone, email, "#" + "LandingPage", "", validity, "", "", "", fee_without_gst, gst,
-               fee,
-               mode_of_payment, paid_to, "", razorpay_id, internet_handling_fees, ""]
-        # sheet.append_row(row)
-        return jsonify({'status': 'success'})
-
-
-
-    else:
-
-        batch_str = ', '.join(user_data[session_id]['batch'])  # Join the batches list with a comma separator
-        print(f"thi is {batch_str}")
-
-        # promo_code_applied = user_data[session_id]['promo_code_applied']
-        promo_code_created = ""
-
-        if validity == "two_months_grid":
-            validity = "May, Grid, June"
-        # else:
-        #     validity = "May, Grid, June"
-        print(validity)
-        increment_receipt_number()
-        print(source)
-
-        row = [name, phone, email, "#PAC" + order_receipt,"", validity,"Offline", batch_str, "", fee_without_gst, gst, fee-internet_handling_fees,
-               mode_of_payment, paid_to, "",f"OrderID : {razorpay_id} Razorpay Fees : ₹{internet_handling_fees}", "", studio]
-
-
-    hashtag_logo = image_to_base64('./static/images/Hashtag_logo.png')
-    hashtag_watermark = image_to_base64('./static/images/pink.png')
-
-    sheet.append_row(row)
-    print("Succesfully added to sheets")
-
-    def send_receipt_background():
-        rendered_receipt = render_template("receipt2.html", date=today_date, name=name, batch=batch_str, phone=phone,
-                                           validity=validity, email=email, studio=studio, gross_amount=fee_without_gst,
-                                           gst=gst, internet_handling_fees=internet_handling_fees, fee=fee, order_receipt=f"#PAC{str(order_receipt)}",
-                                           mode_of_payment=mode_of_payment, paid_to=paid_to, hashtag_logo=hashtag_logo,
-                                           watermark=hashtag_watermark, razorpay_id=razorpay_id, promo_code=promo_code_created)
-
-        print("reciptrendered")
-
-        send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt Grid'24")
-
-    thread = threading.Thread(target=send_receipt_background)
-    thread.start()
-    send_receipt_background()
-    print("receipt sent")
-
-
-
-    return jsonify({'status': 'success'})
+    except Exception as e:
+        logger.error(f'Error processing data: {e}', exc_info=True)
+        return jsonify({'status': 'error', 'message': 'An error occurred during processing'}), 500
 
 # def render_recipt(date):
 #     return render_template("receipt2.html", date=today_date, name=name, batch=batch_str, phone=phone,
