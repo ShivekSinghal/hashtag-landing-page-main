@@ -1234,8 +1234,8 @@ def process_cash(session_id):
 @app.route('/success/<session_id>', methods=['GET', 'POST'])
 def payment_successful(session_id):
     source = request.args.get('source')
-    print(source)
-    return render_template("loading.html", session_id=session_id, source="Razorpay")
+    print(f"the source is {source}")
+    return render_template("loading.html", session_id=session_id, source=source)
 
 @app.route('/process/<session_id>/<source>', methods=['POST'])
 def process_data(session_id, source):

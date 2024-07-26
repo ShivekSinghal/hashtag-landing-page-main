@@ -118,7 +118,7 @@ p {
             description: 'Payment for Registration',
             handler: function(response, error) {
                 if (response.razorpay_payment_id) {
-                    window.location.href = '{{ url_for('payment_successful', session_id=session_id) }}';
+                    window.location.href = '{{ url_for('payment_successful', session_id=session_id, source='Razorpay') }}';
                 } else {
                     window.location.href = "/failed";
                 }
