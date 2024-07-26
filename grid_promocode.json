@@ -711,6 +711,16 @@
         "phone": "9999799357",
         "amount": "1000"
     },
+
+    {
+        "promo_code": "#test_shivek",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshivek24@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+
     {
         "promo_code": "#batch1_GUSB5W",
         "expiry": "2024-07-30 23:59:59",

@@ -278,7 +278,7 @@ def remove_promo_code(name, email, phone, promo_code, filename):
         if (
                 promo_entry.get("name") == name
                 and promo_entry.get("email") == email
-                and promo_entry.get("phone") == phone
+                # and promo_entry.get("phone") == phone
                 and promo_entry.get("promo_code") == promo_code
                 and check_promo_validity(datetime.datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
         ):
@@ -1344,7 +1344,7 @@ def process_data(session_id, source):
                 current_receipt_number = int(file.read())
             return str(current_receipt_number)
 
-
+        remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
 
         number_of_tickets = user_data[session_id]['numberOfTickets']
         # send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Pink'D 2024 Receipt")
