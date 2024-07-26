@@ -1456,7 +1456,7 @@ def process_data(session_id, source):
         fee_final = user_session.get('fee_final')
         promo_code_applied = user_session.get('promo_code_applied')
         internet_handling_fees = user_session.get('internet_handling_fees')
-
+        # sheet = client.open_by_key('1cJdiWjKzOMK6kVkPWBfhBVGTy_bsxDBwDbwlagkQfY4').worksheet('Registrations')
         def get_paid_to(studio):
             if studio in ["NDA", "SD", "GGN", "IPM"]:
                 return "Manas"
@@ -1475,7 +1475,7 @@ def process_data(session_id, source):
             razorpay_id = user_session.get('razorpay_id')
             fee = fee_final
 
-        sheet = client.open_by_key(sheet_key).worksheet('Registrations')
+
 
         if validity == "Drop In":
             batch_str = batch
@@ -1498,7 +1498,7 @@ def process_data(session_id, source):
             ticket_numbers_str = ", ".join(ticket_numbers_list)
             row = [get_date(), name, phone, email, studio, validity, ticket_numbers_str, number_of_tickets,
                    fee_without_gst, gst, fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
-            sheet.append_row(row)
+            # sheet.append_row(row)
             logger.info('Row added to sheet')
             remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
             logger.info('Promo code removed')
