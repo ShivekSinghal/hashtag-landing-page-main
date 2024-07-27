@@ -1,4 +1,135 @@
 [
+
+     {
+        "promo_code": "companytest_1",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Ayushi Pathania",
+        "email": "ayushi.pathania@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_2",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Divija Malhotra",
+        "email": "divijamalhotra@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_3",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Divyata Anand",
+        "email": "divyataanand@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_4",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Hashtag",
+        "email": "universal@hashtag.dance",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_5",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Jahnvi Rao",
+        "email": "jahnvi.ydv48@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_6",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Jhilmil Modi",
+        "email": "modi.jhilmil@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_7",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Kajal Sharma",
+        "email": "kajalsharma604@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_8",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Kriti Rao",
+        "email": "lovable929@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_9",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Manas Yellapantula",
+        "email": "manas210890@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_10",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Manav Sadh",
+        "email": "dancecaptureofficial@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_11",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Muskan Setia",
+        "email": "muskansetia16@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_12",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Priyanshi Kamboj",
+        "email": "priyanshiikamboj05@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_13",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Rubani Manaktala",
+        "email": "rubanimay01@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_14",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshivek24@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_15",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Tanisha Rigo",
+        "email": "tanisha902@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "companytest_16",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Tarun Ahuja",
+        "email": "ahujatarun29@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+
+
     {
         "promo_code": "#batch1_24I8AG",
         "expiry": "2024-07-30 23:59:59",
@@ -1540,7 +1671,7 @@
         "promo_code": "#batch1_2W1AG3",
         "expiry": "2024-07-30 23:59:59",
         "name": "Shreya Puri",
-        "email": "shreyapuri03@gmail.com",
+        "email": "shreyapuri2024@gmail.com",
         "phone": "9999799357",
         "amount": "500"
     },
@@ -3876,7 +4007,7 @@
         "promo_code": "#batch1_EXEXHY",
         "expiry": "2024-07-30 23:59:59",
         "name": "Sanskriti Kapoor",
-        "email": "kapoorsans16@gmail.com",
+        "email": "sanskriti.kapoor016@gmail.com",
         "phone": "9999799357",
         "amount": "500"
     },
