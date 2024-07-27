@@ -244,12 +244,12 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
     subject = "Grid Tickets"
     body = f"Please find attached your tickets for Show on {show}."
 
-    # send_email_with_attachments(to_email, subject, body, attachment_paths)
+    send_email_with_attachments(to_email, subject, body, attachment_paths)
 
     # Clean up generated tickets
     for path in attachment_paths:
         os.remove(path)
 
-    return ticket_numbers
+    # return ticket_numbers
 
 # Example usage:

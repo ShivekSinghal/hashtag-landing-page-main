@@ -1498,8 +1498,12 @@ def process_data(session_id, source):
             first_name = name.split()[0]
             last_name = name.split()[1]
 
+
             # ticket_numbers_list = send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, email, price=validity)
             # ticket_numbers_str = ", ".join(ticket_numbers_list)
+            # ticket_numbers_str
+            # send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, email,
+            #                  price=validity)
             row = [get_date(), name, phone, email, studio, validity, number_of_tickets,
                    fee_without_gst, gst, fee, promo_code_applied, mode_of_payment, razorpay_id, internet_handling_fees]
             sheet.append_row(row)

@@ -29,7 +29,7 @@ def create_ticket(name, ticket_number, qr_data, template_path, output_path, pric
     qr_position = (1063, 162)  # Adjust the position accordingly
     qr_size = 30
 
-    event_date = ticket_number[:8]  # Extract the event date from the ticket number
+    event_date = ticket_number[:14]  # Extract the event date from the ticket number
     event_date_position = (386.26, 267)
 
     price = f"Rs. {price}"
@@ -61,16 +61,20 @@ def increment_ticket_number(filename):
     return new_ticket_number
 
 def generate_tickets(name, first_name, last_name, phone, email, show, number_of_tickets, price):
-    template_path = "ticket_template.png"
+    print("generation started")
+    template_path = "ticket_template-min.webp"
     ticket_file = f"{show}_ticket_number.txt"  # Use separate files for each show
+    print("template loaded")
 
     ticket_numbers = []
 
     for _ in range(int(number_of_tickets)):
+        print(show)
+        fullname = first_name + last_name
         ticket_number = show + str(increment_ticket_number(ticket_file))  # Get and increment the current ticket number for the specified show
-        qr_data = f"https://docs.google.com/forms/d/e/1FAIpQLScLU6j8PKGlxsa5LV-PY9XHRl-Y1mr04vDgp8Eo8ApbmE4gXQ/viewform?usp=pp_url&entry.1211795223={first_name + last_name}&entry.669271916={phone}&entry.539132351={email}&entry.966328261={show}&entry.1058215280={ticket_number}"
-        output_path = f"{show}_ticket_{ticket_number}.png"
+        qr_data = f"https://docs.google.com/forms/d/e/1FAIpQLScLU6j8PKGlxsa5LV-PY9XHRl-Y1mr04vDgp8Eo8ApbmE4gXQ/viewform?usp=pp_url&entry.1211795223={fullname}&entry.669271916={phone}&entry.539132351={email}&entry.966328261={show}&entry.1058215280={ticket_number}"
+        output_path = f"{show}_ticket_{ticket_number}.webp"
         create_ticket(name, ticket_number, qr_data, template_path, output_path, price)
         ticket_numbers.append(ticket_number)
 
-    return ticket_numbers, [f"{show}_ticket_{ticket_number}.png" for ticket_number in ticket_numbers]
+    return ticket_numbers, [f"{show}_ticket_{ticket_number}.webp" for ticket_number in ticket_numbers]
