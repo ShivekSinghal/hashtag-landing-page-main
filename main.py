@@ -1515,7 +1515,7 @@ def process_data(session_id, source):
             print("Sheet Appended")
             # download_links = send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, price=validity)
 
-            return redirect(url_for('final_success', download_links=download_links))
+            return jsonify({'status': 'success'})
 
         elif validity == "landingpage":
             row = [name, phone, email, "#" + "LandingPage", "", validity, "", "", "", fee_without_gst, gst, fee,
