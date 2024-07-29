@@ -1,6 +1,5 @@
 [
-
-     {
+    {
         "promo_code": "companytest_1",
         "expiry": "2024-07-31 23:59:59",
         "name": "Ayushi Pathania",
@@ -105,14 +104,6 @@
         "amount": "500"
     },
     {
-        "promo_code": "companytest_14",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Shivek Singhal",
-        "email": "singhalshivek24@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
         "promo_code": "companytest_15",
         "expiry": "2024-07-31 23:59:59",
         "name": "Tanisha Rigo",
@@ -128,8 +119,6 @@
         "phone": "8527805203",
         "amount": "500"
     },
-
-
     {
         "promo_code": "#batch1_24I8AG",
         "expiry": "2024-07-30 23:59:59",
@@ -1242,7 +1231,6 @@
         "phone": "9999799357",
         "amount": "500"
     },
-
     {
         "promo_code": "#batch1_P6AWI4",
         "expiry": "2024-07-30 23:59:59",
@@ -2696,6 +2684,14 @@
         "expiry": "2024-07-30 23:59:59",
         "name": "Arshiya Sridhar",
         "email": "arshiyasri02@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#test",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshivek24@gmail.com",
         "phone": "9999799357",
         "amount": "500"
     },

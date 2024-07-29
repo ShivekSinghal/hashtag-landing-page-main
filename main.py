@@ -84,7 +84,7 @@ def razorpay_client_credentials(studio):
         razorpay_key_secret = ''
 
     elif studio == "03-August-2024":
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        # 'razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
         # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
 
         razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
@@ -260,8 +260,8 @@ def apply_promo_code(name, email, phone, promo_code, filename):
 
         for promo_entry in promo_data:
             if (
-                    promo_entry.get("name") == name
-                    and promo_entry.get("email") == email
+                    # promo_entry.get("name") == name
+                    promo_entry.get("email") == email
                     # and promo_entry.get("phone") == phone
                     and promo_entry.get("promo_code") == promo_code
                     and check_promo_validity(datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
@@ -284,8 +284,8 @@ def remove_promo_code(name, email, phone, promo_code, filename):
 
     for promo_entry in promo_data:
         if (
-                promo_entry.get("name") == name
-                and promo_entry.get("email") == email
+                # promo_entry.get("name") == name
+                promo_entry.get("email") == email
                 # and promo_entry.get("phone") == phone
                 and promo_entry.get("promo_code") == promo_code
                 and check_promo_validity(datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
@@ -1495,12 +1495,14 @@ def process_data(session_id, source):
             logger.error(f'Promo Code removed')
 
             number_of_tickets = user_session.get('numberOfTickets')
+            print(number_of_tickets)
             first_name = name.split()[0]
             last_name = name.split()[1]
 
 
-            # ticket_numbers_list = send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, email, price=validity)
+            # ticket_numbers_list = send_grid_ticket(name, first_name, last_name, phone, email,studio, number_of_tickets,email,validity)
             # ticket_numbers_str = ", ".join(ticket_numbers_list)
+            # print(ticket_numbers_str)
             # ticket_numbers_str
             # send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, email,
             #                  price=validity)
@@ -1511,8 +1513,10 @@ def process_data(session_id, source):
             remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
             logger.info('Promo code removed')
             print("Sheet Appended")
+            download_links = send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, price=validity)
 
-            return jsonify({'status': 'success'})
+            return redirect(url_for('final_success', download_links=download_links))
+
         elif validity == "landingpage":
             row = [name, phone, email, "#" + "LandingPage", "", validity, "", "", "", fee_without_gst, gst, fee,
                    mode_of_payment, paid_to, "", razorpay_id, internet_handling_fees, ""]
@@ -1559,7 +1563,9 @@ def process_data(session_id, source):
 
 @app.route('/final_success')
 def final_success():
-    return render_template("success.html")
+    download_links = request.args.getlist('download_links')
+
+    return render_template('success.html', download_links=download_links)
 @app.route('/terms')
 def terms_and_conditions():
     return render_template("terms.html")
