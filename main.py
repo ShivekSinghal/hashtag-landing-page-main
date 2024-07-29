@@ -1513,7 +1513,7 @@ def process_data(session_id, source):
             remove_promo_code(name, email, phone, promo_code_applied, "promo_code.json")
             logger.info('Promo code removed')
             print("Sheet Appended")
-            download_links = send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, price=validity)
+            # download_links = send_grid_ticket(name, first_name, last_name, phone, email, studio, number_of_tickets, price=validity)
 
             return redirect(url_for('final_success', download_links=download_links))
 
