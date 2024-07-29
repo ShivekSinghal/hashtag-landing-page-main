@@ -136,22 +136,6 @@ def generate_random_promo_code(length=8 ):
     return f"Hashtag{''.join(random.choice(characters) for _ in range(length))}"
 
 
-def load_promo_data(filename):
-    try:
-        if not os.path.exists(filename):
-            return []  # Return an empty list if the file doesn't exist
-
-        with open(filename, 'r') as json_file:
-            promo_data = json.load(json_file)
-
-        # Ensure that promo_data is a list, or initialize an empty list
-        if not isinstance(promo_data, list):
-            promo_data = []
-
-        return promo_data
-
-    except (FileNotFoundError, json.JSONDecodeError):
-        return []
 def get_studio_wingperson(studio):
     if studio == "NDA":
         wingperson = "Priyanshi"
@@ -223,11 +207,6 @@ def get_studio_location(studio):
 
 
 
-def check_promo_validity(expiry_date):
-    try:
-        return expiry_date >= datetime.now()
-    except ValueError:
-        return False  # Handle invalid date format
 
 
 def create_promo_json(name, email, phone, amount, dropin_date, filename):
@@ -253,47 +232,83 @@ def create_promo_json(name, email, phone, amount, dropin_date, filename):
     return promo_code  # Return the generated promo code
 
 
+def load_promo_data(filename):
+    try:
+        if not os.path.exists(filename):
+            return []  # Return an empty list if the file doesn't exist
+        with open(filename, 'r') as json_file:
+            promo_data = json.load(json_file)
+        # Ensure that promo_data is a list, or initialize an empty list
+        if not isinstance(promo_data, list):
+            promo_data = []
+        return promo_data
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+# Function to check if the promo code is still valid
+def check_promo_validity(expiry_date):
+    try:
+        expiry_date = datetime.strptime(expiry_date, "%Y-%m-%d %H:%M:%S")
+        return expiry_date >= datetime.now()
+    except ValueError:
+        return False  # Handle invalid date format
+
+# Function to apply the promo code
 def apply_promo_code(name, email, phone, promo_code, filename):
     try:
         promo_data = load_promo_data(filename)
+        print(f"Promo DATA {promo_data}")
         amount = 0
 
         for promo_entry in promo_data:
-            if (
-                    # promo_entry.get("name") == name
-                    promo_entry.get("email") == email
-                    # and promo_entry.get("phone") == phone
-                    and promo_entry.get("promo_code") == promo_code
-                    and check_promo_validity(datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
-            # Corrected usage
-            ):
-                print("applied")
+            if (promo_entry.get("email") == email
+                and promo_entry.get("promo_code") == promo_code):
+                # and check_promo_validity(promo_entry["expiry"])
+                print("Promo code applied successfully")
                 amount = float(promo_entry.get('amount'))
                 break
+
         return amount
-    except (FileNotFoundError, json.JSONDecodeError, KeyError):
-        return False  # Handle exceptions gracefully
+    except (FileNotFoundError, json.JSONDecodeError, KeyError) as e:
+        print(f"Error: {e}")
+        return 0  # Handle exceptions gracefully
 
-
-    return 0  # No matching or valid promo code found
-
-
-
+# Function to remove the used promo code
 def remove_promo_code(name, email, phone, promo_code, filename):
     promo_data = load_promo_data(filename)
 
     for promo_entry in promo_data:
-        if (
-                # promo_entry.get("name") == name
-                promo_entry.get("email") == email
-                # and promo_entry.get("phone") == phone
-                and promo_entry.get("promo_code") == promo_code
-                and check_promo_validity(datetime.strptime(promo_entry["expiry"], "%Y-%m-%d %H:%M:%S"))
-        ):
+        if (promo_entry.get("email") == email
+            and promo_entry.get("promo_code") == promo_code
+            and check_promo_validity(promo_entry["expiry"])):
             promo_data.remove(promo_entry)
 
             with open(filename, 'w') as json_file:
                 json.dump(promo_data, json_file, indent=4)
+            print("Promo code removed successfully")
+            return
+
+    print("Promo code not found or already expired")
+
+# Example usage:
+filename = "promo_code.json"
+name = "Eliana Khanna"
+email = "maansikhanna@gmail.com"
+phone = "9999799357"
+promo_code = "#batch4_NQU8DY"
+
+# Apply promo code
+discount = apply_promo_code(name, email, phone, promo_code, filename)
+if discount > 0:
+    print(f"Promo code applied. Discount amount: {discount}")
+    # Remove promo code after applying
+    remove_promo_code(name, email, phone, promo_code, filename)
+else:
+    print("Invalid promo code or expired")
+
+
+
+
 
 # Your Cc avenue API credentials
 
@@ -815,12 +830,10 @@ def registration_form_ticket2():
 
 
 @app.route('/selectticket', methods=['GET', 'POST'])
+@app.route('/selectticket', methods=['GET', 'POST'])
 def select_ticket():
-
     session['session_id'] = os.urandom(16).hex()
     session_id = session['session_id']
-
-    print("started")
 
     session['name'] = request.form['name']
     session['phone'] = request.form['phone']
@@ -832,18 +845,12 @@ def select_ticket():
     phone = session.get('phone')
     email = session.get('email')
     studio = session.get('studio')
-    print("staerted1")
-    print(name)
-    print(phone)
 
     now = datetime.now()
     today_date = now.strftime('%d-%b-%Y %H:%M:%S')
-    print("datedone")
     sheet = client.open_by_key(sheet_key).worksheet("Tickets")
     registration_data = [today_date, name, phone, email, studio]
-    # print("not done")
     sheet.append_row(registration_data)
-    print("done")
 
     promo_code_applied = session.get('promo_code_applied')
 
@@ -862,25 +869,20 @@ def select_ticket():
     user_data[session_id]['studio'] = studio
     user_data[session_id]['promo_code_applied'] = promo_code_applied
 
-    print(user_data)
-    print("withpromo")
+    print("The discount is jebfrej")
 
+    discount = apply_promo_code(name, email, phone, promo_code_applied, filename="promo_code.json")
+    print(discount)
+    if promo_code_applied == "":
+        discount = 0
+        return render_template('selectticket.html', session_id=session_id, discount=discount)
 
-    promo_data = load_promo_data("promo_data.json")
-    if promo_data is not None:
-        discount = int(apply_promo_code(name, email, phone, promo_code_applied, filename="promo_code.json"))
-        if promo_code_applied == "":
-            discount = 0
-            return render_template('selectticket.html', session_id=session_id ,discount=discount)
-
-        if discount > 0:
-            print(discount)
-
-            return render_template('selectticket.html', session_id=session_id, discount=discount,
-                                   promo_message=f"Promo Code worth upto {discount} applied successfully")
-        if discount == 0:
-            return render_template('selectticket.html', session_id=session_id, discount=discount,
-                                   promo_message=f"Promo Code expired or invalid user details")
+    if discount > 0:
+        return render_template('selectticket.html', session_id=session_id, discount=discount,
+                               promo_message=f"Promo Code worth upto {discount} applied successfully")
+    else:
+        return render_template('selectticket.html', session_id=session_id, discount=0,
+                               promo_message=f"Promo Code expired or invalid user details")
 
 
 
