@@ -1,125 +1,5 @@
 [
     {
-        "promo_code": "companytest_1",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Ayushi Pathania",
-        "email": "ayushi.pathania@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_2",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Divija Malhotra",
-        "email": "divijamalhotra@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_3",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Divyata Anand",
-        "email": "divyataanand@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_4",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Hashtag",
-        "email": "universal@hashtag.dance",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_5",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Jahnvi Rao",
-        "email": "jahnvi.ydv48@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_6",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Jhilmil Modi",
-        "email": "modi.jhilmil@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_7",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Kajal Sharma",
-        "email": "kajalsharma604@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_8",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Kriti Rao",
-        "email": "lovable929@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_9",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Manas Yellapantula",
-        "email": "manas210890@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_10",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Manav Sadh",
-        "email": "dancecaptureofficial@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_11",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Muskan Setia",
-        "email": "muskansetia16@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_12",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Priyanshi Kamboj",
-        "email": "priyanshiikamboj05@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_13",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Rubani Manaktala",
-        "email": "rubanimay01@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_15",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Tanisha Rigo",
-        "email": "tanisha902@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
-        "promo_code": "companytest_16",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Tarun Ahuja",
-        "email": "ahujatarun29@gmail.com",
-        "phone": "8527805203",
-        "amount": "500"
-    },
-    {
         "promo_code": "#batch1_24I8AG",
         "expiry": "2024-07-30 23:59:59",
         "name": "Aaamyrah Jain",
@@ -132,14 +12,6 @@
         "expiry": "2024-07-30 23:59:59",
         "name": "Aadhya Rattan",
         "email": "ishi.malhotra05@gmail.com",
-        "phone": "9999799357",
-        "amount": "1000"
-    },
-    {
-        "promo_code": "#batch1_JL54JM",
-        "expiry": "2024-07-30 23:59:59",
-        "name": "Aadya Bansal",
-        "email": "esha.s.lall@gmail.com",
         "phone": "9999799357",
         "amount": "1000"
     },
@@ -176,14 +48,6 @@
         "amount": "500"
     },
     {
-        "promo_code": "#batch1_E6RT8H",
-        "expiry": "2024-07-30 23:59:59",
-        "name": "Aarav Thakur",
-        "email": "darshikathakur@gmail.com",
-        "phone": "9999799357",
-        "amount": "500"
-    },
-    {
         "promo_code": "#batch1_JE0HIR",
         "expiry": "2024-07-30 23:59:59",
         "name": "Aarika Nagpal",
@@ -200,26 +64,2714 @@
         "amount": "1000"
     },
     {
-        "promo_code": "#batch1_VKL6K9",
+        "promo_code": "#batch1_GY5TB9",
         "expiry": "2024-07-30 23:59:59",
-        "name": "Aarna Kanodia",
-        "email": "shwetabansal228@gmail.com",
+        "name": "Aashmee Gupta",
+        "email": "Meenal2609@gmail.com",
         "phone": "9999799357",
         "amount": "1000"
     },
     {
-        "promo_code": "#batch1_F6DP2I",
+        "promo_code": "#batch2_G0BQRF",
         "expiry": "2024-07-30 23:59:59",
-        "name": "Aarushi Chopra",
-        "email": "namanshi.kaul@gmail.com",
+        "name": "Aashna Bhoyar",
+        "email": "aashna.bhoyar@gmail.com",
         "phone": "9999799357",
         "amount": "500"
     },
     {
-        "promo_code": "#batch1_I7LTC3",
+        "promo_code": "#batch1_1PSBTF",
         "expiry": "2024-07-30 23:59:59",
-        "name": "Aaryahi Aggarwal",
-        "email": "poojaa.2020agg@gmail.com",
+        "name": "Aastha Gupta",
+        "email": "aasthaguptajindal@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_K86SON",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Abhiraj Thapar",
+        "email": "Abhiraj.thapar2493@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_ZQ5ALK",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Adarsh Baikan",
+        "email": "adarshbaikan@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_IWDK26",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Agrima Mittal",
+        "email": "vashwa@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_D1C5KW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ahana lal",
+        "email": "ahanalal.04@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_S6CNGW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Akshita Oberoi",
+        "email": "aneethaoberoi@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_KJMA1S",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Alishka Prothi",
+        "email": "naula.pankhuri@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_G8VOGW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Alka Aryal",
+        "email": "alka.aryal27@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_N9P1M1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aman Saini",
+        "email": "amansaini202009@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_CJDNAP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Amayra Singla",
+        "email": "tammiegoel@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_MTSYHU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Amisha P. S.",
+        "email": "pineappleamisha@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_VGLJ3V",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anaahat kaur",
+        "email": "twinkle_virdi05@yahoo.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_6H73JO",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anaya Chopra",
+        "email": "anshuonair@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_Y5GOH7",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anayysha",
+        "email": "bsolomondaniel@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch2_4J506N",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Angella Arora",
+        "email": "Saniya2002@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_4J506N",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Angella Arora",
+        "email": "saniya2002@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_4ALKG1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anidh Singh Sethi",
+        "email": "tismehr29@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_0RH95K",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ankita",
+        "email": "barkha.wahal@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch2_CSLCO7",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ankita Mishra",
+        "email": "ankitawrites23@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_5IWE3N",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anshu Bhoyar",
+        "email": "anshubhoyar97@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_FWJ7BM",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anuj Punj",
+        "email": "apunj1701@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_FZ1I75",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anukriti Jain",
+        "email": "anukritijain14@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_CFWSQE",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anusha Rajan",
+        "email": "anusharajan8199@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_HBELWD",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anvi Khanna",
+        "email": "anvi.khanna08@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_K1YZGF",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Araina Sahani",
+        "email": "Chahatishanksahani@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_IVA7FU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Arayna Juneja",
+        "email": "junejapayal@yahoo.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_557IRQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Arshnoor Kaur",
+        "email": "gunjanchadha29@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_D5ZRJU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Arushi Malviya",
+        "email": "arushimalviya.22@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_S71JBG",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ashna Bhartiya",
+        "email": "Aashnabhartiya@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_4G098P",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Astha Tomar",
+        "email": "asthat2716@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_1VNTUD",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ayaan",
+        "email": "clostemystque@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_WWHAPZ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ayushi Kashyap",
+        "email": "ayushi.kash@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_NN17KF",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Bhavini",
+        "email": "kbhavini147@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_B1OA4D",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Charul Gupta",
+        "email": "Drcharul20@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_T41SI8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Chirag Agarwal",
+        "email": "chirag.agarwal4296@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_XAVZR3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Devesh Yadav",
+        "email": "devesh.btech@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_R1C1F1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Devika Kukreja",
+        "email": "devikakukreja.11@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_BI1949",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Dimayra",
+        "email": "aroragaur@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_88GAS6",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Divya Garg",
+        "email": "divyagarg324@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_U8ZNU0",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Diya Mishra",
+        "email": "diymis01@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_TCQPNC",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Dr. Srishti Balbhadra",
+        "email": "dr.sristib@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_51WL26",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Drisha Gupta",
+        "email": "anupma.goen04@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_XFIVRI",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Emma Bishnoi",
+        "email": "bishnoi.natasha@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_YQ0JID",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Evaan Agarwal",
+        "email": "niraj0907@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_J7BZRZ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Gaurika Chawla",
+        "email": "chawlashweta.26@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_E9UMF3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Girika Nagpal",
+        "email": "dgnagpal@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_Y32J83",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Gultosh Misra",
+        "email": "gultosh2001@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_CEHJW9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Hansa Mehrotra",
+        "email": "asnah1595@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_AJ0OHJ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Harsheen Gulati",
+        "email": "avijeetpal@hotmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_IU4M9E",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Hemakshi Sahani",
+        "email": "Hm.sahani@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_9LDN5J",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Himadri Sharma",
+        "email": "himadrisharma344@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_T4346Z",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Inairah Jain",
+        "email": "inairahjain@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_0BKHE2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ira Kansal",
+        "email": "irakansal8@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_KDTIBA",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Jaisel Rajpal",
+        "email": "Jaiselrajpal2302@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_GUSB5W",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Japneet Kaur",
+        "email": "japneetkaurdesign@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_HXFASZ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Jenny",
+        "email": "clostemystque@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_G4GWWB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Juhi Khera",
+        "email": "juhikhera160@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_VZVZ9I",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kaashvi Chawla",
+        "email": "chawla.sandy@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_1BCZL5",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kashvi Girhotra",
+        "email": "kashvigirhotra07@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_JSHCHY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kaushik Patwari",
+        "email": "kaushik.patwari@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_CE150D",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Keerti",
+        "email": "jahnvi.ydv48@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_4VW1ZW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Khushi Gupta",
+        "email": "kg14082000@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_1YJK59",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Khwaish Bhargava",
+        "email": "amrita.dietician@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_YZ93BM",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Khyati Goel",
+        "email": "khyatigoel97@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_51JN5L",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kiara Gupta",
+        "email": "priyankagoct@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch4_NSVZY0",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kishpreet Sukheja",
+        "email": "sukhejakishpreet@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_4PJXQ0",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kompal Negi",
+        "email": "kompalnegi4@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_JGG559",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Krishnavi",
+        "email": "nehadhingra1008@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_0S1KFR",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kshirja Juneja",
+        "email": "manianand2501@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_JWWP24",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kyra Maulikhi",
+        "email": "bhardwaj8519@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_4ZBBUO",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Lakshika Kalra",
+        "email": "Kshitij.kalra@yahoo.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_8M6SUM",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Lakshita Talan",
+        "email": "talansk@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_IJ3KUP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Lavanya Babber",
+        "email": "lavanyababber2011@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_Q7R538",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Lavanya Gill",
+        "email": "divgill.04@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_Y48PDV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Lavica",
+        "email": "lavicaarora1@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_5C89HQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Mahi Sharma",
+        "email": "Mahisharma1112003@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_5C89HQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Mahi Sharma",
+        "email": "mahiii.sharma24@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_I4SBXW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Mehek Sarin",
+        "email": "meheksarin1602@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_T9PDZY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Meher Dahiya",
+        "email": "rupish@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch2_HZ8IOB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Miraaya Malhotra",
+        "email": "sakshi.superbe9@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_IA39T6",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Mohak Narang",
+        "email": "mohaknarangsteam@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_EUGRBL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Mona Agarwal",
+        "email": "Amona@techmahindra.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_IY95TC",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Y",
+        "email": "mak.globes@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch3_IY95TC",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Y",
+        "email": "vats.malvika@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_M3PA9J",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Myra Singh",
+        "email": "Nishuksingh@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_XVGG59",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Myraa Kohli",
+        "email": "Myraakohli@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_54O7TW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Naman Khandelwal",
+        "email": "NMNKHANDELWAL21@GMAIL.COM",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_J8QZNQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Nargis Badhwar",
+        "email": "nargis.badhwar1998@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_B0GBW9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Neepeeksha Singhal",
+        "email": "goelpree@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch2_9SNPWN",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Nehal Pande",
+        "email": "nehalpande2000@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_0RDX06",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Nitara",
+        "email": "duggal.bhavna@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_9YDCZB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Nupur Goyal",
+        "email": "nupurguptadse@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_ZIFXQ2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Palak",
+        "email": "palak.sharma1931@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2QXT6L",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Parishi Bansal",
+        "email": "ishanviebansal@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_QRKKON",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Parnika Goel",
+        "email": "garg.sakshi08@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_8WHPA8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Pihoo Kaur",
+        "email": "reenakaur0080@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_IR3TU9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Poorvi Badhwar",
+        "email": "badhwarpoorvi@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_2AWBG9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Prachi Arya",
+        "email": "prachik711@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_LOOYJM",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Pranika Jain",
+        "email": "gshefali24@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_OW8XX4",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Preeti Shukla",
+        "email": "Preetuprety@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_A57QGB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Preksha Diwan",
+        "email": "design.franchiseindia@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_M4OQM8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Prerna Sarin",
+        "email": "prernasarin123@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_GBVA9V",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Pritisha Sarkar",
+        "email": "pritishasarkar23@gmail.cpm",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_6YQYLI",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Priya Singh",
+        "email": "priya.singh48456@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_SBBKG9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Raaghav Goyal",
+        "email": "raghavgoyal017@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_J44KIA",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Raavi Madaan",
+        "email": "ravisha.madan4@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_SOBSNB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Rachita Arora",
+        "email": "rachita.arora318@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_4LBN7X",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ragavi Malhotra",
+        "email": "gunjanagarwal8@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_QF5JGF",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Renuka Rajan",
+        "email": "skullnbones99@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_YJZ0P1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Reshal Sanduja",
+        "email": "Reshalsanduja11@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_849TX8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Richa Negi",
+        "email": "rinegi001@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_YJ1S3B",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ruhani Khurana",
+        "email": "preetikhurana18@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_827I9L",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saani Agarwal",
+        "email": "beautypriyanka14@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_B7RPC1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saavi",
+        "email": "khushbu.mitts@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_VYNKCV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saazia Kharkia",
+        "email": "saaziakharkia@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_SCTFB5",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saher Verma",
+        "email": "saherverma@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_NLM3ZX",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sakhi Saxena",
+        "email": "sakhisaxena@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_FK3DFP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sakshi Goel",
+        "email": "garg.sakshi08@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_JGUIXA",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Samta Aggarwal",
+        "email": "sammy9213@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_U7CPC2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saniya Tyagi",
+        "email": "saniyatyagi6599@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_23MKDP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanya Gupta",
+        "email": "guptasanya306@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_QAPF6C",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanya Pruthi",
+        "email": "sanyapruthi335@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_QP5VPV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saumya Pankaj",
+        "email": "saumya.pankaj@yahoo.in",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2FQFYA",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shaira Agarwal",
+        "email": "shairaagarwal7@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_KJ7OOL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shefali Singh",
+        "email": "singhshefali2012@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_SV10IY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivangi Nanda",
+        "email": "snanda.94@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_W56EI3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivani Rohilla",
+        "email": "Shivani29r@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_VFNJKU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shravani Srivastava",
+        "email": "shravanisrivastava30@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_3XPKX4",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shrey Gupta",
+        "email": "shreygupta02@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2W1AG3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shreya Puri",
+        "email": "shreyapuri03@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_B0149P",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shritija Gupta",
+        "email": "raghav.gupta9@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_TNIQEB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Siya",
+        "email": "jahnvi.ydv48@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_OEA7ZX",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Snigdha Banerjee",
+        "email": "snighdabanrji@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_MTDZP7",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Srishti",
+        "email": "ssrivastava_blas21@thapar.edu",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_XXS9FJ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Surbhi Dhanetwal",
+        "email": "surbhidhanetwal031@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_KB3FYW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Swikriti Wankhede",
+        "email": "swikritiwankhede12@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_WJIR44",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Syshe Nanda",
+        "email": "dynamicsol@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2474SV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Taarini Kumar",
+        "email": "surbhi@antareslegal.in",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_EVVRNJ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Taisha Asri",
+        "email": "sweetreatsbytaisha27@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_QTX407",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Talya Rana",
+        "email": "gtalyaranaa@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_CE34W9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tanaira Setia",
+        "email": "namratasehgal874@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch3_6NOILD",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tishya Chhabra",
+        "email": "rupamniranjan@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_UR9LR4",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tismehr Kaur Sethi",
+        "email": "rajleen.sethi5@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_TOYV1F",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tiya Chhabra",
+        "email": "rupamniranjan@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_D6F3B3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tushita Nagpal",
+        "email": "tushita.nagpal.10@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_NP24JX",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Utkarsha Agarwal",
+        "email": "utkarsha_sjh@yahoo.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_U0EDA4",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vandana",
+        "email": "vm7220549@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_NQ118B",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vania Pradhan",
+        "email": "vaniapradhan@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_GBYEDG",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vanshika Goswami",
+        "email": "vanshika.goswami1@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_MABYXN",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Varnika Talwar",
+        "email": "varnika.talwar@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_O9DKVE",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Varshini Ramesh",
+        "email": "varshcoolkid@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_3WXMVH",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Yashasvi Singh",
+        "email": "renutokas@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_KX4SUL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Viya Rana",
+        "email": "priyankasehrawat19@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_V619DP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ananya Bhandari",
+        "email": "manuvani2006@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_YQF4NZ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sukriti Mittal",
+        "email": "sukritimital99@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_R5IUA4",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ripsy",
+        "email": "ripsy.rajpal25@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_8YKSH6",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aahana Sharma",
+        "email": "sharmaleenika@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_XZFXH8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanvi Aggarwal",
+        "email": "gupta.sakshi.012@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_X79W48",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saira Agarwal",
+        "email": "niksaiarayaan23@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_HRIVU8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Siddharth Jain",
+        "email": "siddhu.jain0203@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_AXY1JU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Surbhi Gupta",
+        "email": "gsurbhi8@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_643WI0",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Himanshi Aggarwal",
+        "email": "himanshivijayaggarwal@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2NJBT2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tanya Agarwal",
+        "email": "tanyaagarwal92@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_EX58NV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kamna Kapoor",
+        "email": "honey.kamna@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_TX2KX1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anya Bansal",
+        "email": "shalubansl.87@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_RO4G1M",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Naira Singhla",
+        "email": "singhlaneelu52@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_D6FBJL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aarohi Beriwal",
+        "email": "shrutiberiwal2@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_IJO8AM",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ayansh Jain",
+        "email": "ashianshuljain@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_SQ24YN",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Prachi Jindal",
+        "email": "prachijinndal270@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_OADJO2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Manu Agarwal",
+        "email": "agmanupr@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_DZZ5SV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vani Bagai",
+        "email": "vanibagai@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_EDKKU7",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Lakshita Oli",
+        "email": "laakshita.oli@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_Z4VRN7",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Nikhil Garg",
+        "email": "nikgarg91@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_NNBQ11",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Diksha Kedia",
+        "email": "dikshakedia033@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_48EBJK",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Damini Tomar",
+        "email": "tomar11tomar@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_NZCGWJ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Seerat Kaur",
+        "email": "pallavi_sharma1435@yahoo.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_PQ8VJF",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sayesha Aggarwal",
+        "email": "shikha08mangla89@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_IJRB7C",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kisha",
+        "email": "kishabansal2008@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_0VRB64",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanyukta Malkani",
+        "email": "Sanyukuta.malkani@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_93ZZAB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Gitanjali Mazumdar",
+        "email": "gitanjalimazumdar93@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_DTN78B",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Suhana Mishra",
+        "email": "mishra.suhana68@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_14GDVP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Meher Sharma",
+        "email": "rs3161445@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_WYA09E",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivanshi Jain",
+        "email": "unnati81@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_X99ELM",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sartaaj Kakkar",
+        "email": "pakhi.kakkar@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_92M1I3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saurav Baali",
+        "email": "baalisaurav@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_QIMGH4",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Simran Vijay",
+        "email": "simranvijay49@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_PVCBGE",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Pritansh",
+        "email": "tanushpreeti@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_B96EPQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kimaya Bathla",
+        "email": "kimayabathla@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_78IUXR",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Yashvika",
+        "email": "urvashijagota986@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_AF9H45",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Nandini Arora",
+        "email": "nandini.21151@sbcbs.du.ac.in",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_ROJNLY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vaani Mishra",
+        "email": "neha_sm@rediffmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_YB41PZ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Nitismita Baishya",
+        "email": "nitismitabaishya.official@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_35M4HU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Abhilasha Garodia",
+        "email": "abhilashashah132@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2NWXO2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Simran Sehgal",
+        "email": "Simransehgal2297@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_98CCJL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ganya Anand",
+        "email": "ganya.anand.26@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_MUPWZB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Akash Thakur",
+        "email": "thakur.akash4796@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_T3QN8D",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Azeeza Sachdeva",
+        "email": "pspriyasachdeva@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_G223P6",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aashna Gahi",
+        "email": "aashnagahi398@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_9VPKM9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Dhriti Sawhney",
+        "email": "jasleensawhney2590@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_OTV607",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sia Bagga",
+        "email": "chetnabagga81@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_YU555C",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Nimrit Dhooper",
+        "email": "dhoopern@ms.du.ac.in",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_44JNTC",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Arushi Sharma",
+        "email": "arushi0166@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_HCX0LZ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tarini Gupta",
+        "email": "tarinig2105@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_9NSURX",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vidhi Bhandari",
+        "email": "bhadarividhi1@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_16RK5V",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanya Khanna",
+        "email": "sanyakhannaoct2005@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_XHXWVW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tiana Munjal",
+        "email": "amit_munjal_2000@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_DJUULE",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saisha Choudhary",
+        "email": "anshunchoudhary2910@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_OV9ME2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Rashika Bagga",
+        "email": "rashikabagga@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_C1XH0D",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Avyaansh",
+        "email": "meghachauhan222109@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_NJ5BI3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Maayra Ahuja",
+        "email": "priyaahuja2311@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_IHV47U",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sahana Ahuja",
+        "email": "priyaahuja2311@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_0MNKFQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Jhilmil Modi",
+        "email": "modi.jhilmil2gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_0MNKFQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Jhilmil Modi",
+        "email": "modi.jhilmil@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_3JAQE6",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Disha Dey",
+        "email": "disha.direction2629@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2YEZZ5",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Joeita Roy",
+        "email": "joieta19@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_DIPP5M",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Satyam Dubey",
+        "email": "satyamdubey114@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_GPI4WY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Arshiya Sridhar",
+        "email": "arshiyasri02@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_V3KZNK",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sudhanshu Kapoor",
+        "email": "sudhanshukapoor8@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_YBHZQ4",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vindhya",
+        "email": "vindhyakamlesh@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_33UU2A",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Naman Singha",
+        "email": "Namansingha@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_GDANP9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shreshtha Acharya",
+        "email": "shesh1482004@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_H3CY8Y",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sharmishtha Ghosh",
+        "email": "Sharmistha0108@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_AY454S",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aadya Chauhan",
+        "email": "aadya.chauhan10@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_X81ABS",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tanisha Mehrotra",
+        "email": "tanisha04mehrotra@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2IWUH6",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shri Nidhi Goswami",
+        "email": "shrinidhi031@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_G0PT0X",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shalini Anand",
+        "email": "mrs.shalini.shaily@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_UCDSVK",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aishwarya Mishra",
+        "email": "aishwaryamishra08@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_RDKNKH",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kara Rahul",
+        "email": "drkanikajohar@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_W13AQW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ragini Negi",
+        "email": "ragsnegi007@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_LHXWAB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanjali Gajbhiye",
+        "email": "sanjalig28@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_E1C9GV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Rida Mehra",
+        "email": "mehra.shobit@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_RTEIXD",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Arshi Goel",
+        "email": "nehanikhilgoyal@yahoo.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_9OPLNE",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vanya Jain",
+        "email": "nj.nimishajain@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_29WJZ8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vrinda Narang",
+        "email": "vrindanarang@yahoo.co.in",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_NOT4JH",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Mansi Rawat",
+        "email": "mansirawat96@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_OTYY5V",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanjana Srivastava",
+        "email": "Awesomesnjna@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_D76JKE",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Dev Mehandru",
+        "email": "pkmehandru@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_Y1V2C3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vishaw Ranjan Kumar",
+        "email": "vishawranjankumar@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_7XF1UE",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Karishma Duggal",
+        "email": "kari.duggal555@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_YEUGH3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aarna Jain",
+        "email": "Jainsonika1622@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_9KAOCD",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kashvi Jain",
+        "email": "richa4g@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_04F68Z",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Praveen Sharma",
+        "email": "dsharma472@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_BVPK2D",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ashna Bali",
+        "email": "ashnabali2000@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_3DKRJF",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Karina",
+        "email": "karinarajput508@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_5WX7DX",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ritisha Jain",
+        "email": "Jain.priyan@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_EFCCNK",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Manya Mittal",
+        "email": "manyamittal212@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_LZ3QLF",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kartik Arora",
+        "email": "kartikarorajuly@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_5V2GHB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanghvi Tayal",
+        "email": "tayalnidhi@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_J50ASB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shyambhavi Kathpal",
+        "email": "sbhavi@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_DVPJO9",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Inaya Kapoor Aziz",
+        "email": "Sharika.kapoor@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_6D8VZC",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saswat Panda",
+        "email": "saswatpanda19990@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_LAGYKV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ananya Nair",
+        "email": "ananyanair2001@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_H7SNDP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aadhira Saini",
+        "email": "Anjali.rajput@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_6O3Q99",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ritika Mathur",
+        "email": "ritikamathur77@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_IH8OK2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aarvi Mehta",
+        "email": "aarvimehta.2008@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_E5TAOL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shail Shivani",
+        "email": "shailshivani1803@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_AWJXZV",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vikas Sharma",
+        "email": "priyanshiikamboj05@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_54C2JP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ayati Sharma",
+        "email": "soccar2007@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_CMETEE",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aroh",
+        "email": "arohascend@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_K47HTB",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Reeva Agarwalla",
+        "email": "richpandeya@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch6_JKQOIG",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Jatin",
+        "email": "gauravwadhawan552@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch6_JKQOIG",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Jatin",
+        "email": "jatin85138@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_5DOK4I",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sudhanshu kapoor",
+        "email": "sidkapoorlld1996@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_QYI2RL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Dhriti khanduja",
+        "email": "Khanduja.dhriti04@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_J78SCQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivangi Gupta",
+        "email": "shivangigupta.0697@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_MWF1FU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vaishnavi Gupta",
+        "email": "srpknaik80@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_AAMVXW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saira Taneja",
+        "email": "Nidhitanejasa169@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_4C7G02",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Siddharth Rai",
+        "email": "siddharth_112@yahoo.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_WDXWAS",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Pavni Khandelwal",
+        "email": "khandelwalpavni@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_0US38D",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Myra Kalsi",
+        "email": "Ekta.kalsi@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_UFEDYH",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Raghav Marwah",
+        "email": "Raghav.marwah@hotmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_FCMQSX",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Prarthna Anand",
+        "email": "prarthnaanand@yahoo.in",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_1K8V5L",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aarav Jain",
+        "email": "aaravjain272003@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_PB6UO1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Saranya",
+        "email": "neha@sdauto.co.in",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_145HTA",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Avni",
+        "email": "avnip.anjwani7979@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_PIMR2A",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Manas Yellapantula",
+        "email": "Manas210890@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_QXXWBC",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Abha Dixit",
+        "email": "abha47373@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_5HEHLH",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Yaashree",
+        "email": "Bhavisha.Dave6@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_IV7NTH",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ishika Haldia",
+        "email": "ishikahaldia18@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_AEE5OQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Pratik Patel",
+        "email": "pratikp562@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_AO95SX",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Vanisha Dudani",
+        "email": "Vanishadudani95@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_X1UK6R",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Dhruvika Shetty",
+        "email": "dhruvikashetty11@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_U6U9TY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Simran Rassewatt",
+        "email": "rassewattsimran@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_NXHNY1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Heena",
+        "email": "h.mohinani.15@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_2ISOG7",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanjeevani Singh",
+        "email": "chetsing2005@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_PLP1TL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Zara Catherine Modi",
+        "email": "yfernandesmodi@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_5KUP7T",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kanak Narang",
+        "email": "kanakgarg090204@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_A5IVEJ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Akshara Kaul",
+        "email": "aksharadesign14@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_JRGC89",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Yug Gupta",
+        "email": "anshu.agupta77@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_6YL6WG",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ayush Amavate",
+        "email": "amawateayush@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_QHGNL7",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Lavanya Kukreja",
+        "email": "poojaackukreja@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch2_UK0P21",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Disha Pahuja",
+        "email": "dishapahuja2005@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_JQXTQ1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Gauri Saluja",
+        "email": "gauri.saluja1212@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_T0QD5Z",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Harnoor Kaur",
+        "email": "amritakaurr@yahoo.in",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_L77P2I",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Anika Garodia",
+        "email": "abhilashashah132@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_2SYHJ3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Alyana Bansal",
+        "email": "shailzagoel00@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch2_6S2AV1",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shanaya Sehgal",
+        "email": "vibha.sehgal09@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch2_S805OJ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shruti Gupta",
+        "email": "shrutigupta1551@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_RW9SBG",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Divyata Anand",
+        "email": "divyataanand@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_EB4BKP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Jahnvi Rao",
+        "email": "jahnvi.ydy48@gmIail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_XIK9AU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kajal Sharma",
+        "email": "kajalsharma604@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_PHN9LG",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kriti Rao",
+        "email": "Kriti.rao04@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_PHN9LG",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kriti Rao",
+        "email": "kriti.rao04@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_C2NEH2",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Muskan Setia",
+        "email": "muskansetia16@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_M9C08N",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Priyanshi Kamboj",
+        "email": "priyanshiikamboj05@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_7K1Z0I",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Rubani Manaktala",
+        "email": "rubanimay01@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_NNUEU0",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Tarun Ahuja",
+        "email": "ahujatarun29@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_31WI1A",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Moumita Chakraborty",
+        "email": "moumitachakraborty98@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_PBC92G",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kajal yadav",
+        "email": "Kajalyadav96@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_DBMKNK",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Rutvi Saxena",
+        "email": "rutvisaxena@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_F1CM5H",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kamal Bansal",
+        "email": "Kamalbansal123@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_0HMBD8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Hanisha Chaudhry",
+        "email": "Hanishachaudhry@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_XXTWSW",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Diksha Gupta",
+        "email": "diksha_gupta21@yahoo.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_8X27EQ",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aakansha Singh",
+        "email": "aakansha17112001@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_J0D2H8",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Avantika Jadhav",
+        "email": "avantikajadhav748@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_GLI3MF",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shivanya",
+        "email": "divyataanand@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch2_YYK5GN",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Renu Tokas",
+        "email": "renutokas@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_IYP55S",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Shravya Gupta",
+        "email": "pulkit.gupta@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch2_4N8NKU",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Prab Singh",
+        "email": "prabkhandpur@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_8P94MK",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Radhika Bansal",
+        "email": "blackwhite1627@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_YHMBU3",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Ananya Gupta",
+        "email": "ananya1712second@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_3OPA8W",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Snehal Chauhan",
+        "email": "ycychauhan@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_MPUUL5",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Avleen Kaur",
+        "email": "amrita_cg@yahoo.co.in",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch3_0Q6QN4",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanvi Mahajan",
+        "email": "manmeet141@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch3_MYLMB7",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Dishita Mehandru",
+        "email": "pkmehandru@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch4_UAELK5",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Deeya Soni",
+        "email": "mistronic@hotmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_DIWWBL",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Kaartik Gupta",
+        "email": "kaartik.2804@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_45Y105",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Gaurav Wadhawan",
+        "email": "gauravwadhawan1232@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_G5A03F",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Dhriti Khanduja",
+        "email": "khanduja.dhriti04@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch5_4TMDNP",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Muskan Gupta",
+        "email": "1sona.gupta2@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_UXTXHN",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Aditi Gupta",
+        "email": "aditigupta98.ag@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_UXEXHN",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Maanya Khurana",
+        "email": "wmehereducation@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_EXEXHY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sanskriti Kapoor",
+        "email": "kapoorsans16@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_EXSXHY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Alyana Bansal",
+        "email": "shailzagoel00@gmail.com",
+        "phone": "9999799357",
+        "amount": "1000"
+    },
+    {
+        "promo_code": "#batch1_PXSXHY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Sakshi Rajpoot",
+        "email": "sakshi28.rajpoot@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_UXSXHY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Richa Tyagi",
+        "email": "richatyagi9899@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+        "promo_code": "#batch1_TXSXHY",
+        "expiry": "2024-07-30 23:59:59",
+        "name": "Angella Arora",
+        "email": "Saniya2002@gmail.com",
         "phone": "9999799357",
         "amount": "500"
     }
