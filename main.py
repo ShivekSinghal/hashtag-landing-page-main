@@ -827,6 +827,11 @@ def registration_form_ticket2():
 
     return render_template('ticketindex2.html')
 
+@app.route('/soldout', methods=['GET', 'POST'])
+def soldout():
+
+    return render_template('soldout.html')
+
 
 
 @app.route('/selectticket', methods=['GET', 'POST'])
