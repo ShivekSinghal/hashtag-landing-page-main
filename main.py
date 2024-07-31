@@ -113,7 +113,7 @@ def get_razorpay_modeofpayment(payment_id):
     url = f'https://api.razorpay.com/v1/payments/{payment_id}'
 
     headers = {
-        'Content-Type': 'application/json',
+        'Content-Type': 'yication/json',
     }
 
     auth = (razorpay_key_id, razorpay_key_secret)
