@@ -7,6 +7,7 @@
         "phone": "9999799357",
         "amount": "1000"
     },
+
     {
         "promo_code": "#batch1_MDRBG7",
         "expiry": "2024-07-30 23:59:59",
@@ -1215,14 +1216,6 @@
         "phone": "9999799357",
         "amount": "500"
     },
-    {
-        "promo_code": "#batch2_32037Q",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Tishya Chhabra",
-        "email": "yashikachawla150@gmail.com",
-        "phone": "9999799357",
-        "amount": "500"
-    },
 
     {
         "promo_code": "#batch4_UR9LR4",
@@ -1264,14 +1257,7 @@
         "phone": "9999799357",
         "amount": "500"
     },
-    {
-        "promo_code": "#batch1_NQ118B",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Vania Pradhan",
-        "email": "vaniapradhan@gmail.com",
-        "phone": "9999799357",
-        "amount": "500"
-    },
+
     {
         "promo_code": "#batch1_GBYEDG",
         "expiry": "2024-07-30 23:59:59",
@@ -1456,6 +1442,30 @@
         "phone": "9999799357",
         "amount": "500"
     },
+        {
+        "promo_code": "#batch2_32037Q",
+        "expiry": "2024-07-31 23:59:59",
+        "name": "Tishya Chhabra",
+        "email": "yashikachawla150@gmail.com",
+        "phone": "9999799357",
+        "amount": "500"
+    },
+    {
+            "promo_code": "#batch1_NQ118B",
+            "expiry": "2024-07-31 23:59:59",
+            "name": "Vania Pradhan",
+            "email": "vaniapradhan@gmail.com",
+            "phone": "9999799357",
+            "amount": "500"
+        },
+    {
+            "promo_code": "#batch1_0VRB64",
+            "expiry": "2024-07-31 23:59:59",
+            "name": "Sanyukta Malkani",
+            "email": "sanyukta.malkani@gmail.com",
+            "phone": "9999799357",
+            "amount": "500"
+        },
     {
         "promo_code": "#batch1_EDKKU7",
         "expiry": "2024-07-30 23:59:59",
@@ -1512,14 +1522,7 @@
         "phone": "9999799357",
         "amount": "500"
     },
-    {
-        "promo_code": "#batch1_0VRB64",
-        "expiry": "2024-07-31 23:59:59",
-        "name": "Sanyukta Malkani",
-        "email": "sanyukuta.malkani@gmail.com",
-        "phone": "9999799357",
-        "amount": "500"
-    },
+
     {
         "promo_code": "#batch1_93ZZAB",
         "expiry": "2024-07-30 23:59:59",
