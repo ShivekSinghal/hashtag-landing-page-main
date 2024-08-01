@@ -57,6 +57,7 @@ def process_tickets_from_csv(csv_file_path):
             number_of_tickets = row["NumberOfTickets"]
             to_email = row["Email"]
             price = row["Price"]
+            print(number_of_tickets)
 
             print(f"Processing tickets for {name} ({to_email}) for show on {show}")
 
