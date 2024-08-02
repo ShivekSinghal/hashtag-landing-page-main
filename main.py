@@ -825,7 +825,7 @@ def registration_form_ticket1():
 def registration_form_ticket2():
 
 
-    return render_template('ticketindex2.html')
+    return render_template('soldout.html')
 
 @app.route('/soldout', methods=['GET', 'POST'])
 def soldout():
