@@ -819,7 +819,7 @@ def registration_form():
 def registration_form_ticket1():
 
 
-    return render_template('ticketindex1.html')
+    return render_template('soldout.html')
 
 @app.route('/ticket2', methods=['GET', 'POST'])
 def registration_form_ticket2():
