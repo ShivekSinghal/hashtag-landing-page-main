@@ -64,8 +64,10 @@ def process_tickets_from_csv(csv_file_path):
             ticket_numbers, attachment_paths = generate_tickets(name, first_name, last_name, phone, email, show, number_of_tickets, price)
 
             subject = "Grid Tickets"
-            body = f"Please find your attached tickets for {show}. The event will be held at the NCUI Auditorium, starting at 7 PM. Kindly print or have these tickets ready on your mobile device for entry."
+            # body = f"Sorry , The main area seats were sold out by the time you booked your ticket, Please find your attached balcony tickets for {show}. The event will be held at the NCUI Auditorium August kranti marg,Siri industrial area block A , starting at 7 PM. Kindly print or have these tickets ready on your mobile device for entry."
+            body = f"Please find your attached complimentary tickets for {show}.The event will be held at the NCUI Auditorium August kranti marg,Siri industrial area block A , starting at 7 PM.Kindly print or have these tickets ready on your mobile device for entry."
             print("Tickets Sending")
+
             send_email_with_attachments(to_email, subject, body, attachment_paths)
 
             # Clean up generated tickets

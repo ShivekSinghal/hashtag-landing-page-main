@@ -25,15 +25,17 @@ def create_ticket(name, ticket_number, qr_data, template_path, output_path, pric
 
     font_size = 50
     name_position = (387.26, 158)  # Adjust the position accordingly
-    ticket_number_position = (210.43, 664.9)  # Adjust the position accordingly
+    ticket_number_position = (190.43, 650.9)  # Adjust the position accordingly
     qr_position = (1063, 162)  # Adjust the position accordingly
     qr_size = 30
 
-    event_date = ticket_number[:14]  # Extract the event date from the ticket number
+    event_date = ticket_number[:14]
+    event_date = event_date + " | 7 PM Onwards"
+    print(ticket_number.split())# Extract the event date from the ticket number
     event_date_position = (386.26, 267)
 
     price = f"Rs. {price}"
-    price_position = (834.6, 664.28)
+    price_position = (834.6, 650.28)
 
     image = Image.open(template_path)
     image = add_text_to_image(image, name, name_position, font_path, font_size, color="white")
@@ -62,7 +64,9 @@ def increment_ticket_number(filename):
 
 def generate_tickets(name, first_name, last_name, phone, email, show, number_of_tickets, price):
     print("generation started")
-    template_path = "ticket_template-min.webp"
+    # template_path = "ticket_template.png"
+    template_path = 'ticket_template-min.webp'
+
     ticket_file = f"{show}_ticket_number.txt"  # Use separate files for each show
     print("template loaded")
 

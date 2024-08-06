@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Tickets</title>
+    <script>
+        async function generateTickets() {
+            const response = await fetch('/generate_tickets', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ csv_file_path: 'path/to/your/csvfile.csv' }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                alert('Tickets generated! Download link: ' + data.link);
+            } else {
+                alert('Error: ' + data.error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="generateTickets()">Generate Tickets</button>
+</body>
+</html>

@@ -70,35 +70,22 @@ razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 # Create a Razorpay client
 
 def razorpay_client_credentials(studio):
-    if studio in ["NDA","SD","IPM","GGN"]:
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
-        razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
-        razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
-
-        # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
-        # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
-
-    elif studio == "Ramagya":
-        razorpay_key_id = ''
-        razorpay_key_secret = ''
-
-    elif studio == "03-August-2024":
-        # 'razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
-
-        razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
-        razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
+    if studio in ["NDA","SD","IPM","GGN","Ramagya"]:
+        razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
         # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
         # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
         # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
         # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
-    elif studio == "04-August-2024":
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
-        razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
-        razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+
+    else :
+        razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
+        razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
+        # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
+        # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+
+
 
 
 
@@ -1535,6 +1522,7 @@ def process_data(session_id, source):
                 validity = "May, Grid, June"
             increment_receipt_number()
 
+
             row = [name, phone, email, "#PAC" + order_receipt, "", validity, "Offline", batch_str, "", fee_without_gst, gst,
                    fee - internet_handling_fees, mode_of_payment, paid_to, "", f"OrderID : {razorpay_id} Razorpay Fees : ₹{internet_handling_fees}", "", studio]
 
@@ -1552,9 +1540,10 @@ def process_data(session_id, source):
                                                watermark=hashtag_watermark, razorpay_id=razorpay_id, promo_code=promo_code_created)
             send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt Grid'24")
 
-        thread = threading.Thread(target=send_receipt_background)
-        thread.start()
-        logger.info('Receipt sent')
+        # thread = threading.Thread(target=send_receipt_background)
+        # thread.start()
+        # logger.info('Receipt sent')
+        send_receipt_background()
 
         return jsonify({'status': 'success'})
     except Exception as e:

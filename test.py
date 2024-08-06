@@ -134,9 +134,31 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
 import os
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload
+
+# Google Drive API setup
+SCOPES = ['https://www.googleapis.com/auth/drive.file']
+SERVICE_ACCOUNT_FILE = 'credentials.json'
+
+credentials = service_account.Credentials.from_service_account_file(
+    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+service = build('drive', 'v3', credentials=credentials)
+
+def upload_file_to_drive(file_path):
+    file_metadata = {'name': os.path.basename(file_path)}
+    media = MediaFileUpload(file_path, mimetype='image/png')
+    file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
+    return file.get('id')
+
+def generate_shareable_link(file_id):
+    request_body = {'role': 'reader', 'type': 'anyone'}
+    service.permissions().create(fileId=file_id, body=request_body).execute()
+    link = f"https://drive.google.com/file/d/{file_id}/view"
+    return link
 
 def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_tickets, to_email, price):
-
     def add_text_to_image(image, text, position, font_path, font_size, color="white"):
         draw = ImageDraw.Draw(image)
         font = ImageFont.truetype(font_path, font_size)
@@ -153,7 +175,7 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
         return image
 
     def create_ticket(name, ticket_number, qr_data, template_path, output_path, price):
-        font_path = "impact.ttf.ttf"  # Path to the font file
+        font_path = "impact.ttf"  # Path to the font file
         if not os.path.exists(font_path):
             print("Font file not found. Using default font.")
             font_path = "IMPACT.TTF"  # Update to a font path available on your system
@@ -168,7 +190,7 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
         event_date_position = (386.26, 267)
 
         price = f"Rs. {price}"
-        price_position = (834.6,664.28)
+        price_position = (834.6, 664.28)
 
         image = Image.open(template_path)
         image = add_text_to_image(image, name, name_position, font_path, font_size, color="white")
@@ -230,19 +252,24 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
 
     attachment_paths = []
     ticket_numbers = []
+    download_links = []
 
     for _ in range(int(number_of_tickets)):
-        ticket_number = show + str(increment_ticket_number(ticket_file))  # Get and increment the current ticket number for the specified show
-        qr_data = f"https://docs.google.com/forms/d/e/1FAIpQLScLU6j8PKGlxsa5LV-PY9XHRl-Y1mr04vDgp8Eo8ApbmE4gXQ/viewform?usp=pp_url&entry.1211795223={first_name + last_name}&entry.669271916={phone}&entry.539132351={email}&entry.966328261={show}&entry.1058215280={ticket_number}"
-        print(qr_data)
-        print("Qr Code")
-        output_path = f"{show}_ticket_{ticket_number}.png"
-        create_ticket(name, ticket_number, qr_data, template_path, output_path, price)
+        ticket_number = increment_ticket_number(ticket_file)  # Get and increment the current ticket number for the specified show
+        formatted_ticket_number = f"{show}-{ticket_number}"  # Combine show and ticket number
+        qr_data = f"https://docs.google.com/forms/d/e/1FAIpQLScLU6j8PKGlxsa5LV-PY9XHRl-Y1mr04vDgp8Eo8ApbmE4gXQ/viewform?usp=pp_url&entry.1211795223={first_name + last_name}&entry.669271916={phone}&entry.539132351={email}&entry.966328261={show}&entry.1058215280={formatted_ticket_number}"
+        output_path = f"{show}_ticket_{formatted_ticket_number}.png"
+        create_ticket(name, formatted_ticket_number, qr_data, template_path, output_path, price)
         attachment_paths.append(output_path)
-        ticket_numbers.append(ticket_number)
+        ticket_numbers.append(formatted_ticket_number)
+
+        # Upload to Google Drive
+        file_id = upload_file_to_drive(output_path)
+        link = generate_shareable_link(file_id)
+        download_links.append(link)
 
     subject = "Grid Tickets"
-    body = f"Please find attached your tickets for Show on {show}."
+    body = f"Please find attached your tickets for the show on {show}."
 
     send_email_with_attachments(to_email, subject, body, attachment_paths)
 
@@ -250,6 +277,7 @@ def send_grid_ticket(name, first_name, last_name, phone, email, show, number_of_
     for path in attachment_paths:
         os.remove(path)
 
-    # return ticket_numbers
+    return download_links
+
 
 # Example usage:
