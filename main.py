@@ -198,7 +198,9 @@ def get_studio_location(studio):
 
 def create_promo_json(name, email, phone, amount, dropin_date, filename):
     promo_code = generate_random_promo_code()
-    today = datetime.datetime.strptime(dropin_date, "%Y-%m-%d")
+
+    now = datetime.now()
+    today = now.strptime(dropin_date, "%Y-%m-%d")
     expiry = today + timedelta(hours=23, minutes=59, seconds=59)
 
     promo_entry = ({
@@ -447,9 +449,9 @@ def make_promo(session_id):
     name = request.args.get('name')
     phone = request.args.get('phone')
     amount = request.args.get('amount')
+    now = datetime.now()
+    promo_date_format = now.strftime('%d-%m-%Y')
 
-    original_date = datetime.datetime.strptime(promo_date, '%Y-%m-%d')
-    promo_date_format = original_date.strftime('%d-%m-%Y')
 
 
     promo_code = create_promo_json(name=name, email=email, phone=phone, amount=amount, dropin_date=promo_date, filename='promo_code.json')
