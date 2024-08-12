@@ -6,5 +6,21 @@
         "email": "singhalshivek24@gmail.com",
         "phone": "8527805203",
         "amount": "500"
+    },
+    {
+        "promo_code": "Hashtag8XVN8XRP",
+        "expiry": "2024-08-18 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshivek24@gmail.com",
+        "phone": "8527805203",
+        "amount": "500"
+    },
+    {
+        "promo_code": "Hashtag#BGB9MFY",
+        "expiry": "2024-08-18 23:59:59",
+        "name": "Ayush Amawate",
+        "email": "amawateayush@gmail.com",
+        "phone": "9599861182",
+        "amount": "3833"
     }
 ]
