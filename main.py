@@ -796,6 +796,11 @@ def select_dropin():
 
 
 # Registration Form
+@app.route('/main2', methods=['GET', 'POST'])
+def registration_form2():
+
+
+    return render_template('maintenance.html')
 
 
 @app.route('/main', methods=['GET', 'POST'])
@@ -1096,7 +1101,9 @@ def make_payment(session_id):
             if validity == "two_months_grid":
                 session['validity'] = "Grid, August, September"
             if validity == "three_months":
-                validity = "April, May, June"
+                validity = "August, September, October"
+            if validity == "three_months2":
+                validity = "September, October, November"
             if validity == "grid":
                 validity = "Grid"
             if validity == "Drop In":
@@ -1586,5 +1593,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5653)
+    app.run(debug=True, port=5651)
 
