@@ -1545,7 +1545,7 @@ def process_data(session_id, source):
             rendered_receipt = render_template("receipt2.html", date=datetime.now().strftime('%d-%b-%Y'), name=name, batch=batch_str, phone=phone,
                                                validity=validity, email=email, studio=studio, gross_amount=fee_without_gst,
                                                gst=gst, internet_handling_fees=internet_handling_fees, fee=fee, order_receipt=f"#PAC{str(order_receipt)}",
-                                               mode_of_payment=mode_of_payment, paid_to=paid_to, hashtag_logo=hashtag_logo,
+                                               mode_of_payment=mode_of_payment, paid_to="Hashtag", hashtag_logo=hashtag_logo,
                                                watermark=hashtag_watermark, razorpay_id=razorpay_id, promo_code=promo_code_created)
             send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt Grid'24")
 
