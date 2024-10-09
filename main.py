@@ -15,7 +15,7 @@ import requests
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify, session
 from oauth2client.service_account import ServiceAccountCredentials
 from premailer import transform
-
+import string
 from ccavutil import encrypt
 from test import send_grid_ticket
 from test2 import get_date
@@ -71,17 +71,18 @@ razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
 def razorpay_client_credentials(studio):
     if studio in ["NDA","SD","IPM","GGN","Ramagya"]:
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
-        razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
-        razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
+        # razorpay_key_secret = '03Pk0BtR8EPESTnW83YnQHxy'
+        # razorpay_key_id = 'rzp_test_WARtc4tKD9d0Kr'
+        # razorpay_key_id = 'rzp_live_mxqGmvv7wvDwCM'
+        # razorpay_key_secret = '5Y7eDdJE819LCsBIiiZzgavQ'
 
-        # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
-        # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+        razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
+        razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
 
-    else :
-        # razorpay_key_secret = 'TONcmoAmqaAIKrU8rBiksCp2'
-        # razorpay_key_id = 'rzp_test_eTpKi2x9qCXzCn'
+    else:
+        # razorpay_key_secret = 'A3uUMLwNcJcRcFgiSwrsgVX1'
+        # razorpay_key_id = 'rzp_test_qNvEw96Esqg4AU'
+
         razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
         razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
 
@@ -547,12 +548,16 @@ def make_payment_landingpage(session_id, fee, event):
             'amount': order_amount,
             'currency': 'INR',
             # 'receipt': order_receipt,
-            'payment_capture': 1,  # Auto-capture the payment
+            'payment_capture': 1  # Auto-capture the payment
 
             # Add any other parameters as required
         }
         razorpay_client = razorpay.Client(auth=(razorpay_client_credentials(user_data[session_id]['studio'])['id'],
                                                 razorpay_client_credentials(user_data[session_id]['studio'])['secret']))
+
+
+
+
         user_data[session_id]['razorpay_key'] = razorpay_client_credentials(user_data[session_id]['studio'])['id']
         session['order_response'] = razorpay_client.order.create(data=order_data)
         session['fee'] = round(order_amount / 100 * 1.18)
@@ -567,6 +572,7 @@ def make_payment_landingpage(session_id, fee, event):
             session['batches'] = ""
             session['fee_without_gst'] = fee
             session['fee_with_gst'] = str(round(float(session.get('fee_without_gst')) * 1.18))
+
 
             session['validity'] = event
 
@@ -679,9 +685,14 @@ def make_payment_pinkd(session_id, fee, event):
 
         # Create a new order in Razorpay
 
+
+        random_str = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
+        order_id= f"order_{random_str}"
+
         order_data = {
                 'amount': order_amount,
                 'currency': 'INR',
+                'order_id': order_id,
                 # 'receipt': order_receipt,
                 'payment_capture': 1,  # Auto-capture the payment
                 'redirect': url_for("'payment_successful', session_id=session_id, source='Razorpay'")
@@ -813,7 +824,7 @@ def registration_form():
 def registration_form_ticket1():
 
 
-    return render_template('soldout.html')
+    return render_template("ticketindex1.html")
 
 @app.route('/ticket2', methods=['GET', 'POST'])
 def registration_form_ticket2():
@@ -1080,6 +1091,7 @@ def make_payment(session_id):
             session['fee_with_gst'] = str(round(float(session.get('fee_without_gst')) * 1.18))
 
 
+
             session['validity'] = request.form['validity']
 
             order_id = session.get('order_id')
@@ -1099,9 +1111,9 @@ def make_payment(session_id):
             paid_to = "Pink Grid"
 
             if validity == "two_months_grid":
-                session['validity'] = "Grid, August, September"
+                session['validity'] = "September, October, Grid"
             if validity == "three_months":
-                validity = "August, September, October"
+                validity = "September, October, January"
             if validity == "three_months2":
                 validity = "September, October, November"
             if validity == "grid":
@@ -1528,7 +1540,20 @@ def process_data(session_id, source):
             batch_str = ', '.join(user_session.get('batch'))
             promo_code_created = ""
             if validity == "two_months_grid":
-                validity = "May, Grid, June"
+                validity = "October, Grid, January"
+                subject = "Registration Receipt Oct'24"
+            elif validity == "three_months":
+                validity = "October, January, February"
+                subject = "Registration Receipt Oct'24"
+            elif validity == "grid":
+                validity = "Grid 2.0"
+                subject = "Registration Receipt Grid'2.0'24"
+
+            elif validity == "OpenClass":
+                validity = "Open Class"
+                subject = "Registration Receipt Open Class"
+                promo_code_created = create_promo_json(name, email, phone, fee_without_gst, "2024-10-13",
+                                                       "promo_code.json")
             increment_receipt_number()
 
 
@@ -1547,7 +1572,7 @@ def process_data(session_id, source):
                                                gst=gst, internet_handling_fees=internet_handling_fees, fee=fee, order_receipt=f"#PAC{str(order_receipt)}",
                                                mode_of_payment=mode_of_payment, paid_to="Hashtag", hashtag_logo=hashtag_logo,
                                                watermark=hashtag_watermark, razorpay_id=razorpay_id, promo_code=promo_code_created)
-            send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject="Registration Receipt Grid'24")
+            send_receipt(receiver_mail=email, rendered_html=rendered_receipt, subject=subject)
 
         # thread = threading.Thread(target=send_receipt_background)
         # thread.start()
@@ -1593,5 +1618,5 @@ def payment_failed():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5651)
+    app.run(debug=True, port=5652)
 

@@ -152,19 +152,19 @@
 
           };
         var openclass_fees = {
-          "Any1": 500,
-          "Any2": 846,
-          "Any3": 1269,
+          "Any1": 413.5,
+          "Any2": 827,
+          "Any3": 1240.5,
           "Any4": 1692,
           "All5": 2115,
           "Any6":3000,
           "Any7":3500,
           "Any8":4000,
-          "HHorHL_once": 7700,
+          "HHorHL_once": 827,
           "HHandHL_once": 14100,
-          "Any1_twiceandHHorHL_once": 18100,
-          "Any1_twiceandHHandHL_once": 24400,
-          "Any2_twiceandHHorHL_once": 27800,
+          "Any1_twiceandHHorHL_once": 1240.5,
+          "Any1_twiceandHHandHL_once": 1654,
+          "Any2_twiceandHHorHL_once": 1654,
           "Any2_twiceandHHandHL_once": 34200,
           "Any3_twiceandHHorHL_once": 37700,
           "Any4_twiceorHHandHL_once": 47300,
@@ -199,7 +199,7 @@
     }
       if (no_of_batches === 1) {
         var selectedBatch = selectedBatches[0];
-        if (selectedBatch === "Hip Hop (once a week)" || selectedBatch === "Heels (once a week)") {
+        if (selectedBatch === "Jazz (Open Class)" || selectedBatch === "Heels (once a week)") {
           feeField.value = feesDictionary['HHorHL_once'] - {{ discount }};
         } else {
           feeField.value = feesDictionary['Any1'] - {{ discount }};
@@ -208,8 +208,8 @@
         var first_batch = selectedBatches[0];
         var second_batch = selectedBatches[1];
 
-        if (second_batch === "Hip Hop (once a week)" || second_batch === "Heels (once a week)") {
-          if (first_batch === "Hip Hop (once a week)") {
+        if (second_batch === "Jazz (Open Class)" || second_batch === "Heels (once a week)") {
+          if (first_batch === "Jazz (Open Class)") {
             feeField.value = feesDictionary['HHandHL_once'] - {{ discount }};
           } else {
             feeField.value = feesDictionary['Any1_twiceandHHorHL_once'] - {{ discount }};
@@ -222,10 +222,10 @@
         var second_batch = selectedBatches[1];
         var third_batch = selectedBatches[2];
 
-        if (second_batch === "Hip Hop (once a week)") {
+        if (second_batch === "Jazz (Open Class)") {
           feeField.value = feesDictionary['Any1_twiceandHHandHL_once'] - {{ discount }};
         }
-        else if (third_batch === "Hip Hop (once a week)" || third_batch === "Heels (once a week)") {
+        else if (third_batch === "Jazz (Open Class)" || third_batch === "Heels (once a week)") {
           feeField.value = feesDictionary['Any2_twiceandHHorHL_once'] - {{ discount }};
         } else {
           feeField.value = feesDictionary['Any3'] - {{ discount }};
@@ -235,10 +235,10 @@
         var third_batch = selectedBatches[2];
         var fourth_batch = selectedBatches[3];
 
-        if (third_batch === "Hip Hop (once a week)") {
+        if (third_batch === "Jazz (Open Class)") {
           feeField.value = feesDictionary['Any2_twiceandHHandHL_once'] - {{ discount }};
         }
-        else if (fourth_batch === "Hip Hop (once a week)" || fourth_batch === "Heels (once a week)") {
+        else if (fourth_batch === "Jazz (Open Class)" || fourth_batch === "Heels (once a week)") {
           feeField.value = feesDictionary['Any3_twiceandHHorHL_once'] - {{ discount }};
         } else {
           feeField.value = feesDictionary['Any4'] - {{ discount }};
@@ -249,10 +249,10 @@
         var fourth_batch = selectedBatches[3];
         var fifth_batch = selectedBatches[4];
 
-        if (fifth_batch === "Hip Hop (once a week)" || fifth_batch === "Heels (once a week)"){
+        if (fifth_batch === "Jazz (Open Class)" || fifth_batch === "Heels (once a week)"){
           feeField.value = feesDictionary["Any4_twiceorHHandHL_once"] - {{ discount }};
         }
-        else if (fourth_batch === "Hip Hop (once a week)"){
+        else if (fourth_batch === "Jazz (Open Class)"){
           feeField.value = feesDictionary["Any3_twiceandHHorHL_once"] - {{ discount }};
         } else {
           feeField.value = feesDictionary["All5"] - {{ discount }};
@@ -267,10 +267,10 @@
         var fourth_batch = selectedBatches[3];
         var fifth_batch = selectedBatches[4];
 
-        if (fifth_batch === "Hip Hop (once a week)" || fifth_batch === "Heels (once a week)"){
+        if (fifth_batch === "Jazz (Open Class)" || fifth_batch === "Heels (once a week)"){
           feeField.value = feesDictionary["Any4_twiceorHHandHL_once"] - {{ discount }};
         }
-        else if (fourth_batch === "Hip Hop (once a week)"){
+        else if (fourth_batch === "Jazz (Open Class)"){
           feeField.value = feesDictionary["Any3_twiceandHHorHL_once"] - {{ discount }};
         } else {
           feeField.value = feesDictionary["Any6"] - {{ discount }};
@@ -284,10 +284,10 @@
             var fourth_batch = selectedBatches[3];
             var fifth_batch = selectedBatches[4];
 
-            if (fifth_batch === "Hip Hop (once a week)" || fifth_batch === "Heels (once a week)"){
+            if (fifth_batch === "Jazz (Open Class)" || fifth_batch === "Heels (once a week)"){
               feeField.value = feesDictionary["Any4_twiceorHHandHL_once"] - {{ discount }};
             }
-            else if (fourth_batch === "Hip Hop (once a week)"){
+            else if (fourth_batch === "Jazz (Open Class)"){
               feeField.value = feesDictionary["Any3_twiceandHHorHL_once"] - {{ discount }};
             } else {
               feeField.value = feesDictionary["Any7"] - {{ discount }};
@@ -301,10 +301,10 @@
         var fourth_batch = selectedBatches[3];
         var fifth_batch = selectedBatches[4];
 
-        if (fifth_batch === "Hip Hop (once a week)" || fifth_batch === "Heels (once a week)"){
+        if (fifth_batch === "Jazz (Open Class)" || fifth_batch === "Heels (once a week)"){
           feeField.value = feesDictionary["Any4_twiceorHHandHL_once"] - {{ discount }};
         }
-        else if (fourth_batch === "Hip Hop (once a week)"){
+        else if (fourth_batch === "Jazz (Open Class)"){
           feeField.value = feesDictionary["Any3_twiceandHHorHL_once"] - {{ discount }};
         } else {
           feeField.value = feesDictionary["Any8"] - {{ discount }};
@@ -426,14 +426,32 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group d-flex align-items-center">
-                                                <input class="custom-checkbox" type="checkbox" id="hiphopcheckbox" name="batch[]" value="Hip Hop (twice a week)" onchange="updateFee()">
+                                                <input class="custom-checkbox" type="checkbox" id="kidsopenclass" name="batch[]" value="Kids Jazz (Open CLass)" onchange="updateFee()">
 
-                                                <label class="checkbox-inline" for="hiphopcheckbox">
+                                                <label class="checkbox-inline" for="kidsopenclass">
                                                 </label>
-                                                <span class="ml-2">Manas's Masterclass</span>
+                                                <span class="ml-2">Kids Jazz</span>
                                             </div>
                                         </div>
-<!--                                        <div class="col-md-12">-->
+
+                                        <div class="col-md-12">
+                                            <div class="form-group d-flex align-items-center">
+                                                <input class="custom-checkbox" type="checkbox" id="jazzopenclass" name="batch[]" value="Jazz (Open Class)" onchange="updateFee()">
+
+                                                <label class="checkbox-inline" for="jazzopenclass">
+                                                <span class="ml-2">Jazz</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group d-flex align-items-center">
+                                                <input class="custom-checkbox" type="checkbox" id="hiphopopenclass" name="batch[]" value="HipHop (Open CLass)" onchange="updateFee()">
+
+                                                <label class="checkbox-inline" for="hiphopopenclass">
+                                                </label>
+                                                <span class="ml-2">Hip Hop</span>
+                                            </div>
+                                        </div>                                        <div class="col-md-12">-->
 <!--                                            <div class="form-group d-flex align-items-center">-->
 <!--                                                <input class="custom-checkbox" type="checkbox" id="heelscheckbox" name="batch[]" value="Heels (twice a week)" onchange="updateFee()">-->
 

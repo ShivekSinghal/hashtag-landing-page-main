@@ -30,5 +30,21 @@
         "email": "twinkle_virdi05@yahoo.com",
         "phone": "9810413137",
         "amount": "423.73"
+    },
+    {
+        "promo_code": "HashtagBHKSSK0E",
+        "expiry": "2024-09-15 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshivek24@gmail.com",
+        "phone": "8527805203",
+        "amount": "423.72"
+    },
+    {
+        "promo_code": "Hashtag2J3Y1YG4",
+        "expiry": "2024-10-13 23:59:59",
+        "name": "Shivek Singhal",
+        "email": "singhalshivek24@gmail.com",
+        "phone": "8527805203",
+        "amount": "2000"
     }
 ]
