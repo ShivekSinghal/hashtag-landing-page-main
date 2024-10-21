@@ -696,9 +696,18 @@
                         <div class="col-md-12">
                             <div class="form-group d-flex align-items-center">
 
+                                <input class="text-white" type="radio" id="KidsJazz" name="batch" value="Kids Jazz" onchange="updateFee()" aria-selected="true">
+                                <label style="margin-bottom: 0;" class="checkbox-inline" for="KidsJazz"></label>
+                                <span class="ml-2">Kids Jazz, 12:45pm-1:45pm</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group d-flex align-items-center">
+
                                 <input class="text-white" type="radio" id="Jazz1_weekend1" name="batch" value="Jazz 1 (Weekend)" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1_weekend1"></label>
-                                <span class="ml-2">Jazz 1 (Weekend), 12:30pm-2:45pm </span>
+                                <span class="ml-2">Jazz 1 (Weekend), 2:00pm-4:15pm </span>
                             </div>
                         </div>
 
@@ -743,7 +752,7 @@
 
                                 <input type="radio" name="batch" id="ballet" value="Ballet" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="ballet"></label>
-                                <span class="ml-2">Ballet, 5:00pm-6:15pm</span>
+                                <span class="ml-2">Ballet, 5:00pm-6:30pm</span>
                             </div>
                         </div>
 
@@ -753,7 +762,7 @@
 
                                 <input type="radio" name="batch" id="modern" value="Modern" onchange="updateFee()">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="modern"></label>
-                                <span class="ml-2">Modern, 8:45pm-10:00pm</span>
+                                <span class="ml-2">Modern, 8:00pm-9:15pm</span>
                             </div>
                         </div>
 
@@ -762,10 +771,10 @@
                 classSelection.innerHTML = `
                         <div class="col-md-12">
                             <div class="form-group d-flex align-items-center">
+                                <h4 style="color:white ;" >No classes for this day</h4>
 
-                                <input type="radio" name="batch" id="Jazz1.1" value="Jazz 1" onchange="updateFee()">
-                                <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1.1"></label>
-                                <span class="ml-2">Heels, 7:45pm-9:00pm</span>
+
+
                             </div>
                         </div>
 
@@ -805,7 +814,7 @@
 
                     `;
 
-            } else if (dayOfWeek === 3) { // Saturday
+            } else if (dayOfWeek === 3) { // Wednesday
                 classSelection.innerHTML = `
 
                         <div class="col-md-12">
@@ -813,7 +822,16 @@
 
                                 <input class="text-white" type="radio" id="KidsJazz" name="batch" value="Kids Jazz" onchange="updateFee()" aria-selected="true">
                                 <label style="margin-bottom: 0;" class="checkbox-inline" for="KidsJazz"></label>
-                                <span class="ml-2">Kids Jazz, 3:45pm-4:45pm</span>
+                                <span class="ml-2">Kids Jazz, 6:15pm-7:30pm</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group d-flex align-items-center">
+
+                                <input class="text-white" type="radio" id="Jazz1.1" name="batch" value="Jazz 1.1" onchange="updateFee()">
+                                <label style="margin-bottom: 0;" class="checkbox-inline" for="Jazz1.1"></label>
+                                <span class="ml-2">Jazz 1, 8:00pm-9:15pm </span>
                             </div>
                         </div>
 
