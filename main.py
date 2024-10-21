@@ -80,11 +80,11 @@ def razorpay_client_credentials(studio):
         razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
 
     else:
-        # razorpay_key_secret = 'A3uUMLwNcJcRcFgiSwrsgVX1'
-        # razorpay_key_id = 'rzp_test_qNvEw96Esqg4AU'
+        razorpay_key_secret = 'A3uUMLwNcJcRcFgiSwrsgVX1'
+        razorpay_key_id = 'rzp_test_qNvEw96Esqg4AU'
 
-        razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
-        razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
+        # razorpay_key_id = 'rzp_live_Nl7U5V8xK8TXSI'
+        # razorpay_key_secret = '52nqEc0i23t8nTrtbjpppeSW'
 
 
 
@@ -1540,10 +1540,10 @@ def process_data(session_id, source):
             batch_str = ', '.join(user_session.get('batch'))
             promo_code_created = ""
             if validity == "two_months_grid":
-                validity = "October, Grid, January"
+                validity = "Grid, January, February"
                 subject = "Registration Receipt Oct'24"
             elif validity == "three_months":
-                validity = "October, January, February"
+                validity = "January, February, March"
                 subject = "Registration Receipt Oct'24"
             elif validity == "grid":
                 validity = "Grid 2.0"
